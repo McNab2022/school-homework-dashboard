@@ -425,52 +425,128 @@
       --anna-soft: #fce7f3;
     }
 
+    /* Whose-week card (above tabs — Lovable style) */
     .custody-banner {
+      position: relative;
       display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 0.65rem 1rem;
-      padding: 1rem 1.15rem;
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      margin: 0.5rem 0 1.25rem;
+      flex-direction: column;
+      gap: 0.85rem;
+      padding: 1rem 1.15rem 1.05rem;
+      border-radius: 14px;
+      box-shadow: 0 4px 18px rgba(15, 23, 42, 0.08), 0 1px 3px rgba(15, 23, 42, 0.04);
+      margin: 1rem 0 0.15rem;
       border: 1px solid var(--border);
-      background: var(--surface);
+      background: #ffffff;
     }
 
-    .custody-banner.alex {
-      background: var(--alex-soft);
-      border-color: #93c5fd;
-    }
-    .custody-banner.anna-karin {
-      background: var(--anna-soft);
-      border-color: #f9a8d4;
-    }
-    .custody-banner.unknown {
-      background: var(--surface);
+    .custody-banner.alex { border-color: #bfdbfe; }
+    .custody-banner.anna-karin { border-color: #fbcfe8; }
+    .custody-banner.unknown { border-color: var(--border); }
+
+    .custody-banner .banner-top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 0.75rem;
     }
 
     .custody-banner .label {
-      font-size: 0.75rem;
+      font-size: 0.7rem;
       font-weight: 700;
       text-transform: uppercase;
-      letter-spacing: 0.06em;
+      letter-spacing: 0.08em;
       color: var(--text-muted);
+      margin-bottom: 0.2rem;
     }
 
     .custody-banner .who {
-      font-size: 1.35rem;
-      font-weight: 700;
-      letter-spacing: -0.02em;
+      font-size: 1.55rem;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.15;
+      color: var(--text);
     }
 
     .custody-banner.alex .who { color: var(--alex); }
     .custody-banner.anna-karin .who { color: var(--anna); }
 
-    .custody-banner .range {
-      font-size: 0.9rem;
+    .custody-banner .week-badge {
+      flex-shrink: 0;
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 0.28rem 0.65rem;
+      border-radius: 999px;
+      background: #dcfce7;
+      color: #166534;
+      border: 1px solid #86efac;
+      white-space: nowrap;
+    }
+
+    .custody-banner .preview-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.55rem;
+    }
+
+    .custody-banner .preview-block {
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 0.55rem 0.7rem;
+    }
+
+    .custody-banner .preview-block .preview-label {
+      font-size: 0.68rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
       color: var(--text-muted);
-      width: 100%;
+      margin-bottom: 0.2rem;
+    }
+
+    .custody-banner .preview-block .preview-who {
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    .custody-banner .preview-block .preview-who.alex { color: var(--alex); }
+    .custody-banner .preview-block .preview-who.anna-karin { color: var(--anna); }
+
+    .custody-banner .preview-block .preview-meta {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-top: 0.1rem;
+    }
+
+    .custody-banner .range {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    /* School finish times bar */
+    .finish-times {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.35rem 0.85rem;
+      margin: 0.65rem 0 0.85rem;
+      padding: 0.55rem 0.85rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      box-shadow: var(--shadow);
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text);
+    }
+    .finish-times .sep {
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+    .finish-times .finish-na {
+      color: var(--text-muted);
+      font-weight: 500;
     }
 
     .custody-section h2 {
@@ -771,6 +847,7 @@
           <button type="button" id="lang-sv" data-lang="sv">Svenska</button>
         </div>
       </div>
+      <div id="custody-banner" class="custody-banner unknown" aria-live="polite"></div>
       <nav class="tab-nav" id="tab-nav" role="tablist" aria-label="Sections">
         <button type="button" class="tab-btn active" role="tab" id="tab-school" data-tab="school" aria-selected="true" aria-controls="panel-school">School</button>
         <button type="button" class="tab-btn" role="tab" id="tab-sport" data-tab="sport" aria-selected="false" aria-controls="panel-sport">Sport &amp; Hobbies</button>
@@ -786,6 +863,8 @@
         <div class="kids-row" id="kids-row"></div>
         <p class="updated" id="updated-line"></p>
       </div>
+
+      <div id="finish-times" class="finish-times" aria-live="polite"></div>
 
       <div class="filters" id="filters" role="group" aria-label="Filter items">
         <button type="button" class="chip active" data-filter="all">All</button>
@@ -822,7 +901,6 @@
     </div>
 
     <div id="panel-keydates" class="tab-panel" role="tabpanel" aria-labelledby="tab-keydates" hidden>
-      <div id="custody-banner" class="custody-banner unknown" aria-live="polite"></div>
       <section class="custody-section">
         <h2 id="custody-upcoming-heading">Upcoming custody</h2>
         <div id="custody-list" class="custody-list"></div>
@@ -1212,6 +1290,13 @@
         whoEllie: "Ellie",
         whoOllie: "Ollie",
         thisWeekCustody: "This week",
+        whoseWeek: "Whose week",
+        thisWeekBadge: "This week",
+        nextBlock: "Next block",
+        thenBlock: "Then",
+        finishEllie: "Ellie finish: {time}",
+        finishOllie: "Ollie finish: {time}",
+        finishUnavailable: "—",
         upcomingCustody: "Upcoming custody",
         parentAlex: "Alex",
         parentAnnaKarin: "Anna-Karin",
@@ -1298,6 +1383,13 @@
         whoEllie: "Ellie",
         whoOllie: "Ollie",
         thisWeekCustody: "Denna vecka",
+        whoseWeek: "Vems vecka",
+        thisWeekBadge: "Denna vecka",
+        nextBlock: "Nästa block",
+        thenBlock: "Sedan",
+        finishEllie: "Ellie slutar: {time}",
+        finishOllie: "Ollie slutar: {time}",
+        finishUnavailable: "—",
         upcomingCustody: "Kommande umgänge",
         parentAlex: "Alex",
         parentAnnaKarin: "Anna-Karin",
@@ -1588,6 +1680,8 @@
     let custodyData = null;
     let custodyLoadState = "pending";
     let custodyShowMore = false;
+    let scheduleData = null;
+    let scheduleLoadState = "pending"; // pending | ok | error
     const CUSTODY_WEEKS_NEAR = 4;
     const CUSTODY_WEEKS_ALL = 12;
     let otherDatesData = null;
@@ -1648,46 +1742,127 @@
           </article>`;
     }
 
-    function renderCustody() {
-      const i = t();
+    function blocksAfter(blocks, current, today, count) {
+      if (!blocks || !blocks.length) return [];
+      let startIdx = 0;
+      if (current) {
+        const idx = blocks.findIndex(
+          (b) => b.start === current.start && b.end === current.end && b.parent === current.parent
+        );
+        startIdx = idx >= 0 ? idx + 1 : 0;
+      } else {
+        startIdx = blocks.findIndex((b) => b.end >= today);
+        if (startIdx < 0) return [];
+      }
+      return blocks.slice(startIdx, startIdx + count);
+    }
+
+    function previewBlockHtml(label, block, i) {
+      if (!block) {
+        return `<div class="preview-block">
+          <div class="preview-label">${escapeHtml(label)}</div>
+          <div class="preview-who">—</div>
+        </div>`;
+      }
+      const name = parentLabel(block.parent);
+      return `<div class="preview-block">
+          <div class="preview-label">${escapeHtml(label)}</div>
+          <div class="preview-who ${escapeHtml(block.parent)}">${escapeHtml(name)}</div>
+          <div class="preview-meta">${escapeHtml(i.custodyDays.replace("{n}", String(block.days)))}</div>
+        </div>`;
+    }
+
+    function renderCustodyBanner(current, following, i) {
       const banner = document.getElementById("custody-banner");
-      const list = document.getElementById("custody-list");
-      const heading = document.getElementById("custody-upcoming-heading");
-      heading.textContent = i.upcomingCustody;
+      if (!banner) return;
 
       if (custodyLoadState === "pending") {
         banner.className = "custody-banner unknown";
-        banner.innerHTML = `<div class="label">${escapeHtml(i.thisWeekCustody)}</div><div class="who">…</div>`;
-        list.innerHTML = "";
+        banner.innerHTML = `
+          <div class="banner-top">
+            <div>
+              <div class="label">${escapeHtml(i.whoseWeek)}</div>
+              <div class="who">…</div>
+            </div>
+          </div>`;
         return;
       }
 
       if (custodyLoadState === "error" || !custodyData) {
         banner.className = "custody-banner unknown";
-        banner.innerHTML = `<div class="label">${escapeHtml(i.thisWeekCustody)}</div><div class="who">—</div><div class="range">${escapeHtml(i.custodyLoadError)}</div>`;
-        list.innerHTML = `<div class="custody-empty">${escapeHtml(i.custodyLoadError)}</div>`;
+        banner.innerHTML = `
+          <div class="banner-top">
+            <div>
+              <div class="label">${escapeHtml(i.whoseWeek)}</div>
+              <div class="who">—</div>
+              <div class="range">${escapeHtml(i.custodyLoadError)}</div>
+            </div>
+          </div>`;
+        return;
+      }
+
+      if (current) {
+        const name = parentLabel(current.parent);
+        const next = following[0] || null;
+        const then = following[1] || null;
+        banner.className = `custody-banner ${current.parent}`;
+        banner.innerHTML = `
+          <div class="banner-top">
+            <div>
+              <div class="label">${escapeHtml(i.whoseWeek)}</div>
+              <div class="who">${escapeHtml(name)}</div>
+            </div>
+            <span class="week-badge">${escapeHtml(i.thisWeekBadge)}</span>
+          </div>
+          <div class="preview-row">
+            ${previewBlockHtml(i.nextBlock, next, i)}
+            ${previewBlockHtml(i.thenBlock, then, i)}
+          </div>`;
+      } else {
+        const next = following[0] || null;
+        const then = following[1] || null;
+        banner.className = "custody-banner unknown";
+        banner.innerHTML = `
+          <div class="banner-top">
+            <div>
+              <div class="label">${escapeHtml(i.whoseWeek)}</div>
+              <div class="who">—</div>
+              <div class="range">${escapeHtml(i.custodyNone)}</div>
+            </div>
+          </div>
+          <div class="preview-row">
+            ${previewBlockHtml(i.nextBlock, next, i)}
+            ${previewBlockHtml(i.thenBlock, then, i)}
+          </div>`;
+      }
+    }
+
+    function renderCustody() {
+      const i = t();
+      const list = document.getElementById("custody-list");
+      const heading = document.getElementById("custody-upcoming-heading");
+      if (heading) heading.textContent = i.upcomingCustody;
+
+      if (custodyLoadState === "pending") {
+        renderCustodyBanner(null, [], i);
+        if (list) list.innerHTML = "";
+        return;
+      }
+
+      if (custodyLoadState === "error" || !custodyData) {
+        renderCustodyBanner(null, [], i);
+        if (list) list.innerHTML = `<div class="custody-empty">${escapeHtml(i.custodyLoadError)}</div>`;
         return;
       }
 
       const today = todayStockholm();
       const current = findCurrentBlock(custodyData.blocks, today);
-      if (current) {
-        banner.className = `custody-banner ${current.parent}`;
-        const name = parentLabel(current.parent);
-        banner.innerHTML = `
-          <div class="label">${escapeHtml(i.thisWeekCustody)}</div>
-          <div class="who">${escapeHtml(i.kidsWith.replace("{name}", name))}</div>
-          <div class="range">${escapeHtml(formatRange(current.start, current.end))} · ${escapeHtml(i.custodyDays.replace("{n}", String(current.days)))}</div>`;
-      } else {
-        banner.className = "custody-banner unknown";
-        banner.innerHTML = `
-          <div class="label">${escapeHtml(i.thisWeekCustody)}</div>
-          <div class="who">—</div>
-          <div class="range">${escapeHtml(i.custodyNone)}</div>`;
-      }
+      const following = blocksAfter(custodyData.blocks, current, today, 2);
+      renderCustodyBanner(current, following, i);
 
       const near = upcomingBlocks(custodyData.blocks, today, CUSTODY_WEEKS_NEAR);
       const all = upcomingBlocks(custodyData.blocks, today, CUSTODY_WEEKS_ALL);
+      if (!list) return;
       if (!all.length) {
         list.innerHTML = `<div class="custody-empty">${escapeHtml(i.custodyEmptyUpcoming)}</div>`;
         return;
@@ -2144,6 +2319,60 @@
       renderCustody();
     }
 
+    function finishTimeForKid(kidId, weekday) {
+      if (!scheduleData || !scheduleData.kids || !scheduleData.kids[kidId]) return null;
+      const map = scheduleData.kids[kidId].finishByWeekday || {};
+      const v = map[String(weekday)];
+      return v || null;
+    }
+
+    function renderFinishTimes() {
+      const el = document.getElementById("finish-times");
+      if (!el) return;
+      const i = t();
+      const na = i.finishUnavailable;
+
+      if (scheduleLoadState === "pending") {
+        el.innerHTML = `<span>${escapeHtml(i.finishEllie.replace("{time}", "…"))}</span>` +
+          `<span class="sep" aria-hidden="true">·</span>` +
+          `<span>${escapeHtml(i.finishOllie.replace("{time}", "…"))}</span>`;
+        return;
+      }
+
+      let ellie = na;
+      let ollie = na;
+      if (scheduleLoadState === "ok" && scheduleData) {
+        const today = new Date(
+          new Date().toLocaleString("en-US", { timeZone: "Europe/Stockholm" })
+        );
+        const wd = today.getDay(); // 0=Sun … 6=Sat
+        ellie = finishTimeForKid("eleanor", wd) || na;
+        ollie = finishTimeForKid("oliver", wd) || na;
+      }
+
+      const ellieCls = ellie === na ? " finish-na" : "";
+      const ollieCls = ollie === na ? " finish-na" : "";
+      el.innerHTML =
+        `<span class="${ellieCls.trim()}">${escapeHtml(i.finishEllie.replace("{time}", ellie))}</span>` +
+        `<span class="sep" aria-hidden="true">·</span>` +
+        `<span class="${ollieCls.trim()}">${escapeHtml(i.finishOllie.replace("{time}", ollie))}</span>`;
+    }
+
+    async function loadScheduleFeed() {
+      scheduleLoadState = "pending";
+      renderFinishTimes();
+      try {
+        const res = await fetch("feeds/schedule.json", { cache: "no-store" });
+        if (!res.ok) throw new Error("HTTP " + res.status);
+        scheduleData = await res.json();
+        scheduleLoadState = "ok";
+      } catch (e) {
+        scheduleData = null;
+        scheduleLoadState = "error";
+      }
+      renderFinishTimes();
+    }
+
     function setTab(tab) {
       if (!VALID_TABS.includes(tab)) tab = "school";
       currentTab = tab;
@@ -2260,6 +2489,7 @@
       applyChrome();
       setTab(currentTab);
       renderSchool();
+      renderFinishTimes();
       renderCustody();
       renderOtherDates();
       renderSport();
@@ -2309,6 +2539,7 @@
 
     render();
     loadCustodyFeed();
+    loadScheduleFeed();
     loadOtherDatesFeed();
     loadSportFeeds();
     loadDrumsFeed();

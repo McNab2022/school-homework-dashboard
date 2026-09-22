@@ -61,3 +61,11 @@ Include upcoming appointments only. Past events are omitted.
 ### Refresh
 
 No public ICS URL yet. Maintain as a static snapshot (Grok Bot or hand-edit). Later this can pull Family calendar events that are not health (logoped/dentist). Include upcoming/current events only; past ones can be dropped. Empty notes are fine — fill in flight details later.
+
+## School finish times (Vklass lectures)
+
+- **ICS sources:** `ellie-lectures.ics`, `ollie-lectures.ics` (Vklass lecture exports)
+- **JSON for the UI:** `schedule.json` (generated — do not hand-edit finish times)
+- **Builder:** `python3 feeds/build_schedule.py`
+
+Finish time per weekday = modal max `DTEND` of lessons that day. Keys are JS `getDay()` strings (`"1"`=Mon … `"5"`=Fri). Display names in the UI are Ellie / Ollie.

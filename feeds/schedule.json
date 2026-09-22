@@ -1,0 +1,31 @@
+{
+  "updated": "2026-09-22",
+  "timezone": "Europe/Stockholm",
+  "kids": {
+    "eleanor": {
+      "name": "Ellie",
+      "finishByWeekday": {
+        "0": null,
+        "1": "14:45",
+        "2": "15:30",
+        "3": "14:50",
+        "4": "15:20",
+        "5": "15:25",
+        "6": null
+      }
+    },
+    "oliver": {
+      "name": "Ollie",
+      "finishByWeekday": {
+        "0": null,
+        "1": "14:10",
+        "2": "13:50",
+        "3": "14:30",
+        "4": "13:45",
+        "5": "13:40",
+        "6": null
+      }
+    }
+  },
+  "notes": "Finish = end of last lesson that day (max DTEND from Vklass lecture ICS). Weekday keys are JS getDay() strings: \"0\"=Sun … \"6\"=Sat; school days use \"1\"–\"5\". Built by feeds/build_schedule.py from ellie-lectures.ics / ollie-lectures.ics."
+}
