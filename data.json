@@ -12,9 +12,10 @@
     },
     {
       "id": "oliver",
-      "name": "Oliver Lawrence",
+      "name": "Oliver",
       "class": "4C",
-      "notes": "fritids"
+      "notes": "fritids",
+      "legal_name": "Oliver Lawrence"
     }
   ],
   "items": [
@@ -26,8 +27,9 @@
       "subject": "School",
       "type": "parent_action",
       "title": "Parent info meeting",
-      "notes": "Aula then classrooms. Parent event, not a test.",
-      "optional": false
+      "notes": "Aula then home classrooms. Parent event, not a test.",
+      "optional": false,
+      "on_classroom": false
     },
     {
       "id": "el-spanish-vocab",
@@ -38,7 +40,8 @@
       "type": "homework",
       "title": "Spanish vocab quiz (läxförhör)",
       "notes": "Chapter 4 glosses.",
-      "optional": false
+      "optional": false,
+      "on_classroom": false
     },
     {
       "id": "el-samhall",
@@ -48,8 +51,9 @@
       "subject": "Samhällskunskap",
       "type": "test",
       "title": "Samhällskunskap test",
-      "notes": "Statsskick, politik, ideologi. Prep in Classroom Examinationer (“Att kunna inför testet…”). Also politics group presentation from valstugor interviews.",
-      "optional": false
+      "notes": "Statsskick, politik, ideologi. Prep in Classroom Examinationer (“Att kunna inför testet…”). Also politics group presentation from valstugor interviews. Prompt Ellie to open Google Classroom for this material.",
+      "optional": false,
+      "on_classroom": true
     },
     {
       "id": "ol-fritids-schema",
@@ -60,7 +64,8 @@
       "type": "parent_action",
       "title": "Register fritids omsorgsschema for höstlov",
       "notes": "Deadline — register care schedule for höstlov week 44 (26–30 Oct). Action for parents.",
-      "optional": false
+      "optional": false,
+      "on_classroom": false
     },
     {
       "id": "el-kallbrinks-os",
@@ -71,7 +76,8 @@
       "type": "event",
       "title": "Källbrinks OS",
       "notes": "PE event.",
-      "optional": false
+      "optional": false,
+      "on_classroom": false
     },
     {
       "id": "el-math-prov-1",
@@ -82,7 +88,8 @@
       "type": "test",
       "title": "Math Prov del 1 (tal)",
       "notes": null,
-      "optional": false
+      "optional": false,
+      "on_classroom": false
     },
     {
       "id": "ol-math-test-1",
@@ -93,7 +100,8 @@
       "type": "test",
       "title": "Math test 1",
       "notes": null,
-      "optional": false
+      "optional": false,
+      "on_classroom": false
     },
     {
       "id": "el-math-prov-2",
@@ -104,7 +112,8 @@
       "type": "test",
       "title": "Math Prov del 2 (tal)",
       "notes": null,
-      "optional": false
+      "optional": false,
+      "on_classroom": false
     },
     {
       "id": "ol-no-skogen",
@@ -115,7 +124,8 @@
       "type": "test",
       "title": "NO checkout/test “Skogen”",
       "notes": "4B+4C.",
-      "optional": false
+      "optional": false,
+      "on_classroom": false
     },
     {
       "id": "el-english-oral",
@@ -126,7 +136,8 @@
       "type": "test",
       "title": "English oral group discussion",
       "notes": "UK and travel.",
-      "optional": false
+      "optional": false,
+      "on_classroom": false
     },
     {
       "id": "el-swedish-boksamtal",
@@ -137,7 +148,8 @@
       "type": "test",
       "title": "Swedish boksamtal",
       "notes": null,
-      "optional": false
+      "optional": false,
+      "on_classroom": false
     },
     {
       "id": "ol-utvecklingssamtal",
@@ -148,7 +160,8 @@
       "type": "parent_action",
       "title": "Utvecklingssamtal",
       "notes": "Book in Vklass.",
-      "optional": false
+      "optional": false,
+      "on_classroom": false
     },
     {
       "id": "el-spanish-exam",
@@ -159,7 +172,8 @@
       "type": "test",
       "title": "Spanish written exam",
       "notes": null,
-      "optional": false
+      "optional": false,
+      "on_classroom": false
     },
     {
       "id": "ol-hostlov",
@@ -171,7 +185,8 @@
       "type": "event",
       "title": "Höstlov",
       "notes": "Autumn break 26–30 Oct (week 44).",
-      "optional": false
+      "optional": false,
+      "on_classroom": false
     },
     {
       "id": "el-no-trelson",
@@ -183,7 +198,8 @@
       "type": "test",
       "title": "NO Trelson test",
       "notes": "Week 45 — date TBD.",
-      "optional": false
+      "optional": false,
+      "on_classroom": false
     },
     {
       "id": "el-french-verbs",
@@ -194,7 +210,8 @@
       "type": "homework",
       "title": "French verb quiz — avoir/être + regular verbs",
       "notes": "Date TBD.",
-      "optional": false
+      "optional": false,
+      "on_classroom": false
     },
     {
       "id": "el-kartlaggaren",
@@ -206,7 +223,8 @@
       "title": "Kartläggaren (ongoing)",
       "notes": "This week ongoing in Swedish.",
       "optional": false,
-      "ongoing": true
+      "ongoing": true,
+      "on_classroom": false
     },
     {
       "id": "el-scratch",
@@ -218,7 +236,8 @@
       "title": "Scratch programming (ongoing)",
       "notes": "This week ongoing in TK.",
       "optional": false,
-      "ongoing": true
+      "ongoing": true,
+      "on_classroom": false
     },
     {
       "id": "ol-math-laxa-3",
@@ -228,8 +247,11 @@
       "subject": "Math",
       "type": "homework",
       "title": "Math läxa 3",
-      "notes": "Addition, subtraction, multiplication. Marked FRIVILLIG/optional in school letter (pending confirmation from attachment).",
-      "optional": true
+      "notes": "Addition, subtraction, multiplication. School letter marked this as frivillig (optional); worksheet may be attached in Vklass news.",
+      "optional": true,
+      "on_classroom": false,
+      "has_attachment": true,
+      "attachment_status": "pending_vklass"
     }
   ]
 }
