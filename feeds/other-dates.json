@@ -3,6 +3,19 @@
   "timezone": "Europe/Stockholm",
   "events": [
     {
+      "start": "2026-09-22T14:45:00+02:00",
+      "end": "2026-09-22T15:30:00+02:00",
+      "summary": "Ollie haircut — Salong Mold",
+      "summary_sv": "Ollie klippning — Salong Mold",
+      "notes": "Azwang. Forwarded by Anna-Karin (BokaDirekt).",
+      "notes_sv": "Azwang. Vidarebefordrat av Anna-Karin (BokaDirekt).",
+      "location": "Salong Mold, mold. Fullersta",
+      "who": [
+        "Ollie"
+      ],
+      "source": "annakarinlundback@gmail.com / BokaDirekt"
+    },
+    {
       "start": "2026-10-16T15:00:00+02:00",
       "end": "2026-10-18T18:00:00+02:00",
       "summary": "Alex & Ellie in London",
@@ -10,7 +23,10 @@
       "notes": "",
       "notes_sv": "",
       "location": "London",
-      "who": ["Alex", "Ellie"],
+      "who": [
+        "Alex",
+        "Ellie"
+      ],
       "source": "Family calendar"
     }
   ]
