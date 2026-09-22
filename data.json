@@ -34,22 +34,6 @@
       "notes_sv": "Aula, sedan hemklassrum. Föräldraevenemang, inte ett prov."
     },
     {
-      "id": "el-spanish-vocab",
-      "date": "2026-09-23",
-      "time": null,
-      "child": "eleanor",
-      "subject": "Spanish",
-      "type": "homework",
-      "title": "Spanish vocab quiz (läxförhör)",
-      "notes": "Chapter 4 glosses. Teacher Sebastian (SEBTOR), group 7C / M2SP71.",
-      "optional": false,
-      "on_classroom": false,
-      "title_sv": "Spanska läxförhör — glosor",
-      "notes_sv": "Kapitel 4 glosor. Lärare Sebastian (SEBTOR), grupp 7C / M2SP71.",
-      "teacher": "Sebastian",
-      "group": "7C"
-    },
-    {
       "id": "el-samhall",
       "date": "2026-09-24",
       "time": "10:05",

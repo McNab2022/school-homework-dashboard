@@ -13,6 +13,8 @@ Anything that does **not** match the teacher/group tags below does **not** apply
 
 **Ignore:** French, German, and Spanish sections for other teachers or other groups.
 
+**Never include** Spanish homework or tests attributed to **Gabriella** (or any teacher other than Sebastian / SEBTOR). Chapter/glosor läxförhör under Gabriella must be **excluded** even if the same letter also mentions **7C** elsewhere — 7C alone is not enough; the Spanish teacher must be Sebastian.
+
 Item fields to set when including: `teacher`: `"Sebastian"`, `group`: `"7C"` (or `"M2SP71"`). Prefer a short note that names Sebastian / the group when the source letter does.
 
 ## Maths (Matematik)
