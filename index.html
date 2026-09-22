@@ -530,6 +530,143 @@
       border-radius: 999px;
     }
 
+
+    /* Sport & Hobbies */
+    .sport-section {
+      margin: 0.5rem 0 1.5rem;
+    }
+
+    .sport-section h2 {
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--text-muted);
+      margin: 0 0 0.65rem;
+    }
+
+    .sport-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.55rem;
+    }
+
+    .sport-item {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 0.45rem 0.75rem;
+      padding: 0.75rem 0.9rem;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      box-shadow: var(--shadow);
+      border-left: 4px solid #64748b;
+    }
+
+    .sport-item.kind-match {
+      border-left-color: #c2410c;
+      background: linear-gradient(90deg, #ffedd5 0%, var(--surface) 42%);
+    }
+    .sport-item.kind-training {
+      border-left-color: #15803d;
+      background: linear-gradient(90deg, #dcfce7 0%, var(--surface) 42%);
+    }
+    .sport-item.kind-other {
+      border-left-color: #64748b;
+    }
+    .sport-item.is-today {
+      outline: 2px solid var(--accent);
+      outline-offset: 1px;
+    }
+    .sport-item.is-next-match {
+      box-shadow: 0 0 0 2px rgba(194, 65, 12, 0.35), var(--shadow);
+    }
+
+    .sport-item .event-when {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 0.15rem;
+    }
+    .sport-item .event-summary {
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: var(--text);
+    }
+    .sport-item .event-meta {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-top: 0.2rem;
+    }
+
+    .sport-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.3rem;
+      align-items: center;
+    }
+
+    .kind-badge {
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      padding: 0.15rem 0.5rem;
+      border-radius: 999px;
+      background: rgba(0,0,0,0.06);
+      color: var(--text-muted);
+    }
+    .kind-badge.match { background: #ffedd5; color: #9a3412; }
+    .kind-badge.training { background: #dcfce7; color: #166534; }
+    .kind-badge.other { background: #e2e8f0; color: #475569; }
+
+    .sport-flag {
+      font-size: 0.7rem;
+      font-weight: 700;
+      padding: 0.15rem 0.45rem;
+      border-radius: 999px;
+      background: var(--accent);
+      color: #fff;
+    }
+    .sport-flag.next-match {
+      background: #c2410c;
+    }
+
+    .msg-item {
+      padding: 0.75rem 0.9rem;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      box-shadow: var(--shadow);
+    }
+    .msg-item .msg-date {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--text-muted);
+    }
+    .msg-item .msg-subject {
+      font-weight: 700;
+      font-size: 0.95rem;
+      margin: 0.2rem 0 0.35rem;
+    }
+    .msg-item .msg-summary {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      line-height: 1.4;
+    }
+
+    .sport-placeholder-card {
+      padding: 1rem 1.15rem;
+      border-radius: var(--radius);
+      border: 1px dashed var(--border);
+      background: var(--surface);
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
     .custody-empty {
       color: var(--text-muted);
       padding: 1rem;
@@ -582,10 +719,18 @@
     </div>
 
     <div id="panel-sport" class="tab-panel" role="tabpanel" aria-labelledby="tab-sport" hidden>
-      <div class="placeholder-panel">
-        <h2 id="sport-title">Sport &amp; Hobbies</h2>
-        <p id="sport-body"></p>
-      </div>
+      <section class="sport-section" aria-labelledby="football-heading">
+        <h2 id="football-heading">Football (Ollie)</h2>
+        <div id="sport-events" class="sport-list" aria-live="polite"></div>
+      </section>
+      <section class="sport-section" aria-labelledby="sport-messages-heading">
+        <h2 id="sport-messages-heading">Messages / Info</h2>
+        <div id="sport-messages" class="sport-list" aria-live="polite"></div>
+      </section>
+      <section class="sport-section" aria-labelledby="drums-heading">
+        <h2 id="drums-heading">Drums</h2>
+        <div id="drums-body" class="sport-placeholder-card"></div>
+      </section>
     </div>
 
     <div id="panel-health" class="tab-panel" role="tabpanel" aria-labelledby="tab-health" hidden>
@@ -955,9 +1100,21 @@
         tabHealth: "Health",
         tabKeydates: "Key dates",
         sportTitle: "Sport & Hobbies",
-        sportBody: "Ollie’s football (SportAdmin) and drums will appear here once calendar feeds are connected.",
+        footballHeading: "Football (Ollie)",
+        sportMessagesHeading: "Messages / Info",
+        drumsHeading: "Drums",
+        drumsComingSoon: "Coming soon",
+        kindMatch: "Match",
+        kindTraining: "Training",
+        kindOther: "Other",
+        gatheringLabel: "Gathering {time}",
+        nextMatchFlag: "Next match",
+        sportEventsEmpty: "No upcoming football events in the next weeks.",
+        sportEventsLoadError: "Could not load SportAdmin feed. Try refreshing the page, or re-run feeds/refresh_sportadmin.py.",
+        sportMessagesEmpty: "No club messages yet.",
+        sportMessagesLoadError: "Could not load club messages.",
         healthTitle: "Health",
-        healthBody: "Logoped, dentist and other health appointments coming soon.",
+        healthBody: "Logoped, dentist and other health appointments will appear here once the Family Google Calendar is connected. Placeholder for now.",
         thisWeekCustody: "This week",
         upcomingCustody: "Upcoming custody",
         parentAlex: "Alex",
@@ -1013,9 +1170,21 @@
         tabHealth: "Hälsa",
         tabKeydates: "Viktiga datum",
         sportTitle: "Sport & hobbies",
-        sportBody: "Ollies fotboll (SportAdmin) och trummor visas här när kalenderflöden är inkopplade.",
+        footballHeading: "Fotboll (Ollie)",
+        sportMessagesHeading: "Meddelanden / Info",
+        drumsHeading: "Trummor",
+        drumsComingSoon: "Kommer snart",
+        kindMatch: "Match",
+        kindTraining: "Träning",
+        kindOther: "Övrigt",
+        gatheringLabel: "Samling {time}",
+        nextMatchFlag: "Nästa match",
+        sportEventsEmpty: "Inga kommande fotbollshändelser de närmaste veckorna.",
+        sportEventsLoadError: "Kunde inte ladda SportAdmin-flödet. Uppdatera sidan, eller kör om feeds/refresh_sportadmin.py.",
+        sportMessagesEmpty: "Inga klubbmeddelanden ännu.",
+        sportMessagesLoadError: "Kunde inte ladda klubbmeddelanden.",
         healthTitle: "Hälsa",
-        healthBody: "Logoped, tandläkare och andra hälsobesök kommer snart.",
+        healthBody: "Logoped, tandläkare och andra hälsobesök visas här när Family Google Calendar är inkopplat. Platshållare tills vidare.",
         thisWeekCustody: "Denna vecka",
         upcomingCustody: "Kommande umgänge",
         parentAlex: "Alex",
@@ -1300,7 +1469,11 @@
 
     let currentTab = loadTab();
     let custodyData = null;
-    let custodyLoadState = "pending"; // pending | ok | error
+    let custodyLoadState = "pending";
+    let sportEventsData = null;
+    let sportEventsLoadState = "pending";
+    let sportMessagesData = null;
+    let sportMessagesLoadState = "pending"; // pending | ok | error
 
     function parentLabel(parentId) {
       const i = t();
@@ -1394,6 +1567,145 @@
       }).join("");
     }
 
+
+    function kindLabel(kind) {
+      const i = t();
+      if (kind === "match") return i.kindMatch;
+      if (kind === "training") return i.kindTraining;
+      return i.kindOther;
+    }
+
+    function eventStartDate(ev) {
+      if (!ev || !ev.start) return null;
+      return ev.start.slice(0, 10);
+    }
+
+    function formatEventWhen(ev) {
+      const i = t();
+      const datePart = eventStartDate(ev);
+      if (!datePart) return "";
+      const d = parseYMD(datePart);
+      const base = `${i.weekdays[d.getDay()]} ${d.getDate()} ${i.months[d.getMonth()]}`;
+      // Timed: 2026-09-22T18:30+02:00
+      const tm = ev.start.match(/T(\d{2}):(\d{2})/);
+      if (tm) return `${base} · ${tm[1]}:${tm[2]}`;
+      return base;
+    }
+
+    function upcomingSportEvents(events, today, horizonDays, maxCount) {
+      const end = addDays(today, horizonDays);
+      const list = (events || []).filter((ev) => {
+        const d = eventStartDate(ev);
+        return d && d >= today && d <= end;
+      });
+      return list.slice(0, maxCount);
+    }
+
+    function findNextMatch(events, today) {
+      return (events || []).find((ev) => {
+        const d = eventStartDate(ev);
+        return ev.kind === "match" && d && d >= today;
+      }) || null;
+    }
+
+    function renderSport() {
+      const i = t();
+      const eventsEl = document.getElementById("sport-events");
+      const messagesEl = document.getElementById("sport-messages");
+      if (!eventsEl || !messagesEl) return;
+
+      if (sportEventsLoadState === "pending") {
+        eventsEl.innerHTML = `<div class="custody-empty">…</div>`;
+      } else if (sportEventsLoadState === "error" || !sportEventsData) {
+        eventsEl.innerHTML = `<div class="custody-empty">${escapeHtml(i.sportEventsLoadError)}</div>`;
+      } else {
+        const today = todayStockholm();
+        const upcoming = upcomingSportEvents(sportEventsData.events, today, 42, 20);
+        const nextMatch = findNextMatch(sportEventsData.events, today);
+        if (!upcoming.length) {
+          eventsEl.innerHTML = `<div class="custody-empty">${escapeHtml(i.sportEventsEmpty)}</div>`;
+        } else {
+          eventsEl.innerHTML = upcoming.map((ev) => {
+            const d = eventStartDate(ev);
+            const isToday = d === today;
+            const isNextMatch = nextMatch && ev.start === nextMatch.start && ev.summary === nextMatch.summary;
+            const flags = [];
+            if (isToday) flags.push(`<span class="sport-flag">${escapeHtml(i.todayLabel)}</span>`);
+            if (isNextMatch) flags.push(`<span class="sport-flag next-match">${escapeHtml(i.nextMatchFlag)}</span>`);
+            const gathering = ev.gathering
+              ? `<div class="event-meta">${escapeHtml(i.gatheringLabel.replace("{time}", ev.gathering))}</div>`
+              : "";
+            const loc = ev.location
+              ? `<div class="event-meta">${escapeHtml(ev.location)}</div>`
+              : "";
+            return `
+              <article class="sport-item kind-${escapeHtml(ev.kind || "other")}${isToday ? " is-today" : ""}${isNextMatch ? " is-next-match" : ""}">
+                <div>
+                  <div class="event-when">${escapeHtml(formatEventWhen(ev))}</div>
+                  <div class="event-summary">${escapeHtml(ev.summary || "")}</div>
+                  ${loc}
+                  ${gathering}
+                </div>
+                <div class="sport-badges">
+                  <span class="kind-badge ${escapeHtml(ev.kind || "other")}">${escapeHtml(kindLabel(ev.kind))}</span>
+                  ${flags.join("")}
+                </div>
+              </article>`;
+          }).join("");
+        }
+      }
+
+      if (sportMessagesLoadState === "pending") {
+        messagesEl.innerHTML = `<div class="custody-empty">…</div>`;
+      } else if (sportMessagesLoadState === "error" || !sportMessagesData) {
+        messagesEl.innerHTML = `<div class="custody-empty">${escapeHtml(i.sportMessagesLoadError)}</div>`;
+      } else {
+        const msgs = sportMessagesData.messages || [];
+        if (!msgs.length) {
+          messagesEl.innerHTML = `<div class="custody-empty">${escapeHtml(i.sportMessagesEmpty)}</div>`;
+        } else {
+          messagesEl.innerHTML = msgs.map((m) => {
+            const summary = currentLang === "sv" ? (m.summary_sv || m.summary_en || "") : (m.summary_en || m.summary_sv || "");
+            const d = parseYMD(m.date);
+            const dateLabel = d
+              ? `${d.getDate()} ${i.months[d.getMonth()]} ${d.getFullYear()}`
+              : (m.date || "");
+            return `
+              <article class="msg-item">
+                <div class="msg-date">${escapeHtml(dateLabel)}</div>
+                <div class="msg-subject">${escapeHtml(m.subject || "")}</div>
+                <div class="msg-summary">${escapeHtml(summary)}</div>
+              </article>`;
+          }).join("");
+        }
+      }
+    }
+
+    async function loadSportFeeds() {
+      sportEventsLoadState = "pending";
+      sportMessagesLoadState = "pending";
+      renderSport();
+      try {
+        const res = await fetch("feeds/sportadmin.json", { cache: "no-store" });
+        if (!res.ok) throw new Error("HTTP " + res.status);
+        sportEventsData = await res.json();
+        sportEventsLoadState = "ok";
+      } catch (e) {
+        sportEventsData = null;
+        sportEventsLoadState = "error";
+      }
+      try {
+        const res = await fetch("feeds/sportadmin-messages.json", { cache: "no-store" });
+        if (!res.ok) throw new Error("HTTP " + res.status);
+        sportMessagesData = await res.json();
+        sportMessagesLoadState = "ok";
+      } catch (e) {
+        sportMessagesData = null;
+        sportMessagesLoadState = "error";
+      }
+      renderSport();
+    }
+
     async function loadCustodyFeed() {
       custodyLoadState = "pending";
       renderCustody();
@@ -1447,8 +1759,10 @@
         if (btn) btn.textContent = tabLabels[id];
       });
 
-      document.getElementById("sport-title").textContent = i.sportTitle;
-      document.getElementById("sport-body").textContent = i.sportBody;
+      document.getElementById("football-heading").textContent = i.footballHeading;
+      document.getElementById("sport-messages-heading").textContent = i.sportMessagesHeading;
+      document.getElementById("drums-heading").textContent = i.drumsHeading;
+      document.getElementById("drums-body").textContent = i.drumsComingSoon;
       document.getElementById("health-title").textContent = i.healthTitle;
       document.getElementById("health-body").textContent = i.healthBody;
 
@@ -1523,6 +1837,7 @@
       setTab(currentTab);
       renderSchool();
       renderCustody();
+      renderSport();
     }
 
     function setLang(lang) {
@@ -1561,6 +1876,7 @@
 
     render();
     loadCustodyFeed();
+    loadSportFeeds();
   </script>
 </body>
 </html>

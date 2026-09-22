@@ -18,3 +18,24 @@ python3 feeds/refresh_coparenting.py
 `--fetch` downloads a fresh ICS from the source URL, saves `coparenting.ics`, then rebuilds `coparenting.json`.
 
 Custody blocks are events whose SUMMARY looks like `👨 Alex (7 days)` / `👩 Anna-Karin (7 days)` (emoji + parent name, optional day count). Other calendar notes stay in the ICS but are omitted from the JSON.
+
+## SportAdmin (Ollie football)
+
+- **Source URL:** https://portalweb.sportadmin.se/webcal?id=f619c1f3-826c-4bd7-a8c8-a344b3470d48
+- **Calendar:** Sportadmin Huddinge Idrottsförening (P2016 training + matches)
+- **Local ICS:** `sportadmin.ics`
+- **JSON for the UI:** `sportadmin.json` (generated — do not hand-edit)
+- **Club messages (curated):** `sportadmin-messages.json` (hand-maintained bilingual summaries)
+
+### Refresh
+
+```bash
+# From repo root (school-dashboard/):
+python3 feeds/refresh_sportadmin.py --fetch
+# Or, if ICS is already updated locally:
+python3 feeds/refresh_sportadmin.py
+```
+
+`--fetch` downloads a fresh ICS from SportAdmin, saves `sportadmin.ics`, then rebuilds `sportadmin.json`.
+
+Events are classified by SUMMARY: starts with `Match` → `match`; contains `träning`/`Träning` → `training`; otherwise `other`. Optional `gathering` is extracted from `Samling: HH:MM` in the description. Times use `Europe/Stockholm`.
