@@ -565,6 +565,36 @@
           "on_classroom": false
         },
         {
+          "id": "ol-math-laxa-1",
+          "date": null,
+          "time": null,
+          "child": "oliver",
+          "subject": "Math",
+          "type": "homework",
+          "title": "Math läxa 1",
+          "notes": "From åk 4 veckobrev v.37. Frivillig — “kan vara ett bra sätt för er där hemma att se vilken typ av uppgifter era barn ska klara av.” Worksheet attached.",
+          "optional": true,
+          "on_classroom": false,
+          "has_attachment": true,
+          "attachment_status": "available",
+          "attachment_url": "attachments/oliver-matte-laxa-1.pdf"
+        },
+        {
+          "id": "ol-math-laxa-2",
+          "date": null,
+          "time": null,
+          "child": "oliver",
+          "subject": "Math",
+          "type": "homework",
+          "title": "Math läxa 2",
+          "notes": "From åk 4 veckobrev v.38. Frivillig — “kan vara ett bra sätt för er där hemma att se vilken typ av uppgifter era barn ska klara av.” Worksheet attached.",
+          "optional": true,
+          "on_classroom": false,
+          "has_attachment": true,
+          "attachment_status": "available",
+          "attachment_url": "attachments/oliver-matte-laxa-2.pdf"
+        },
+        {
           "id": "ol-math-laxa-3",
           "date": null,
           "time": null,
@@ -572,11 +602,25 @@
           "subject": "Math",
           "type": "homework",
           "title": "Math läxa 3",
-          "notes": "Addition, subtraction, multiplication. School letter marked this as frivillig (optional); worksheet may be attached in Vklass news.",
+          "notes": "From åk 4 veckobrev v.39 (addition, subtraction, multiplication). Frivillig — “kan vara ett bra sätt för er där hemma att se vilken typ av uppgifter era barn ska klara av.” Worksheet attached.",
           "optional": true,
           "on_classroom": false,
           "has_attachment": true,
-          "attachment_status": "pending_vklass"
+          "attachment_status": "available",
+          "attachment_url": "attachments/oliver-matte-laxa-3.pdf"
+        },
+        {
+          "id": "el-hkk-classroom",
+          "date": null,
+          "time": null,
+          "child": "eleanor",
+          "subject": "Hem- och konsumentkunskap",
+          "type": "homework",
+          "title": "HKK — valfritt från Classroom",
+          "notes": "Egen planering, optional work from Google Classroom. Prompt Ellie to open Google Classroom for this material.",
+          "optional": true,
+          "on_classroom": true,
+          "has_attachment": false
         }
       ]
     };
@@ -716,7 +760,7 @@
           </div>
           <h3 class="card-title">${escapeHtml(item.title)}</h3>
           <p class="card-meta">${escapeHtml(item.subject)}</p>
-          ${notesHtml}
+          ${notesHtml}${attachmentLinkHtml}
         </article>
       `;
     }
