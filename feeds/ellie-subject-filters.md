@@ -17,6 +17,20 @@ Anything that does **not** match the teacher/group tags below does **not** apply
 
 Item fields to set when including: `teacher`: `"Sebastian"`, `group`: `"7C"` (or `"M2SP71"`). Prefer a short note that names Sebastian / the group when the source letter does.
 
+## Spanish example (v.39)
+
+Veckobrev sections look like:
+
+```
+Spanska
+Sebastian:
+Nästa vecka kommer vi att jobba vidare med berätta om en själv. Vi kommer också jobba med genitiv (ägande).
+Prov:14/10, skriftlig framställning. Mer info i v klass och classroom.
+sebastian.torres-villagran@huddinge.se
+```
+
+Only include blocks under **Sebastian:** — never Gabriella (or other Spanish teachers).
+
 ## Maths (Matematik)
 
 | Field | Include only |
