@@ -307,7 +307,7 @@
 
     <div class="filters" id="filters" role="group" aria-label="Filter items">
       <button type="button" class="chip active" data-filter="all">All</button>
-      <button type="button" class="chip" data-filter="eleanor">Eleanor</button>
+      <button type="button" class="chip" data-filter="eleanor">Ellie</button>
       <button type="button" class="chip" data-filter="oliver">Oliver</button>
       <button type="button" class="chip" data-filter="tests">Tests</button>
       <button type="button" class="chip" data-filter="homework">Homework</button>
@@ -330,7 +330,7 @@
       "kids": [
         {
           "id": "eleanor",
-          "name": "Eleanor Katherine",
+          "name": "Ellie",
           "class": "7C",
           "notes": null
         },
@@ -750,7 +750,7 @@
       let html = "";
       html += sectionHtml("Upcoming (next 7 days)", upcoming, kids, today);
       if (currentFilter !== "oliver") {
-        html += sectionHtml("Eleanor", eleanor, kids, today);
+        html += sectionHtml("Ellie", eleanor, kids, today);
       }
       if (currentFilter !== "eleanor") {
         html += sectionHtml("Oliver", oliver, kids, today);

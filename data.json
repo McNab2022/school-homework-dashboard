@@ -5,9 +5,10 @@
   "kids": [
     {
       "id": "eleanor",
-      "name": "Eleanor Katherine",
+      "name": "Ellie",
       "class": "7C",
-      "notes": null
+      "notes": null,
+      "legal_name": "Eleanor Katherine"
     },
     {
       "id": "oliver",
