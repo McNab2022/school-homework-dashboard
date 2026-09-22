@@ -39,3 +39,15 @@ python3 feeds/refresh_sportadmin.py
 `--fetch` downloads a fresh ICS from SportAdmin, saves `sportadmin.ics`, then rebuilds `sportadmin.json`.
 
 Events are classified by SUMMARY: starts with `Match` → `match`; contains `träning`/`Träning` → `training`; otherwise `other`. Optional `gathering` is extracted from `Samling: HH:MM` in the description. Times use `Europe/Stockholm`.
+
+## Health (logoped / dentist)
+
+- **JSON for the UI:** `health.json` (static snapshot — no public ICS URL)
+- **Sources:** Alex’s primary Google Calendar (`alex.mcnab2011@gmail.com`) and the Family calendar (`family03128392050150890041@group.calendar.google.com`)
+- **Kinds:** `logoped`, `dentist`, or `other`; `who` is `Ellie` or `Ollie`
+
+### Refresh
+
+There is no public ICS feed. Refresh manually or via Grok Bot from Google Calendar (list/search events for logoped/dentist on primary + Family), then rewrite `health.json`. Do **not** commit OAuth secrets — keep a static JSON snapshot only.
+
+Include upcoming appointments only. Past events are omitted.

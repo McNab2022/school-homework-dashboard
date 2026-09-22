@@ -667,6 +667,38 @@
       font-size: 0.95rem;
     }
 
+
+    /* Health appointments (reuse sport card layout) */
+    .health-note {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin: 0 0 0.85rem;
+      line-height: 1.4;
+    }
+
+    .sport-item.kind-logoped {
+      border-left-color: #7c3aed;
+      background: linear-gradient(90deg, #ede9fe 0%, var(--surface) 42%);
+    }
+    .sport-item.kind-dentist {
+      border-left-color: #0369a1;
+      background: linear-gradient(90deg, #e0f2fe 0%, var(--surface) 42%);
+    }
+
+    .kind-badge.logoped { background: #ede9fe; color: #5b21b6; }
+    .kind-badge.dentist { background: #e0f2fe; color: #075985; }
+
+    .who-badge {
+      font-size: 0.7rem;
+      font-weight: 700;
+      padding: 0.15rem 0.5rem;
+      border-radius: 999px;
+      background: #e2e8f0;
+      color: #334155;
+    }
+    .who-badge.ollie { background: #dbeafe; color: #1e40af; }
+    .who-badge.ellie { background: #fce7f3; color: #9d174d; }
+
     .custody-empty {
       color: var(--text-muted);
       padding: 1rem;
@@ -734,10 +766,11 @@
     </div>
 
     <div id="panel-health" class="tab-panel" role="tabpanel" aria-labelledby="tab-health" hidden>
-      <div class="placeholder-panel">
+      <section class="sport-section" aria-labelledby="health-title">
         <h2 id="health-title">Health</h2>
-        <p id="health-body"></p>
-      </div>
+        <p id="health-note" class="health-note"></p>
+        <div id="health-events" class="sport-list" aria-live="polite"></div>
+      </section>
     </div>
 
     <div id="panel-keydates" class="tab-panel" role="tabpanel" aria-labelledby="tab-keydates" hidden>
@@ -1113,8 +1146,14 @@
         sportEventsLoadError: "Could not load SportAdmin feed. Try refreshing the page, or re-run feeds/refresh_sportadmin.py.",
         sportMessagesEmpty: "No club messages yet.",
         sportMessagesLoadError: "Could not load club messages.",
-        healthTitle: "Health",
-        healthBody: "Logoped, dentist and other health appointments will appear here once the Family Google Calendar is connected. Placeholder for now.",
+        healthTitle: "Appointments",
+        healthNote: "From Google Calendar snapshot (main + Family). Add logoped/dentist there and refresh.",
+        healthEmpty: "No upcoming logoped or dentist appointments. Add them to Google Calendar (Family or main calendar), then refresh this feed.",
+        healthLoadError: "Could not load health appointments. Try refreshing the page.",
+        kindLogoped: "Logoped",
+        kindDentist: "Dentist",
+        whoEllie: "Ellie",
+        whoOllie: "Ollie",
         thisWeekCustody: "This week",
         upcomingCustody: "Upcoming custody",
         parentAlex: "Alex",
@@ -1183,8 +1222,14 @@
         sportEventsLoadError: "Kunde inte ladda SportAdmin-flödet. Uppdatera sidan, eller kör om feeds/refresh_sportadmin.py.",
         sportMessagesEmpty: "Inga klubbmeddelanden ännu.",
         sportMessagesLoadError: "Kunde inte ladda klubbmeddelanden.",
-        healthTitle: "Hälsa",
-        healthBody: "Logoped, tandläkare och andra hälsobesök visas här när Family Google Calendar är inkopplat. Platshållare tills vidare.",
+        healthTitle: "Besök",
+        healthNote: "Från Google Kalender-snapshot (huvud + Family). Lägg till logoped/tandläkare där och uppdatera.",
+        healthEmpty: "Inga kommande logoped- eller tandläkarbesök. Lägg till dem i Google Kalender (Family eller huvudkalender) och uppdatera flödet.",
+        healthLoadError: "Kunde inte ladda hälsobesök. Uppdatera sidan.",
+        kindLogoped: "Logoped",
+        kindDentist: "Tandläkare",
+        whoEllie: "Ellie",
+        whoOllie: "Ollie",
         thisWeekCustody: "Denna vecka",
         upcomingCustody: "Kommande umgänge",
         parentAlex: "Alex",
@@ -1474,6 +1519,8 @@
     let sportEventsLoadState = "pending";
     let sportMessagesData = null;
     let sportMessagesLoadState = "pending"; // pending | ok | error
+    let healthData = null;
+    let healthLoadState = "pending"; // pending | ok | error
 
     function parentLabel(parentId) {
       const i = t();
@@ -1706,6 +1753,121 @@
       renderSport();
     }
 
+
+    function healthKindLabel(kind) {
+      const i = t();
+      if (kind === "logoped") return i.kindLogoped;
+      if (kind === "dentist") return i.kindDentist;
+      return i.kindOther;
+    }
+
+    function whoLabel(who) {
+      const i = t();
+      const w = (who || "").toLowerCase();
+      if (w === "ellie" || w === "eleanor") return i.whoEllie;
+      if (w === "ollie" || w === "oliver") return i.whoOllie;
+      return who || "";
+    }
+
+    function whoClass(who) {
+      const w = (who || "").toLowerCase();
+      if (w === "ellie" || w === "eleanor") return "ellie";
+      if (w === "ollie" || w === "oliver") return "ollie";
+      return "";
+    }
+
+    function formatHealthWhen(ev) {
+      const i = t();
+      const datePart = eventStartDate(ev);
+      if (!datePart) return "";
+      const d = parseYMD(datePart);
+      const base = `${i.weekdays[d.getDay()]} ${d.getDate()} ${i.months[d.getMonth()]}`;
+      const startM = (ev.start || "").match(/T(\d{2}):(\d{2})/);
+      const endM = (ev.end || "").match(/T(\d{2}):(\d{2})/);
+      if (startM && endM) return `${base} · ${startM[1]}:${startM[2]}–${endM[1]}:${endM[2]}`;
+      if (startM) return `${base} · ${startM[1]}:${startM[2]}`;
+      return base;
+    }
+
+    function upcomingHealthEvents(events, today) {
+      return (events || []).filter((ev) => {
+        const d = eventStartDate(ev);
+        return d && d >= today;
+      });
+    }
+
+    function renderHealth() {
+      const i = t();
+      const eventsEl = document.getElementById("health-events");
+      const noteEl = document.getElementById("health-note");
+      if (!eventsEl || !noteEl) return;
+
+      let note = i.healthNote;
+      if (healthData) {
+        note = currentLang === "sv"
+          ? (healthData.note_sv || healthData.note_en || note)
+          : (healthData.note_en || healthData.note_sv || note);
+      }
+      noteEl.textContent = note;
+
+      if (healthLoadState === "pending") {
+        eventsEl.innerHTML = `<div class="custody-empty">…</div>`;
+        return;
+      }
+      if (healthLoadState === "error" || !healthData) {
+        eventsEl.innerHTML = `<div class="custody-empty">${escapeHtml(i.healthLoadError)}</div>`;
+        return;
+      }
+
+      const today = todayStockholm();
+      const upcoming = upcomingHealthEvents(healthData.events, today);
+      if (!upcoming.length) {
+        eventsEl.innerHTML = `<div class="custody-empty">${escapeHtml(i.healthEmpty)}</div>`;
+        return;
+      }
+
+      eventsEl.innerHTML = upcoming.map((ev) => {
+        const d = eventStartDate(ev);
+        const isToday = d === today;
+        const kind = ev.kind || "other";
+        const who = ev.who || "";
+        const loc = ev.location
+          ? `<div class="event-meta">${escapeHtml(ev.location)}</div>`
+          : "";
+        const flags = [];
+        if (isToday) flags.push(`<span class="sport-flag">${escapeHtml(i.todayLabel)}</span>`);
+        const wClass = whoClass(who);
+        return `
+          <article class="sport-item kind-${escapeHtml(kind)}${isToday ? " is-today" : ""}">
+            <div>
+              <div class="event-when">${escapeHtml(formatHealthWhen(ev))}</div>
+              <div class="event-summary">${escapeHtml(ev.summary || "")}</div>
+              ${loc}
+            </div>
+            <div class="sport-badges">
+              ${who ? `<span class="who-badge ${escapeHtml(wClass)}">${escapeHtml(whoLabel(who))}</span>` : ""}
+              <span class="kind-badge ${escapeHtml(kind)}">${escapeHtml(healthKindLabel(kind))}</span>
+              ${flags.join("")}
+            </div>
+          </article>`;
+      }).join("");
+    }
+
+    async function loadHealthFeed() {
+      healthLoadState = "pending";
+      renderHealth();
+      try {
+        const res = await fetch("feeds/health.json", { cache: "no-store" });
+        if (!res.ok) throw new Error("HTTP " + res.status);
+        healthData = await res.json();
+        healthLoadState = "ok";
+      } catch (e) {
+        healthData = null;
+        healthLoadState = "error";
+      }
+      renderHealth();
+    }
+
     async function loadCustodyFeed() {
       custodyLoadState = "pending";
       renderCustody();
@@ -1764,7 +1926,6 @@
       document.getElementById("drums-heading").textContent = i.drumsHeading;
       document.getElementById("drums-body").textContent = i.drumsComingSoon;
       document.getElementById("health-title").textContent = i.healthTitle;
-      document.getElementById("health-body").textContent = i.healthBody;
 
       const chipLabels = {
         all: i.filterAll,
@@ -1838,6 +1999,7 @@
       renderSchool();
       renderCustody();
       renderSport();
+      renderHealth();
     }
 
     function setLang(lang) {
@@ -1877,6 +2039,7 @@
     render();
     loadCustodyFeed();
     loadSportFeeds();
+    loadHealthFeed();
   </script>
 </body>
 </html>

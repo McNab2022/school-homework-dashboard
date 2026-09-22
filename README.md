@@ -6,7 +6,7 @@ Open **`index.html`** via GitHub Pages or a local static server (`python3 -m htt
 
 1. **School** — Källbrinksskolan homework & tests (`data.json` + embedded copy in `index.html`)
 2. **Sport & Hobbies** — Ollie’s football schedule (SportAdmin) + club messages; drums placeholder
-3. **Health** — placeholder (logoped / dentist once Family Google Calendar is connected)
+3. **Health** — logoped / dentist from Google Calendar snapshot (`feeds/health.json`)
 4. **Key dates** — co-parenting custody weeks from the ICS feed
 
 Language: EN/SV toggle (saved in `localStorage` as `school-dashboard-lang`). Active tab: `family-dashboard-tab`.
@@ -25,4 +25,4 @@ python3 feeds/refresh_sportadmin.py            # ICS already on disk → JSON on
 
 Source URLs and details: see `feeds/README.md`.
 
-**Grok Bot** refreshes school homework when emails/letters arrive, can re-run the co-parenting script when the custody calendar changes, and can refresh SportAdmin when the football calendar or club emails change.
+**Grok Bot** refreshes school homework when emails/letters arrive, can re-run the co-parenting script when the custody calendar changes, can refresh SportAdmin when the football calendar or club emails change, and refreshes `feeds/health.json` from Google Calendar (primary + Family) when logoped/dentist appointments change (no public ICS).

@@ -1,0 +1,39 @@
+{
+  "updated": "2026-09-22",
+  "timezone": "Europe/Stockholm",
+  "sources": [
+    {"calendar": "primary", "id": "alex.mcnab2011@gmail.com"},
+    {"calendar": "Family", "id": "family03128392050150890041@group.calendar.google.com"}
+  ],
+  "note_en": "Logoped and dentist appointments are read from Google Calendar (main calendar + Family). Add new ones there and refresh.",
+  "note_sv": "Logoped- och tandläkarbesök läses från Google Kalender (huvudkalender + Family). Lägg till nya där och uppdatera.",
+  "events": [
+    {
+      "start": "2026-10-16T15:45:00+02:00",
+      "end": "2026-10-16T16:45:00+02:00",
+      "summary": "Ollie Logoped",
+      "who": "Ollie",
+      "kind": "logoped",
+      "location": "",
+      "calendar": "primary"
+    },
+    {
+      "start": "2026-11-05T15:45:00+01:00",
+      "end": "2026-11-05T16:45:00+01:00",
+      "summary": "Ollie Logoped",
+      "who": "Ollie",
+      "kind": "logoped",
+      "location": "",
+      "calendar": "primary"
+    },
+    {
+      "start": "2026-11-19T15:15:00+01:00",
+      "end": "2026-11-19T16:15:00+01:00",
+      "summary": "Ollie Logoped",
+      "who": "Ollie",
+      "kind": "logoped",
+      "location": "",
+      "calendar": "primary"
+    }
+  ]
+}
