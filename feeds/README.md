@@ -51,3 +51,13 @@ Events are classified by SUMMARY: starts with `Match` → `match`; contains `tr�
 There is no public ICS feed. Refresh manually or via Grok Bot from Google Calendar (list/search events for logoped/dentist on primary + Family), then rewrite `health.json`. Do **not** commit OAuth secrets — keep a static JSON snapshot only.
 
 Include upcoming appointments only. Past events are omitted.
+
+## Other important dates (family / travel)
+
+- **JSON for the UI:** `other-dates.json` (manual / Grok snapshot — hand-edit OK)
+- **Sources:** Family calendar non-health events (trips, travel, etc.), curated into this file
+- **Fields:** `start`, `end`, bilingual `summary` / `summary_sv`, optional `notes` / `notes_sv`, `location`, `who` (array of names), `source`
+
+### Refresh
+
+No public ICS URL yet. Maintain as a static snapshot (Grok Bot or hand-edit). Later this can pull Family calendar events that are not health (logoped/dentist). Include upcoming/current events only; past ones can be dropped. Empty notes are fine — fill in flight details later.

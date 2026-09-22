@@ -699,6 +699,54 @@
     .who-badge.ollie { background: #dbeafe; color: #1e40af; }
     .who-badge.ellie { background: #fce7f3; color: #9d174d; }
 
+
+    .custody-more-wrap {
+      margin-top: 0.25rem;
+    }
+    .custody-more-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      margin-top: 0.35rem;
+      padding: 0.45rem 0.85rem;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--text-muted);
+      font: inherit;
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      box-shadow: var(--shadow);
+    }
+    .custody-more-btn:hover {
+      color: var(--text);
+      border-color: var(--accent);
+    }
+    .custody-more-btn:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 2px;
+    }
+    .custody-list-more {
+      display: flex;
+      flex-direction: column;
+      gap: 0.55rem;
+      margin-top: 0.55rem;
+    }
+
+    .other-dates-section {
+      margin-top: 1.75rem;
+    }
+    .other-dates-section h2 {
+      margin-top: 0.25rem;
+    }
+
+    .sport-item.kind-trip {
+      border-left-color: #0f766e;
+      background: linear-gradient(90deg, #ccfbf1 0%, var(--surface) 42%);
+    }
+    .who-badge.alex { background: #dbeafe; color: #1e40af; }
+
     .custody-empty {
       color: var(--text-muted);
       padding: 1rem;
@@ -778,6 +826,10 @@
       <section class="custody-section">
         <h2 id="custody-upcoming-heading">Upcoming custody</h2>
         <div id="custody-list" class="custody-list"></div>
+      </section>
+      <section class="other-dates-section">
+        <h2 id="other-dates-heading">Other Important Dates</h2>
+        <div id="other-dates-list" class="sport-list" aria-live="polite"></div>
       </section>
     </div>
   </div>
@@ -1163,6 +1215,11 @@
         custodyNone: "No custody block found for today.",
         custodyLoadError: "Could not load co-parenting feed. Try refreshing the page, or re-run feeds/refresh_coparenting.py.",
         custodyEmptyUpcoming: "No upcoming custody blocks in the next weeks.",
+        seeMore: "See more",
+        seeLess: "See less",
+        otherImportantDates: "Other Important Dates",
+        otherDatesEmpty: "No other upcoming important dates.",
+        otherDatesLoadError: "Could not load other important dates. Try refreshing the page.",
         filterAria: "Filter items",
         filterAll: "All",
         filterEllie: "Ellie",
@@ -1239,6 +1296,11 @@
         custodyNone: "Inget umgängesblock hittades för idag.",
         custodyLoadError: "Kunde inte ladda umgängesflödet. Uppdatera sidan, eller kör om feeds/refresh_coparenting.py.",
         custodyEmptyUpcoming: "Inga kommande umgängesblock de närmaste veckorna.",
+        seeMore: "Visa mer",
+        seeLess: "Visa mindre",
+        otherImportantDates: "Andra viktiga datum",
+        otherDatesEmpty: "Inga andra kommande viktiga datum.",
+        otherDatesLoadError: "Kunde inte ladda andra viktiga datum. Uppdatera sidan.",
         filterAria: "Filtrera poster",
         filterAll: "Alla",
         filterEllie: "Ellie",
@@ -1515,6 +1577,11 @@
     let currentTab = loadTab();
     let custodyData = null;
     let custodyLoadState = "pending";
+    let custodyShowMore = false;
+    const CUSTODY_WEEKS_NEAR = 4;
+    const CUSTODY_WEEKS_ALL = 12;
+    let otherDatesData = null;
+    let otherDatesLoadState = "pending"; // pending | ok | error
     let sportEventsData = null;
     let sportEventsLoadState = "pending";
     let sportMessagesData = null;
@@ -1556,6 +1623,19 @@
       return blocks.filter((b) => b.end >= today && b.start <= horizon);
     }
 
+    function custodyItemHtml(b, current, i) {
+      const isCurrent = current && b.start === current.start && b.end === current.end && b.parent === current.parent;
+      const name = parentLabel(b.parent);
+      return `
+          <article class="custody-item ${b.parent}${isCurrent ? " current" : ""}">
+            <div>
+              <div class="parent-name">${escapeHtml(name)}</div>
+              <div class="dates">${escapeHtml(formatRange(b.start, b.end))}</div>
+            </div>
+            <span class="days-pill">${escapeHtml(i.custodyDays.replace("{n}", String(b.days)))}</span>
+          </article>`;
+    }
+
     function renderCustody() {
       const i = t();
       const banner = document.getElementById("custody-banner");
@@ -1594,24 +1674,24 @@
           <div class="range">${escapeHtml(i.custodyNone)}</div>`;
       }
 
-      const upcoming = upcomingBlocks(custodyData.blocks, today, 12);
-      if (!upcoming.length) {
+      const near = upcomingBlocks(custodyData.blocks, today, CUSTODY_WEEKS_NEAR);
+      const all = upcomingBlocks(custodyData.blocks, today, CUSTODY_WEEKS_ALL);
+      if (!all.length) {
         list.innerHTML = `<div class="custody-empty">${escapeHtml(i.custodyEmptyUpcoming)}</div>`;
         return;
       }
 
-      list.innerHTML = upcoming.map((b) => {
-        const isCurrent = current && b.start === current.start && b.end === current.end && b.parent === current.parent;
-        const name = parentLabel(b.parent);
-        return `
-          <article class="custody-item ${b.parent}${isCurrent ? " current" : ""}">
-            <div>
-              <div class="parent-name">${escapeHtml(name)}</div>
-              <div class="dates">${escapeHtml(formatRange(b.start, b.end))}</div>
-            </div>
-            <span class="days-pill">${escapeHtml(i.custodyDays.replace("{n}", String(b.days)))}</span>
-          </article>`;
-      }).join("");
+      const rest = all.slice(near.length);
+      const visible = custodyShowMore ? all : near;
+      let html = visible.map((b) => custodyItemHtml(b, current, i)).join("");
+      if (rest.length) {
+        html += `<div class="custody-more-wrap">
+          <button type="button" class="custody-more-btn" id="custody-see-more" aria-expanded="${custodyShowMore ? "true" : "false"}">
+            ${escapeHtml(custodyShowMore ? i.seeLess : i.seeMore)}
+          </button>
+        </div>`;
+      }
+      list.innerHTML = html;
     }
 
 
@@ -1868,6 +1948,129 @@
       renderHealth();
     }
 
+
+    function eventEndDate(ev) {
+      if (!ev || !ev.end) return null;
+      return ev.end.slice(0, 10);
+    }
+
+    function formatOtherWhen(ev) {
+      const i = t();
+      const startYmd = eventStartDate(ev);
+      if (!startYmd) return "";
+      const endYmd = eventEndDate(ev) || startYmd;
+      const s = parseYMD(startYmd);
+      const e = parseYMD(endYmd);
+      if (!s || !e) return "";
+      const startTm = (ev.start || "").match(/T(\d{2}):(\d{2})/);
+      const endTm = (ev.end || "").match(/T(\d{2}):(\d{2})/);
+      const left = `${i.weekdays[s.getDay()]} ${s.getDate()} ${i.months[s.getMonth()]}`;
+      const leftWithTime = startTm ? `${left} · ${startTm[1]}:${startTm[2]}` : left;
+      if (startYmd === endYmd) {
+        if (startTm && endTm) return `${left} · ${startTm[1]}:${startTm[2]}–${endTm[1]}:${endTm[2]}`;
+        return leftWithTime;
+      }
+      const sameMonth = s.getMonth() === e.getMonth() && s.getFullYear() === e.getFullYear();
+      const right = sameMonth
+        ? `${i.weekdays[e.getDay()]} ${e.getDate()}`
+        : `${i.weekdays[e.getDay()]} ${e.getDate()} ${i.months[e.getMonth()]}`;
+      const rightWithTime = endTm ? `${right} · ${endTm[1]}:${endTm[2]}` : right;
+      return `${leftWithTime} – ${rightWithTime}`;
+    }
+
+    function upcomingOtherEvents(events, today) {
+      return (events || [])
+        .filter((ev) => {
+          const start = eventStartDate(ev);
+          const end = eventEndDate(ev) || start;
+          return end && end >= today;
+        })
+        .slice()
+        .sort((a, b) => String(a.start || "").localeCompare(String(b.start || "")));
+    }
+
+    function otherWhoBadges(whoList) {
+      const names = Array.isArray(whoList) ? whoList : (whoList ? [whoList] : []);
+      return names.map((w) => {
+        const label = whoLabel(w);
+        const cls = whoClass(w) || ((w || "").toLowerCase() === "alex" ? "alex" : "");
+        return `<span class="who-badge ${escapeHtml(cls)}">${escapeHtml(label || w)}</span>`;
+      }).join("");
+    }
+
+    function renderOtherDates() {
+      const i = t();
+      const heading = document.getElementById("other-dates-heading");
+      const list = document.getElementById("other-dates-list");
+      if (!heading || !list) return;
+      heading.textContent = i.otherImportantDates;
+
+      if (otherDatesLoadState === "pending") {
+        list.innerHTML = `<div class="custody-empty">…</div>`;
+        return;
+      }
+      if (otherDatesLoadState === "error" || !otherDatesData) {
+        list.innerHTML = `<div class="custody-empty">${escapeHtml(i.otherDatesLoadError)}</div>`;
+        return;
+      }
+
+      const today = todayStockholm();
+      const upcoming = upcomingOtherEvents(otherDatesData.events, today);
+      if (!upcoming.length) {
+        list.innerHTML = `<div class="custody-empty">${escapeHtml(i.otherDatesEmpty)}</div>`;
+        return;
+      }
+
+      list.innerHTML = upcoming.map((ev) => {
+        const start = eventStartDate(ev);
+        const end = eventEndDate(ev) || start;
+        const isToday = start && start <= today && end >= today;
+        const summary = currentLang === "sv"
+          ? (ev.summary_sv || ev.summary || "")
+          : (ev.summary || ev.summary_sv || "");
+        const notesRaw = currentLang === "sv"
+          ? (ev.notes_sv || ev.notes || "")
+          : (ev.notes || ev.notes_sv || "");
+        const notes = (notesRaw || "").trim();
+        const loc = ev.location
+          ? `<div class="event-meta">${escapeHtml(ev.location)}</div>`
+          : "";
+        const notesHtml = notes
+          ? `<div class="event-meta">${escapeHtml(notes)}</div>`
+          : "";
+        const flags = [];
+        if (isToday) flags.push(`<span class="sport-flag">${escapeHtml(i.todayLabel)}</span>`);
+        return `
+          <article class="sport-item kind-trip${isToday ? " is-today" : ""}">
+            <div>
+              <div class="event-when">${escapeHtml(formatOtherWhen(ev))}</div>
+              <div class="event-summary">${escapeHtml(summary)}</div>
+              ${loc}
+              ${notesHtml}
+            </div>
+            <div class="sport-badges">
+              ${otherWhoBadges(ev.who)}
+              ${flags.join("")}
+            </div>
+          </article>`;
+      }).join("");
+    }
+
+    async function loadOtherDatesFeed() {
+      otherDatesLoadState = "pending";
+      renderOtherDates();
+      try {
+        const res = await fetch("feeds/other-dates.json", { cache: "no-store" });
+        if (!res.ok) throw new Error("HTTP " + res.status);
+        otherDatesData = await res.json();
+        otherDatesLoadState = "ok";
+      } catch (e) {
+        otherDatesData = null;
+        otherDatesLoadState = "error";
+      }
+      renderOtherDates();
+    }
+
     async function loadCustodyFeed() {
       custodyLoadState = "pending";
       renderCustody();
@@ -1926,6 +2129,8 @@
       document.getElementById("drums-heading").textContent = i.drumsHeading;
       document.getElementById("drums-body").textContent = i.drumsComingSoon;
       document.getElementById("health-title").textContent = i.healthTitle;
+      const otherHeading = document.getElementById("other-dates-heading");
+      if (otherHeading) otherHeading.textContent = i.otherImportantDates;
 
       const chipLabels = {
         all: i.filterAll,
@@ -1998,6 +2203,7 @@
       setTab(currentTab);
       renderSchool();
       renderCustody();
+      renderOtherDates();
       renderSport();
       renderHealth();
     }
@@ -2029,6 +2235,13 @@
       setLang(btn.dataset.lang);
     });
 
+    document.getElementById("custody-list").addEventListener("click", (e) => {
+      const btn = e.target.closest("#custody-see-more");
+      if (!btn) return;
+      custodyShowMore = !custodyShowMore;
+      renderCustody();
+    });
+
     const filtersEl = document.getElementById("filters");
     const observer = new IntersectionObserver(
       ([entry]) => filtersEl.classList.toggle("is-stuck", entry.intersectionRatio < 1),
@@ -2038,6 +2251,7 @@
 
     render();
     loadCustodyFeed();
+    loadOtherDatesFeed();
     loadSportFeeds();
     loadHealthFeed();
   </script>
