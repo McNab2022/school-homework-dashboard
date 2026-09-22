@@ -743,7 +743,10 @@
         ? `<span class="badge badge-classroom">Google Classroom — prompt Ellie</span>`
         : "";
       const attachmentHtml = item.has_attachment
-        ? `<span class="badge badge-attachment">${item.attachment_status === 'pending_vklass' ? 'Attachment in Vklass' : 'Has attachment'}</span>`
+        ? `<span class="badge badge-attachment">${item.attachment_status === "pending_vklass" ? "Attachment in Vklass" : "Worksheet"}</span>`
+        : "";
+      const attachmentLinkHtml = item.attachment_url
+        ? `<p class="attach"><a href="${item.attachment_url}" target="_blank" rel="noopener">Open worksheet (PDF)</a></p>`
         : "";
       const notesHtml = item.notes
         ? `<p class="card-notes">${escapeHtml(item.notes)}</p>`
