@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="en-SE">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="color-scheme" content="light" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Källbrinksskolan — Homework &amp; Tests</title>
+  <style>
+    :root {
+      --bg: #f4f6f9;
+      --surface: #ffffff;
+      --text: #1a2332;
+      --text-muted: #5a6577;
+      --border: #e2e8f0;
+      --accent: #2b6cb0;
+      --accent-soft: #ebf4ff;
+      --eleanor: #6b46c1;
+      --eleanor-soft: #f3e8ff;
+      --oliver: #0d9488;
+      --oliver-soft: #ccfbf1;
+      --test: #c53030;
+      --test-bg: #fff5f5;
+      --homework: #b7791f;
+      --homework-bg: #fffff0;
+      --revision: #2b6cb0;
+      --revision-bg: #ebf8ff;
+      --parent: #c05621;
+      --parent-bg: #fffaf0;
+      --event: #2f855a;
+      --event-bg: #f0fff4;
+      --today: #dd6b20;
+      --tomorrow: #3182ce;
+      --overdue: #e53e3e;
+      --radius: 12px;
+      --shadow: 0 1px 3px rgba(26, 35, 50, 0.06), 0 4px 12px rgba(26, 35, 50, 0.04);
+      --font: "Segoe UI", system-ui, -apple-system, "Helvetica Neue", sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .wrap {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 1.25rem 1rem 3rem;
+    }
+
+    header {
+      margin-bottom: 1.5rem;
+    }
+
+    header h1 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: var(--text);
+    }
+
+    header .sub {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      margin-top: 0.25rem;
+    }
+
+    .kids-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 0.85rem;
+    }
+
+    .kid-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.35rem 0.75rem;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+
+    .kid-pill.eleanor { background: var(--eleanor-soft); color: var(--eleanor); }
+    .kid-pill.oliver { background: var(--oliver-soft); color: var(--oliver); }
+
+    .updated {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-top: 0.75rem;
+    }
+
+    .filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-bottom: 1.5rem;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: var(--bg);
+      padding: 0.65rem 0;
+      border-bottom: 1px solid transparent;
+    }
+
+    .filters.is-stuck {
+      border-bottom-color: var(--border);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    }
+
+    .chip {
+      appearance: none;
+      border: 1.5px solid var(--border);
+      background: var(--surface);
+      color: var(--text-muted);
+      font: inherit;
+      font-size: 0.8rem;
+      font-weight: 600;
+      padding: 0.4rem 0.85rem;
+      border-radius: 999px;
+      cursor: pointer;
+      transition: background 0.15s, color 0.15s, border-color 0.15s;
+    }
+
+    .chip:hover { border-color: #a0aec0; color: var(--text); }
+    .chip:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 2px;
+    }
+    .chip.active {
+      background: var(--text);
+      border-color: var(--text);
+      color: #fff;
+    }
+
+    section {
+      margin-bottom: 1.75rem;
+    }
+
+    section h2 {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--text-muted);
+      margin-bottom: 0.65rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    section h2 .count {
+      background: var(--border);
+      color: var(--text-muted);
+      font-size: 0.7rem;
+      padding: 0.1rem 0.45rem;
+      border-radius: 999px;
+      letter-spacing: 0;
+      text-transform: none;
+    }
+
+    .card-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.65rem;
+    }
+
+    .card {
+      background: var(--surface);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      border: 1px solid var(--border);
+      padding: 0.9rem 1rem;
+      border-left: 4px solid var(--border);
+      transition: border-color 0.15s;
+    }
+
+    .card.urgency-overdue { border-left-color: var(--overdue); background: #fffafa; }
+    .card.urgency-today { border-left-color: var(--today); }
+    .card.urgency-tomorrow { border-left-color: var(--tomorrow); }
+    .card.type-test { /* keep urgency override */ }
+    .card.type-parent_action { border-left-color: var(--parent); }
+
+    .card-top {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.4rem 0.55rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .date-label {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--text);
+      font-variant-numeric: tabular-nums;
+    }
+
+    .urgency-tag {
+      font-size: 0.68rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      padding: 0.15rem 0.45rem;
+      border-radius: 4px;
+    }
+
+    .urgency-tag.overdue { background: #fed7d7; color: var(--overdue); }
+    .urgency-tag.today { background: #feebc8; color: #c05621; }
+    .urgency-tag.tomorrow { background: #bee3f8; color: #2b6cb0; }
+    .urgency-tag.ongoing { background: #e9d8fd; color: #6b46c1; }
+
+    .badge {
+      font-size: 0.68rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      padding: 0.18rem 0.5rem;
+      border-radius: 4px;
+    }
+
+    .badge.test { background: var(--test-bg); color: var(--test); }
+    .badge.homework { background: var(--homework-bg); color: var(--homework); }
+    .badge.revision { background: var(--revision-bg); color: var(--revision); }
+    .badge.parent_action { background: var(--parent-bg); color: var(--parent); }
+    .badge.event { background: var(--event-bg); color: var(--event); }
+
+    .optional-flag {
+      font-size: 0.68rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      padding: 0.18rem 0.5rem;
+      border-radius: 4px;
+      background: #edf2f7;
+      color: #4a5568;
+      border: 1px dashed #a0aec0;
+    }
+
+    .child-tag {
+      font-size: 0.75rem;
+      font-weight: 600;
+      margin-left: auto;
+    }
+
+    .child-tag.eleanor { color: var(--eleanor); }
+    .child-tag.oliver { color: var(--oliver); }
+
+    .card-title {
+      font-size: 1rem;
+      font-weight: 650;
+      color: var(--text);
+      margin-bottom: 0.15rem;
+    }
+
+    .card-meta {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    .card-notes {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-top: 0.45rem;
+      padding-top: 0.45rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .empty {
+      text-align: center;
+      padding: 1.5rem 1rem;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      background: var(--surface);
+      border-radius: var(--radius);
+      border: 1px dashed var(--border);
+    }
+
+    footer {
+      margin-top: 2rem;
+      text-align: center;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+
+    @media (min-width: 560px) {
+      header h1 { font-size: 1.75rem; }
+      .wrap { padding: 1.75rem 1.25rem 3.5rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <h1>Homework &amp; Tests</h1>
+      <p class="sub" id="school-line">Källbrinksskolan</p>
+      <div class="kids-row" id="kids-row"></div>
+      <p class="updated" id="updated-line"></p>
+    </header>
+
+    <div class="filters" id="filters" role="group" aria-label="Filter items">
+      <button type="button" class="chip active" data-filter="all">All</button>
+      <button type="button" class="chip" data-filter="eleanor">Eleanor</button>
+      <button type="button" class="chip" data-filter="oliver">Oliver</button>
+      <button type="button" class="chip" data-filter="tests">Tests</button>
+      <button type="button" class="chip" data-filter="homework">Homework</button>
+    </div>
+
+    <main id="main"></main>
+
+    <footer>
+      Offline parental dashboard · No login · Europe/Stockholm
+    </footer>
+  </div>
+
+  <script>
+    // Embedded data for file:// compatibility (also kept in data.json).
+    // Grok Bot refreshes both when school info is updated.
+    const DASHBOARD_DATA = {
+      "updated": "2026-09-22",
+      "school": "Källbrinksskolan",
+      "timezone": "Europe/Stockholm",
+      "kids": [
+        {
+          "id": "eleanor",
+          "name": "Eleanor Katherine",
+          "class": "7C",
+          "notes": null
+        },
+        {
+          "id": "oliver",
+          "name": "Oliver Lawrence",
+          "class": "4C",
+          "notes": "fritids"
+        }
+      ],
+      "items": [
+        {
+          "id": "el-parent-meeting",
+          "date": "2026-09-23",
+          "time": "17:30–18:30",
+          "child": "eleanor",
+          "subject": "School",
+          "type": "parent_action",
+          "title": "Parent info meeting",
+          "notes": "Aula then classrooms. Parent event, not a test.",
+          "optional": false
+        },
+        {
+          "id": "el-spanish-vocab",
+          "date": "2026-09-23",
+          "time": null,
+          "child": "eleanor",
+          "subject": "Spanish",
+          "type": "homework",
+          "title": "Spanish vocab quiz (läxförhör)",
+          "notes": "Chapter 4 glosses.",
+          "optional": false
+        },
+        {
+          "id": "el-samhall",
+          "date": "2026-09-24",
+          "time": "10:05",
+          "child": "eleanor",
+          "subject": "Samhällskunskap",
+          "type": "test",
+          "title": "Samhällskunskap test",
+          "notes": "Statsskick, politik, ideologi. Prep in Classroom Examinationer (“Att kunna inför testet…”). Also politics group presentation from valstugor interviews.",
+          "optional": false
+        },
+        {
+          "id": "ol-fritids-schema",
+          "date": "2026-09-28",
+          "time": null,
+          "child": "oliver",
+          "subject": "Fritids",
+          "type": "parent_action",
+          "title": "Register fritids omsorgsschema for höstlov",
+          "notes": "Deadline — register care schedule for höstlov week 44 (26–30 Oct). Action for parents.",
+          "optional": false
+        },
+        {
+          "id": "el-kallbrinks-os",
+          "date": "2026-09-30",
+          "time": null,
+          "child": "eleanor",
+          "subject": "PE",
+          "type": "event",
+          "title": "Källbrinks OS",
+          "notes": "PE event.",
+          "optional": false
+        },
+        {
+          "id": "el-math-prov-1",
+          "date": "2026-10-01",
+          "time": "13:45",
+          "child": "eleanor",
+          "subject": "Math",
+          "type": "test",
+          "title": "Math Prov del 1 (tal)",
+          "notes": null,
+          "optional": false
+        },
+        {
+          "id": "ol-math-test-1",
+          "date": "2026-10-01",
+          "time": null,
+          "child": "oliver",
+          "subject": "Math",
+          "type": "test",
+          "title": "Math test 1",
+          "notes": null,
+          "optional": false
+        },
+        {
+          "id": "el-math-prov-2",
+          "date": "2026-10-02",
+          "time": "12:50",
+          "child": "eleanor",
+          "subject": "Math",
+          "type": "test",
+          "title": "Math Prov del 2 (tal)",
+          "notes": null,
+          "optional": false
+        },
+        {
+          "id": "ol-no-skogen",
+          "date": "2026-10-05",
+          "time": null,
+          "child": "oliver",
+          "subject": "NO",
+          "type": "test",
+          "title": "NO checkout/test “Skogen”",
+          "notes": "4B+4C.",
+          "optional": false
+        },
+        {
+          "id": "el-english-oral",
+          "date": "2026-10-06",
+          "time": "09:45",
+          "child": "eleanor",
+          "subject": "English",
+          "type": "test",
+          "title": "English oral group discussion",
+          "notes": "UK and travel.",
+          "optional": false
+        },
+        {
+          "id": "el-swedish-boksamtal",
+          "date": "2026-10-09",
+          "time": "07:00",
+          "child": "eleanor",
+          "subject": "Swedish",
+          "type": "test",
+          "title": "Swedish boksamtal",
+          "notes": null,
+          "optional": false
+        },
+        {
+          "id": "ol-utvecklingssamtal",
+          "date": "2026-10-13",
+          "time": null,
+          "child": "oliver",
+          "subject": "School",
+          "type": "parent_action",
+          "title": "Utvecklingssamtal",
+          "notes": "Book in Vklass.",
+          "optional": false
+        },
+        {
+          "id": "el-spanish-exam",
+          "date": "2026-10-14",
+          "time": "09:10",
+          "child": "eleanor",
+          "subject": "Spanish",
+          "type": "test",
+          "title": "Spanish written exam",
+          "notes": null,
+          "optional": false
+        },
+        {
+          "id": "ol-hostlov",
+          "date": "2026-10-26",
+          "endDate": "2026-10-30",
+          "time": null,
+          "child": "oliver",
+          "subject": "School",
+          "type": "event",
+          "title": "Höstlov",
+          "notes": "Autumn break 26–30 Oct (week 44).",
+          "optional": false
+        },
+        {
+          "id": "el-no-trelson",
+          "date": null,
+          "week": "45",
+          "time": null,
+          "child": "eleanor",
+          "subject": "NO",
+          "type": "test",
+          "title": "NO Trelson test",
+          "notes": "Week 45 — date TBD.",
+          "optional": false
+        },
+        {
+          "id": "el-french-verbs",
+          "date": null,
+          "time": null,
+          "child": "eleanor",
+          "subject": "French",
+          "type": "homework",
+          "title": "French verb quiz — avoir/être + regular verbs",
+          "notes": "Date TBD.",
+          "optional": false
+        },
+        {
+          "id": "el-kartlaggaren",
+          "date": "2026-09-22",
+          "time": null,
+          "child": "eleanor",
+          "subject": "Swedish",
+          "type": "revision",
+          "title": "Kartläggaren (ongoing)",
+          "notes": "This week ongoing in Swedish.",
+          "optional": false,
+          "ongoing": true
+        },
+        {
+          "id": "el-scratch",
+          "date": "2026-09-22",
+          "time": null,
+          "child": "eleanor",
+          "subject": "TK",
+          "type": "homework",
+          "title": "Scratch programming (ongoing)",
+          "notes": "This week ongoing in TK.",
+          "optional": false,
+          "ongoing": true
+        },
+        {
+          "id": "ol-math-laxa-3",
+          "date": null,
+          "time": null,
+          "child": "oliver",
+          "subject": "Math",
+          "type": "homework",
+          "title": "Math läxa 3",
+          "notes": "Addition, subtraction, multiplication. Marked FRIVILLIG/optional in school letter (pending confirmation from attachment).",
+          "optional": true
+        }
+      ]
+    };
+
+    const TYPE_LABELS = {
+      test: "Test",
+      homework: "Homework",
+      revision: "Revision",
+      parent_action: "Parent action",
+      event: "Event"
+    };
+
+    const WEEKDAY_SHORT = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+    const MONTH_SHORT = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+
+    /** Today in Europe/Stockholm as YYYY-MM-DD */
+    function todayStockholm() {
+      try {
+        return new Intl.DateTimeFormat("en-CA", {
+          timeZone: "Europe/Stockholm",
+          year: "numeric",
+          month: "2-digit",
+          day: "2-digit"
+        }).format(new Date());
+      } catch (e) {
+        const d = new Date();
+        return d.toISOString().slice(0, 10);
+      }
+    }
+
+    function parseYMD(s) {
+      if (!s) return null;
+      const [y, m, d] = s.split("-").map(Number);
+      return new Date(y, m - 1, d);
+    }
+
+    function addDays(ymd, n) {
+      const d = parseYMD(ymd);
+      d.setDate(d.getDate() + n);
+      const yyyy = d.getFullYear();
+      const mm = String(d.getMonth() + 1).padStart(2, "0");
+      const dd = String(d.getDate()).padStart(2, "0");
+      return `${yyyy}-${mm}-${dd}`;
+    }
+
+    function formatDateLabel(item) {
+      if (item.ongoing) return "This week";
+      if (!item.date) {
+        if (item.week) return `Week ${item.week} · TBD`;
+        return "Date TBD";
+      }
+      const d = parseYMD(item.date);
+      const base = `${WEEKDAY_SHORT[d.getDay()]} ${d.getDate()} ${MONTH_SHORT[d.getMonth()]}`;
+      if (item.endDate) {
+        const e = parseYMD(item.endDate);
+        return `${base} – ${e.getDate()} ${MONTH_SHORT[e.getMonth()]}`;
+      }
+      if (item.time) return `${base} · ${item.time}`;
+      return base;
+    }
+
+    function urgency(item, today) {
+      if (item.ongoing) return "ongoing";
+      if (!item.date) return null;
+      if (item.date < today && !item.endDate) {
+        // Events/parent actions in the past (single day) are overdue if actionable
+        if (item.type === "event" && item.endDate) return null;
+        if (item.type === "event") return null; // past one-day events: don't mark overdue
+        return "overdue";
+      }
+      if (item.endDate && item.date <= today && item.endDate >= today) return "today";
+      if (item.endDate && item.endDate < today) return null;
+      if (item.date === today) return "today";
+      if (item.date === addDays(today, 1)) return "tomorrow";
+      return null;
+    }
+
+    function sortKey(item) {
+      // Dated first (ascending), then week-based, then TBD optional last
+      if (item.date) return "0-" + item.date + "-" + (item.time || "99:99");
+      if (item.week) return "1-week-" + String(item.week).padStart(2, "0");
+      return "2-tbd-" + item.title;
+    }
+
+    function matchesFilter(item, filter) {
+      if (filter === "all") return true;
+      if (filter === "eleanor") return item.child === "eleanor";
+      if (filter === "oliver") return item.child === "oliver";
+      if (filter === "tests") return item.type === "test";
+      if (filter === "homework") return item.type === "homework" || item.type === "revision";
+      return true;
+    }
+
+    function kidName(id, kids) {
+      const k = kids.find((x) => x.id === id);
+      return k ? k.name.split(" ")[0] : id;
+    }
+
+    function escapeHtml(str) {
+      if (!str) return "";
+      return String(str)
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;");
+    }
+
+    function renderCard(item, kids, today) {
+      const u = urgency(item, today);
+      const childFirst = kidName(item.child, kids);
+      const typeClass = item.type;
+      const urgencyClass = u ? `urgency-${u}` : "";
+      const urgencyHtml = u
+        ? `<span class="urgency-tag ${u}">${u === "ongoing" ? "Ongoing" : u.charAt(0).toUpperCase() + u.slice(1)}</span>`
+        : "";
+      const optionalHtml = item.optional
+        ? `<span class="optional-flag">Optional</span>`
+        : "";
+      const notesHtml = item.notes
+        ? `<p class="card-notes">${escapeHtml(item.notes)}</p>`
+        : "";
+
+      return `
+        <article class="card type-${typeClass} ${urgencyClass}" data-child="${item.child}" data-type="${item.type}">
+          <div class="card-top">
+            <span class="date-label">${escapeHtml(formatDateLabel(item))}</span>
+            ${urgencyHtml}
+            <span class="badge ${typeClass}">${TYPE_LABELS[item.type] || item.type}</span>
+            ${optionalHtml}
+            <span class="child-tag ${item.child}">${escapeHtml(childFirst)}</span>
+          </div>
+          <h3 class="card-title">${escapeHtml(item.title)}</h3>
+          <p class="card-meta">${escapeHtml(item.subject)}</p>
+          ${notesHtml}
+        </article>
+      `;
+    }
+
+    function sectionHtml(title, items, kids, today) {
+      if (!items.length) {
+        return `
+          <section>
+            <h2>${escapeHtml(title)} <span class="count">0</span></h2>
+            <div class="empty">Nothing here for this filter.</div>
+          </section>`;
+      }
+      const cards = items.map((i) => renderCard(i, kids, today)).join("");
+      return `
+        <section>
+          <h2>${escapeHtml(title)} <span class="count">${items.length}</span></h2>
+          <div class="card-list">${cards}</div>
+        </section>`;
+    }
+
+    let currentFilter = "all";
+
+    function render() {
+      const data = DASHBOARD_DATA;
+      const today = todayStockholm();
+      const kids = data.kids;
+      const items = [...data.items].sort((a, b) => sortKey(a).localeCompare(sortKey(b)));
+      const filtered = items.filter((i) => matchesFilter(i, currentFilter));
+
+      // Header
+      document.getElementById("school-line").textContent = data.school;
+      document.getElementById("kids-row").innerHTML = kids.map((k) => {
+        const extra = k.notes ? ` · ${k.notes}` : "";
+        return `<span class="kid-pill ${k.id}">${escapeHtml(k.name)} · ${escapeHtml(k.class)}${escapeHtml(extra)}</span>`;
+      }).join("");
+
+      const updatedDate = parseYMD(data.updated);
+      const updatedLabel = updatedDate
+        ? `${updatedDate.getDate()} ${MONTH_SHORT[updatedDate.getMonth()]} ${updatedDate.getFullYear()}`
+        : data.updated;
+      document.getElementById("updated-line").textContent =
+        `Last updated: ${updatedLabel} · Europe/Stockholm · Today: ${formatDateLabel({ date: today })}`;
+
+      // Buckets
+      const end7 = addDays(today, 7);
+      const upcoming = filtered.filter((i) => {
+        if (i.ongoing) return true;
+        if (!i.date) return false;
+        if (i.endDate) return i.date <= end7 && i.endDate >= today;
+        return i.date >= today && i.date <= end7;
+      });
+
+      const eleanor = filtered.filter((i) => i.child === "eleanor");
+      const oliver = filtered.filter((i) => i.child === "oliver");
+      const parentActions = filtered.filter((i) => i.type === "parent_action");
+
+      // Avoid duplicating: show full kid sections always (when filter allows),
+      // Upcoming = next 7 days snapshot, Parent actions = actionable list
+      const main = document.getElementById("main");
+      let html = "";
+      html += sectionHtml("Upcoming (next 7 days)", upcoming, kids, today);
+      if (currentFilter !== "oliver") {
+        html += sectionHtml("Eleanor", eleanor, kids, today);
+      }
+      if (currentFilter !== "eleanor") {
+        html += sectionHtml("Oliver", oliver, kids, today);
+      }
+      html += sectionHtml("Parent actions", parentActions, kids, today);
+      main.innerHTML = html;
+    }
+
+    // Filters
+    document.getElementById("filters").addEventListener("click", (e) => {
+      const btn = e.target.closest(".chip");
+      if (!btn) return;
+      currentFilter = btn.dataset.filter;
+      document.querySelectorAll(".chip").forEach((c) => c.classList.toggle("active", c === btn));
+      render();
+    });
+
+    // Sticky filter bar shadow
+    const filtersEl = document.getElementById("filters");
+    const observer = new IntersectionObserver(
+      ([entry]) => filtersEl.classList.toggle("is-stuck", entry.intersectionRatio < 1),
+      { threshold: [1], rootMargin: "-1px 0px 0px 0px" }
+    );
+    observer.observe(filtersEl);
+
+    render();
+  </script>
+</body>
+</html>

@@ -1,0 +1,234 @@
+{
+  "updated": "2026-09-22",
+  "school": "Källbrinksskolan",
+  "timezone": "Europe/Stockholm",
+  "kids": [
+    {
+      "id": "eleanor",
+      "name": "Eleanor Katherine",
+      "class": "7C",
+      "notes": null
+    },
+    {
+      "id": "oliver",
+      "name": "Oliver Lawrence",
+      "class": "4C",
+      "notes": "fritids"
+    }
+  ],
+  "items": [
+    {
+      "id": "el-parent-meeting",
+      "date": "2026-09-23",
+      "time": "17:30–18:30",
+      "child": "eleanor",
+      "subject": "School",
+      "type": "parent_action",
+      "title": "Parent info meeting",
+      "notes": "Aula then classrooms. Parent event, not a test.",
+      "optional": false
+    },
+    {
+      "id": "el-spanish-vocab",
+      "date": "2026-09-23",
+      "time": null,
+      "child": "eleanor",
+      "subject": "Spanish",
+      "type": "homework",
+      "title": "Spanish vocab quiz (läxförhör)",
+      "notes": "Chapter 4 glosses.",
+      "optional": false
+    },
+    {
+      "id": "el-samhall",
+      "date": "2026-09-24",
+      "time": "10:05",
+      "child": "eleanor",
+      "subject": "Samhällskunskap",
+      "type": "test",
+      "title": "Samhällskunskap test",
+      "notes": "Statsskick, politik, ideologi. Prep in Classroom Examinationer (“Att kunna inför testet…”). Also politics group presentation from valstugor interviews.",
+      "optional": false
+    },
+    {
+      "id": "ol-fritids-schema",
+      "date": "2026-09-28",
+      "time": null,
+      "child": "oliver",
+      "subject": "Fritids",
+      "type": "parent_action",
+      "title": "Register fritids omsorgsschema for höstlov",
+      "notes": "Deadline — register care schedule for höstlov week 44 (26–30 Oct). Action for parents.",
+      "optional": false
+    },
+    {
+      "id": "el-kallbrinks-os",
+      "date": "2026-09-30",
+      "time": null,
+      "child": "eleanor",
+      "subject": "PE",
+      "type": "event",
+      "title": "Källbrinks OS",
+      "notes": "PE event.",
+      "optional": false
+    },
+    {
+      "id": "el-math-prov-1",
+      "date": "2026-10-01",
+      "time": "13:45",
+      "child": "eleanor",
+      "subject": "Math",
+      "type": "test",
+      "title": "Math Prov del 1 (tal)",
+      "notes": null,
+      "optional": false
+    },
+    {
+      "id": "ol-math-test-1",
+      "date": "2026-10-01",
+      "time": null,
+      "child": "oliver",
+      "subject": "Math",
+      "type": "test",
+      "title": "Math test 1",
+      "notes": null,
+      "optional": false
+    },
+    {
+      "id": "el-math-prov-2",
+      "date": "2026-10-02",
+      "time": "12:50",
+      "child": "eleanor",
+      "subject": "Math",
+      "type": "test",
+      "title": "Math Prov del 2 (tal)",
+      "notes": null,
+      "optional": false
+    },
+    {
+      "id": "ol-no-skogen",
+      "date": "2026-10-05",
+      "time": null,
+      "child": "oliver",
+      "subject": "NO",
+      "type": "test",
+      "title": "NO checkout/test “Skogen”",
+      "notes": "4B+4C.",
+      "optional": false
+    },
+    {
+      "id": "el-english-oral",
+      "date": "2026-10-06",
+      "time": "09:45",
+      "child": "eleanor",
+      "subject": "English",
+      "type": "test",
+      "title": "English oral group discussion",
+      "notes": "UK and travel.",
+      "optional": false
+    },
+    {
+      "id": "el-swedish-boksamtal",
+      "date": "2026-10-09",
+      "time": "07:00",
+      "child": "eleanor",
+      "subject": "Swedish",
+      "type": "test",
+      "title": "Swedish boksamtal",
+      "notes": null,
+      "optional": false
+    },
+    {
+      "id": "ol-utvecklingssamtal",
+      "date": "2026-10-13",
+      "time": null,
+      "child": "oliver",
+      "subject": "School",
+      "type": "parent_action",
+      "title": "Utvecklingssamtal",
+      "notes": "Book in Vklass.",
+      "optional": false
+    },
+    {
+      "id": "el-spanish-exam",
+      "date": "2026-10-14",
+      "time": "09:10",
+      "child": "eleanor",
+      "subject": "Spanish",
+      "type": "test",
+      "title": "Spanish written exam",
+      "notes": null,
+      "optional": false
+    },
+    {
+      "id": "ol-hostlov",
+      "date": "2026-10-26",
+      "endDate": "2026-10-30",
+      "time": null,
+      "child": "oliver",
+      "subject": "School",
+      "type": "event",
+      "title": "Höstlov",
+      "notes": "Autumn break 26–30 Oct (week 44).",
+      "optional": false
+    },
+    {
+      "id": "el-no-trelson",
+      "date": null,
+      "week": "45",
+      "time": null,
+      "child": "eleanor",
+      "subject": "NO",
+      "type": "test",
+      "title": "NO Trelson test",
+      "notes": "Week 45 — date TBD.",
+      "optional": false
+    },
+    {
+      "id": "el-french-verbs",
+      "date": null,
+      "time": null,
+      "child": "eleanor",
+      "subject": "French",
+      "type": "homework",
+      "title": "French verb quiz — avoir/être + regular verbs",
+      "notes": "Date TBD.",
+      "optional": false
+    },
+    {
+      "id": "el-kartlaggaren",
+      "date": "2026-09-22",
+      "time": null,
+      "child": "eleanor",
+      "subject": "Swedish",
+      "type": "revision",
+      "title": "Kartläggaren (ongoing)",
+      "notes": "This week ongoing in Swedish.",
+      "optional": false,
+      "ongoing": true
+    },
+    {
+      "id": "el-scratch",
+      "date": "2026-09-22",
+      "time": null,
+      "child": "eleanor",
+      "subject": "TK",
+      "type": "homework",
+      "title": "Scratch programming (ongoing)",
+      "notes": "This week ongoing in TK.",
+      "optional": false,
+      "ongoing": true
+    },
+    {
+      "id": "ol-math-laxa-3",
+      "date": null,
+      "time": null,
+      "child": "oliver",
+      "subject": "Math",
+      "type": "homework",
+      "title": "Math läxa 3",
+      "notes": "Addition, subtraction, multiplication. Marked FRIVILLIG/optional in school letter (pending confirmation from attachment).",
+      "optional": true
+    }
+  ]
+}
