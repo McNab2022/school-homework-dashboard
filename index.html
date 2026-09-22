@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="color-scheme" content="light" />
   <meta name="robots" content="noindex, nofollow" />
-  <title>Källbrinksskolan — Homework &amp; Tests</title>
+  <title>Family dashboard</title>
   <style>
     :root {
       --bg: #f4f6f9;
@@ -342,6 +342,202 @@
       header h1 { font-size: 1.75rem; }
       .wrap { padding: 1.75rem 1.25rem 3.5rem; }
     }
+
+    /* —— Family tabs —— */
+    .tab-nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+      margin-top: 1rem;
+      padding: 0.25rem 0 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .tab-btn {
+      appearance: none;
+      border: none;
+      background: transparent;
+      font: inherit;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      cursor: pointer;
+      padding: 0.55rem 0.75rem;
+      border-bottom: 2px solid transparent;
+      margin-bottom: -1px;
+      border-radius: 6px 6px 0 0;
+    }
+
+    .tab-btn:hover { color: var(--text); background: rgba(43, 108, 176, 0.06); }
+    .tab-btn:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 2px;
+    }
+    .tab-btn.active {
+      color: var(--accent);
+      border-bottom-color: var(--accent);
+      background: var(--accent-soft);
+    }
+
+    .tab-panel[hidden] { display: none !important; }
+
+    .school-brand {
+      margin-bottom: 0.25rem;
+    }
+
+    .school-brand .school-heading {
+      font-size: 1.15rem;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      margin-top: 0.35rem;
+    }
+
+    /* Placeholders */
+    .placeholder-panel {
+      background: var(--surface);
+      border: 1px dashed var(--border);
+      border-radius: var(--radius);
+      padding: 1.5rem 1.25rem;
+      box-shadow: var(--shadow);
+      margin-top: 0.5rem;
+    }
+
+    .placeholder-panel h2 {
+      font-size: 1rem;
+      font-weight: 700;
+      text-transform: none;
+      letter-spacing: 0;
+      color: var(--text);
+      margin-bottom: 0.5rem;
+    }
+
+    .placeholder-panel p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      max-width: 36rem;
+    }
+
+    /* Custody / Key dates */
+    :root {
+      --alex: #1d4ed8;
+      --alex-soft: #dbeafe;
+      --anna: #9d174d;
+      --anna-soft: #fce7f3;
+    }
+
+    .custody-banner {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.65rem 1rem;
+      padding: 1rem 1.15rem;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      margin: 0.5rem 0 1.25rem;
+      border: 1px solid var(--border);
+      background: var(--surface);
+    }
+
+    .custody-banner.alex {
+      background: var(--alex-soft);
+      border-color: #93c5fd;
+    }
+    .custody-banner.anna-karin {
+      background: var(--anna-soft);
+      border-color: #f9a8d4;
+    }
+    .custody-banner.unknown {
+      background: var(--surface);
+    }
+
+    .custody-banner .label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--text-muted);
+    }
+
+    .custody-banner .who {
+      font-size: 1.35rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    .custody-banner.alex .who { color: var(--alex); }
+    .custody-banner.anna-karin .who { color: var(--anna); }
+
+    .custody-banner .range {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      width: 100%;
+    }
+
+    .custody-section h2 {
+      margin-top: 0.25rem;
+    }
+
+    .custody-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.55rem;
+    }
+
+    .custody-item {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.4rem 0.75rem;
+      padding: 0.75rem 0.9rem;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      box-shadow: var(--shadow);
+    }
+
+    .custody-item.alex {
+      border-left: 4px solid var(--alex);
+      background: linear-gradient(90deg, var(--alex-soft) 0%, var(--surface) 42%);
+    }
+    .custody-item.anna-karin {
+      border-left: 4px solid var(--anna);
+      background: linear-gradient(90deg, var(--anna-soft) 0%, var(--surface) 42%);
+    }
+    .custody-item.current {
+      outline: 2px solid var(--accent);
+      outline-offset: 1px;
+    }
+
+    .custody-item .parent-name {
+      font-weight: 700;
+      font-size: 0.95rem;
+    }
+    .custody-item.alex .parent-name { color: var(--alex); }
+    .custody-item.anna-karin .parent-name { color: var(--anna); }
+
+    .custody-item .dates {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    .custody-item .days-pill {
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      background: rgba(0,0,0,0.04);
+      padding: 0.15rem 0.5rem;
+      border-radius: 999px;
+    }
+
+    .custody-empty {
+      color: var(--text-muted);
+      padding: 1rem;
+      background: var(--surface);
+      border-radius: var(--radius);
+      border: 1px dashed var(--border);
+    }
+
   </style>
 </head>
 <body>
@@ -349,8 +545,8 @@
     <header>
       <div class="header-top">
         <div>
-          <h1 id="page-heading">Homework &amp; Tests</h1>
-          <p class="sub" id="school-line">Källbrinksskolan</p>
+          <h1 id="page-heading">Family dashboard</h1>
+          <p class="sub" id="page-sub"></p>
         </div>
         <div class="lang-toggle" role="group" aria-label="Language">
           <button type="button" id="lang-en" data-lang="en" class="active">English</button>
@@ -358,19 +554,54 @@
           <button type="button" id="lang-sv" data-lang="sv">Svenska</button>
         </div>
       </div>
-      <div class="kids-row" id="kids-row"></div>
-      <p class="updated" id="updated-line"></p>
+      <nav class="tab-nav" id="tab-nav" role="tablist" aria-label="Sections">
+        <button type="button" class="tab-btn active" role="tab" id="tab-school" data-tab="school" aria-selected="true" aria-controls="panel-school">School</button>
+        <button type="button" class="tab-btn" role="tab" id="tab-sport" data-tab="sport" aria-selected="false" aria-controls="panel-sport">Sport &amp; Hobbies</button>
+        <button type="button" class="tab-btn" role="tab" id="tab-health" data-tab="health" aria-selected="false" aria-controls="panel-health">Health</button>
+        <button type="button" class="tab-btn" role="tab" id="tab-keydates" data-tab="keydates" aria-selected="false" aria-controls="panel-keydates">Key dates</button>
+      </nav>
     </header>
 
-    <div class="filters" id="filters" role="group" aria-label="Filter items">
-      <button type="button" class="chip active" data-filter="all">All</button>
-      <button type="button" class="chip" data-filter="eleanor">Ellie</button>
-      <button type="button" class="chip" data-filter="oliver">Oliver</button>
-      <button type="button" class="chip" data-filter="tests">Tests</button>
-      <button type="button" class="chip" data-filter="homework">Homework</button>
+    <div id="panel-school" class="tab-panel" role="tabpanel" aria-labelledby="tab-school">
+      <div class="school-brand">
+        <p class="school-heading" id="school-heading">Homework &amp; Tests</p>
+        <p class="sub" id="school-line">Källbrinksskolan</p>
+        <div class="kids-row" id="kids-row"></div>
+        <p class="updated" id="updated-line"></p>
+      </div>
+
+      <div class="filters" id="filters" role="group" aria-label="Filter items">
+        <button type="button" class="chip active" data-filter="all">All</button>
+        <button type="button" class="chip" data-filter="eleanor">Ellie</button>
+        <button type="button" class="chip" data-filter="oliver">Oliver</button>
+        <button type="button" class="chip" data-filter="tests">Tests</button>
+        <button type="button" class="chip" data-filter="homework">Homework</button>
+      </div>
+
+      <main id="main"></main>
     </div>
 
-    <main id="main"></main>
+    <div id="panel-sport" class="tab-panel" role="tabpanel" aria-labelledby="tab-sport" hidden>
+      <div class="placeholder-panel">
+        <h2 id="sport-title">Sport &amp; Hobbies</h2>
+        <p id="sport-body"></p>
+      </div>
+    </div>
+
+    <div id="panel-health" class="tab-panel" role="tabpanel" aria-labelledby="tab-health" hidden>
+      <div class="placeholder-panel">
+        <h2 id="health-title">Health</h2>
+        <p id="health-body"></p>
+      </div>
+    </div>
+
+    <div id="panel-keydates" class="tab-panel" role="tabpanel" aria-labelledby="tab-keydates" hidden>
+      <div id="custody-banner" class="custody-banner unknown" aria-live="polite"></div>
+      <section class="custody-section">
+        <h2 id="custody-upcoming-heading">Upcoming custody</h2>
+        <div id="custody-list" class="custody-list"></div>
+      </section>
+    </div>
   </div>
 
   <script>
@@ -709,11 +940,33 @@
     };
 
     const LANG_KEY = "school-dashboard-lang";
+    const TAB_KEY = "family-dashboard-tab";
+    const VALID_TABS = ["school", "sport", "health", "keydates"];
 
     const I18N = {
       en: {
-        docTitle: "Källbrinksskolan — Homework & Tests",
-        pageHeading: "Homework & Tests",
+        docTitle: "Family dashboard",
+        pageHeading: "Family dashboard",
+        pageSub: "Home overview",
+        schoolHeading: "Homework & Tests",
+        tabAria: "Sections",
+        tabSchool: "School",
+        tabSport: "Sport & Hobbies",
+        tabHealth: "Health",
+        tabKeydates: "Key dates",
+        sportTitle: "Sport & Hobbies",
+        sportBody: "Ollie’s football (SportAdmin) and drums will appear here once calendar feeds are connected.",
+        healthTitle: "Health",
+        healthBody: "Logoped, dentist and other health appointments coming soon.",
+        thisWeekCustody: "This week",
+        upcomingCustody: "Upcoming custody",
+        parentAlex: "Alex",
+        parentAnnaKarin: "Anna-Karin",
+        kidsWith: "Kids with {name}",
+        custodyDays: "{n} days",
+        custodyNone: "No custody block found for today.",
+        custodyLoadError: "Could not load co-parenting feed. Try refreshing the page, or re-run feeds/refresh_coparenting.py.",
+        custodyEmptyUpcoming: "No upcoming custody blocks in the next weeks.",
         filterAria: "Filter items",
         filterAll: "All",
         filterEllie: "Ellie",
@@ -750,8 +1003,28 @@
         months: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
       },
       sv: {
-        docTitle: "Källbrinksskolan — Läxor & Prov",
-        pageHeading: "Läxor & Prov",
+        docTitle: "Familjeöversikt",
+        pageHeading: "Familjeöversikt",
+        pageSub: "Hemöversikt",
+        schoolHeading: "Läxor & Prov",
+        tabAria: "Sektioner",
+        tabSchool: "Skola",
+        tabSport: "Sport & hobbies",
+        tabHealth: "Hälsa",
+        tabKeydates: "Viktiga datum",
+        sportTitle: "Sport & hobbies",
+        sportBody: "Ollies fotboll (SportAdmin) och trummor visas här när kalenderflöden är inkopplade.",
+        healthTitle: "Hälsa",
+        healthBody: "Logoped, tandläkare och andra hälsobesök kommer snart.",
+        thisWeekCustody: "Denna vecka",
+        upcomingCustody: "Kommande umgänge",
+        parentAlex: "Alex",
+        parentAnnaKarin: "Anna-Karin",
+        kidsWith: "Barnen hos {name}",
+        custodyDays: "{n} dagar",
+        custodyNone: "Inget umgängesblock hittades för idag.",
+        custodyLoadError: "Kunde inte ladda umgängesflödet. Uppdatera sidan, eller kör om feeds/refresh_coparenting.py.",
+        custodyEmptyUpcoming: "Inga kommande umgängesblock de närmaste veckorna.",
         filterAria: "Filtrera poster",
         filterAll: "Alla",
         filterEllie: "Ellie",
@@ -1013,13 +1286,171 @@
         </section>`;
     }
 
+    function loadTab() {
+      try {
+        const v = localStorage.getItem(TAB_KEY);
+        if (VALID_TABS.includes(v)) return v;
+      } catch (e) { /* ignore */ }
+      return "school";
+    }
+
+    function saveTab(tab) {
+      try { localStorage.setItem(TAB_KEY, tab); } catch (e) { /* ignore */ }
+    }
+
+    let currentTab = loadTab();
+    let custodyData = null;
+    let custodyLoadState = "pending"; // pending | ok | error
+
+    function parentLabel(parentId) {
+      const i = t();
+      if (parentId === "alex") return i.parentAlex;
+      if (parentId === "anna-karin") return i.parentAnnaKarin;
+      return parentId || "";
+    }
+
+    function formatRange(startYmd, endYmd) {
+      const i = t();
+      const s = parseYMD(startYmd);
+      const e = parseYMD(endYmd);
+      if (!s || !e) return "";
+      const sameMonth = s.getMonth() === e.getMonth() && s.getFullYear() === e.getFullYear();
+      const left = `${i.weekdays[s.getDay()]} ${s.getDate()} ${i.months[s.getMonth()]}`;
+      const right = sameMonth
+        ? `${i.weekdays[e.getDay()]} ${e.getDate()}`
+        : `${i.weekdays[e.getDay()]} ${e.getDate()} ${i.months[e.getMonth()]}`;
+      if (s.getFullYear() !== e.getFullYear()) {
+        return `${left} ${s.getFullYear()} – ${right} ${e.getFullYear()}`;
+      }
+      return `${left} – ${right}`;
+    }
+
+    function findCurrentBlock(blocks, today) {
+      if (!blocks) return null;
+      return blocks.find((b) => b.start <= today && today <= b.end) || null;
+    }
+
+    function upcomingBlocks(blocks, today, weeksAhead) {
+      if (!blocks) return [];
+      const horizon = addDays(today, weeksAhead * 7);
+      return blocks.filter((b) => b.end >= today && b.start <= horizon);
+    }
+
+    function renderCustody() {
+      const i = t();
+      const banner = document.getElementById("custody-banner");
+      const list = document.getElementById("custody-list");
+      const heading = document.getElementById("custody-upcoming-heading");
+      heading.textContent = i.upcomingCustody;
+
+      if (custodyLoadState === "pending") {
+        banner.className = "custody-banner unknown";
+        banner.innerHTML = `<div class="label">${escapeHtml(i.thisWeekCustody)}</div><div class="who">…</div>`;
+        list.innerHTML = "";
+        return;
+      }
+
+      if (custodyLoadState === "error" || !custodyData) {
+        banner.className = "custody-banner unknown";
+        banner.innerHTML = `<div class="label">${escapeHtml(i.thisWeekCustody)}</div><div class="who">—</div><div class="range">${escapeHtml(i.custodyLoadError)}</div>`;
+        list.innerHTML = `<div class="custody-empty">${escapeHtml(i.custodyLoadError)}</div>`;
+        return;
+      }
+
+      const today = todayStockholm();
+      const current = findCurrentBlock(custodyData.blocks, today);
+      if (current) {
+        banner.className = `custody-banner ${current.parent}`;
+        const name = parentLabel(current.parent);
+        banner.innerHTML = `
+          <div class="label">${escapeHtml(i.thisWeekCustody)}</div>
+          <div class="who">${escapeHtml(i.kidsWith.replace("{name}", name))}</div>
+          <div class="range">${escapeHtml(formatRange(current.start, current.end))} · ${escapeHtml(i.custodyDays.replace("{n}", String(current.days)))}</div>`;
+      } else {
+        banner.className = "custody-banner unknown";
+        banner.innerHTML = `
+          <div class="label">${escapeHtml(i.thisWeekCustody)}</div>
+          <div class="who">—</div>
+          <div class="range">${escapeHtml(i.custodyNone)}</div>`;
+      }
+
+      const upcoming = upcomingBlocks(custodyData.blocks, today, 12);
+      if (!upcoming.length) {
+        list.innerHTML = `<div class="custody-empty">${escapeHtml(i.custodyEmptyUpcoming)}</div>`;
+        return;
+      }
+
+      list.innerHTML = upcoming.map((b) => {
+        const isCurrent = current && b.start === current.start && b.end === current.end && b.parent === current.parent;
+        const name = parentLabel(b.parent);
+        return `
+          <article class="custody-item ${b.parent}${isCurrent ? " current" : ""}">
+            <div>
+              <div class="parent-name">${escapeHtml(name)}</div>
+              <div class="dates">${escapeHtml(formatRange(b.start, b.end))}</div>
+            </div>
+            <span class="days-pill">${escapeHtml(i.custodyDays.replace("{n}", String(b.days)))}</span>
+          </article>`;
+      }).join("");
+    }
+
+    async function loadCustodyFeed() {
+      custodyLoadState = "pending";
+      renderCustody();
+      try {
+        const res = await fetch("feeds/coparenting.json", { cache: "no-store" });
+        if (!res.ok) throw new Error("HTTP " + res.status);
+        custodyData = await res.json();
+        custodyLoadState = "ok";
+      } catch (e) {
+        custodyData = null;
+        custodyLoadState = "error";
+      }
+      renderCustody();
+    }
+
+    function setTab(tab) {
+      if (!VALID_TABS.includes(tab)) tab = "school";
+      currentTab = tab;
+      saveTab(tab);
+      VALID_TABS.forEach((id) => {
+        const panel = document.getElementById("panel-" + id);
+        const btn = document.getElementById("tab-" + id);
+        const active = id === currentTab;
+        if (panel) panel.hidden = !active;
+        if (btn) {
+          btn.classList.toggle("active", active);
+          btn.setAttribute("aria-selected", active ? "true" : "false");
+        }
+      });
+    }
+
     function applyChrome() {
       const i = t();
       document.documentElement.lang = currentLang;
       document.title = i.docTitle;
       document.getElementById("page-heading").textContent = i.pageHeading;
+      document.getElementById("page-sub").textContent = i.pageSub;
+      document.getElementById("school-heading").textContent = i.schoolHeading;
       document.getElementById("filters").setAttribute("aria-label", i.filterAria);
       document.querySelector(".lang-toggle").setAttribute("aria-label", i.langAria);
+      document.getElementById("tab-nav").setAttribute("aria-label", i.tabAria);
+
+      const tabLabels = {
+        school: i.tabSchool,
+        sport: i.tabSport,
+        health: i.tabHealth,
+        keydates: i.tabKeydates
+      };
+      Object.keys(tabLabels).forEach((id) => {
+        const btn = document.getElementById("tab-" + id);
+        if (btn) btn.textContent = tabLabels[id];
+      });
+
+      document.getElementById("sport-title").textContent = i.sportTitle;
+      document.getElementById("sport-body").textContent = i.sportBody;
+      document.getElementById("health-title").textContent = i.healthTitle;
+      document.getElementById("health-body").textContent = i.healthBody;
 
       const chipLabels = {
         all: i.filterAll,
@@ -1037,8 +1468,7 @@
       document.getElementById("lang-sv").classList.toggle("active", currentLang === "sv");
     }
 
-    function render() {
-      applyChrome();
+    function renderSchool() {
       const i = t();
       const data = DASHBOARD_DATA;
       const today = todayStockholm();
@@ -1088,6 +1518,13 @@
       main.innerHTML = html;
     }
 
+    function render() {
+      applyChrome();
+      setTab(currentTab);
+      renderSchool();
+      renderCustody();
+    }
+
     function setLang(lang) {
       if (lang !== "en" && lang !== "sv") return;
       currentLang = lang;
@@ -1100,7 +1537,13 @@
       if (!btn) return;
       currentFilter = btn.dataset.filter;
       document.querySelectorAll(".chip").forEach((c) => c.classList.toggle("active", c === btn));
-      render();
+      renderSchool();
+    });
+
+    document.getElementById("tab-nav").addEventListener("click", (e) => {
+      const btn = e.target.closest(".tab-btn");
+      if (!btn) return;
+      setTab(btn.dataset.tab);
     });
 
     document.querySelector(".lang-toggle").addEventListener("click", (e) => {
@@ -1117,6 +1560,7 @@
     observer.observe(filtersEl);
 
     render();
+    loadCustodyFeed();
   </script>
 </body>
 </html>
