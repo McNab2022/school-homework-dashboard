@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en-SE">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -58,6 +58,14 @@
       margin-bottom: 1.5rem;
     }
 
+    .header-top {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 0.75rem 1rem;
+    }
+
     header h1 {
       font-size: 1.5rem;
       font-weight: 700;
@@ -70,6 +78,40 @@
       font-size: 0.9rem;
       margin-top: 0.25rem;
     }
+
+    .lang-toggle {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      flex-shrink: 0;
+      padding-top: 0.2rem;
+    }
+
+    .lang-toggle button {
+      appearance: none;
+      border: none;
+      background: transparent;
+      font: inherit;
+      font-weight: 600;
+      color: var(--text-muted);
+      cursor: pointer;
+      padding: 0.15rem 0.35rem;
+      border-radius: 4px;
+    }
+
+    .lang-toggle button:hover { color: var(--text); }
+    .lang-toggle button:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 2px;
+    }
+    .lang-toggle button.active {
+      color: var(--accent);
+      background: var(--accent-soft);
+    }
+    .lang-toggle .sep { color: var(--border); user-select: none; }
 
     .kids-row {
       display: flex;
@@ -273,6 +315,19 @@
       border-top: 1px solid var(--border);
     }
 
+    .attach {
+      margin-top: 0.45rem;
+      font-size: 0.85rem;
+    }
+
+    .attach a {
+      color: var(--accent);
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .attach a:hover { text-decoration: underline; }
+
     .empty {
       text-align: center;
       padding: 1.5rem 1rem;
@@ -281,13 +336,6 @@
       background: var(--surface);
       border-radius: var(--radius);
       border: 1px dashed var(--border);
-    }
-
-    footer {
-      margin-top: 2rem;
-      text-align: center;
-      font-size: 0.75rem;
-      color: var(--text-muted);
     }
 
     @media (min-width: 560px) {
@@ -299,8 +347,17 @@
 <body>
   <div class="wrap">
     <header>
-      <h1>Homework &amp; Tests</h1>
-      <p class="sub" id="school-line">Källbrinksskolan</p>
+      <div class="header-top">
+        <div>
+          <h1 id="page-heading">Homework &amp; Tests</h1>
+          <p class="sub" id="school-line">Källbrinksskolan</p>
+        </div>
+        <div class="lang-toggle" role="group" aria-label="Language">
+          <button type="button" id="lang-en" data-lang="en" class="active">English</button>
+          <span class="sep" aria-hidden="true">|</span>
+          <button type="button" id="lang-sv" data-lang="sv">Svenska</button>
+        </div>
+      </div>
       <div class="kids-row" id="kids-row"></div>
       <p class="updated" id="updated-line"></p>
     </header>
@@ -314,10 +371,6 @@
     </div>
 
     <main id="main"></main>
-
-    <footer>
-      Offline parental dashboard · No login · Europe/Stockholm
-    </footer>
   </div>
 
   <script>
@@ -354,7 +407,9 @@
           "title": "Parent info meeting",
           "notes": "Aula then home classrooms. Parent event, not a test.",
           "optional": false,
-          "on_classroom": false
+          "on_classroom": false,
+          "title_sv": "Informationsmöte för vårdnadshavare",
+          "notes_sv": "Aula, sedan hemklassrum. Föräldraevenemang, inte ett prov."
         },
         {
           "id": "el-spanish-vocab",
@@ -366,7 +421,9 @@
           "title": "Spanish vocab quiz (läxförhör)",
           "notes": "Chapter 4 glosses.",
           "optional": false,
-          "on_classroom": false
+          "on_classroom": false,
+          "title_sv": "Spanska läxförhör — glosor",
+          "notes_sv": "Kapitel 4 glosor."
         },
         {
           "id": "el-samhall",
@@ -378,7 +435,9 @@
           "title": "Samhällskunskap test",
           "notes": "Statsskick, politik, ideologi. Prep in Classroom Examinationer (“Att kunna inför testet…”). Also politics group presentation from valstugor interviews. Prompt Ellie to open Google Classroom for this material.",
           "optional": false,
-          "on_classroom": true
+          "on_classroom": true,
+          "title_sv": "Prov i samhällskunskap",
+          "notes_sv": "Statsskick, politik, ideologi. Förberedelse i Classroom Examinationer (“Att kunna inför testet…”). Även politik gruppresentation från valstugor-intervjuer. Påminn Ellie att öppna Google Classroom för det här materialet."
         },
         {
           "id": "ol-fritids-schema",
@@ -390,7 +449,9 @@
           "title": "Register fritids omsorgsschema for höstlov",
           "notes": "Deadline — register care schedule for höstlov week 44 (26–30 Oct). Action for parents.",
           "optional": false,
-          "on_classroom": false
+          "on_classroom": false,
+          "title_sv": "Registrera fritids omsorgsschema för höstlov",
+          "notes_sv": "Deadline — registrera omsorgsschema för höstlov vecka 44 (26–30 okt). Åtgärd för vårdnadshavare."
         },
         {
           "id": "el-kallbrinks-os",
@@ -402,7 +463,9 @@
           "title": "Källbrinks OS",
           "notes": "PE event.",
           "optional": false,
-          "on_classroom": false
+          "on_classroom": false,
+          "title_sv": "Källbrinks OS",
+          "notes_sv": "Idrottsevenemang."
         },
         {
           "id": "el-math-prov-1",
@@ -414,7 +477,9 @@
           "title": "Math Prov del 1 (tal)",
           "notes": "Moment “Tal”. From week-38 letter for 7B–7D: finish chapter 1; round whole numbers & decimals; överslagsräkning; Magma. Pages — Avrunda heltal: stöttande s.39, grundläggande s.22, fördjupande s.46; Avrunda decimaltal: stöttande s.39, grundläggande s.23; Överslagsräkning: stöttande s.40, grundläggande s.24–25, fördjupande s.47–48.",
           "optional": false,
-          "on_classroom": false
+          "on_classroom": false,
+          "title_sv": "Matematik Prov del 1 (tal)",
+          "notes_sv": "Moment “Tal”. Från veckobrev v.38 för 7B–7D: avsluta kapitel 1; avrunda heltal & decimaltal; överslagsräkning; Magma. Sidor — Avrunda heltal: stöttande s.39, grundläggande s.22, fördjupande s.46; Avrunda decimaltal: stöttande s.39, grundläggande s.23; Överslagsräkning: stöttande s.40, grundläggande s.24–25, fördjupande s.47–48."
         },
         {
           "id": "ol-math-test-1",
@@ -426,7 +491,9 @@
           "title": "Math test 1",
           "notes": null,
           "optional": false,
-          "on_classroom": false
+          "on_classroom": false,
+          "title_sv": "Matematikprov 1",
+          "notes_sv": null
         },
         {
           "id": "el-math-prov-2",
@@ -438,7 +505,9 @@
           "title": "Math Prov del 2 (tal)",
           "notes": "Moment “Tal”. From week-38 letter for 7B–7D: finish chapter 1; round whole numbers & decimals; överslagsräkning; Magma. Pages — Avrunda heltal: stöttande s.39, grundläggande s.22, fördjupande s.46; Avrunda decimaltal: stöttande s.39, grundläggande s.23; Överslagsräkning: stöttande s.40, grundläggande s.24–25, fördjupande s.47–48.",
           "optional": false,
-          "on_classroom": false
+          "on_classroom": false,
+          "title_sv": "Matematik Prov del 2 (tal)",
+          "notes_sv": "Moment “Tal”. Från veckobrev v.38 för 7B–7D: avsluta kapitel 1; avrunda heltal & decimaltal; överslagsräkning; Magma. Sidor — Avrunda heltal: stöttande s.39, grundläggande s.22, fördjupande s.46; Avrunda decimaltal: stöttande s.39, grundläggande s.23; Överslagsräkning: stöttande s.40, grundläggande s.24–25, fördjupande s.47–48."
         },
         {
           "id": "ol-no-skogen",
@@ -450,7 +519,9 @@
           "title": "NO checkout/test “Skogen”",
           "notes": "4B+4C.",
           "optional": false,
-          "on_classroom": false
+          "on_classroom": false,
+          "title_sv": "NO avstämning/prov “Skogen”",
+          "notes_sv": "4B+4C."
         },
         {
           "id": "el-english-oral",
@@ -462,7 +533,9 @@
           "title": "English oral group discussion",
           "notes": "UK and travel.",
           "optional": false,
-          "on_classroom": false
+          "on_classroom": false,
+          "title_sv": "Engelska muntlig grupdiskussion",
+          "notes_sv": "Storbritannien och resor."
         },
         {
           "id": "el-swedish-boksamtal",
@@ -474,7 +547,9 @@
           "title": "Swedish boksamtal",
           "notes": "Calendar: bedömningstillfälle — boksamtal. No book/chapters listed in Vklass news or documents. Week 39: ongoing reading + Kartläggaren (no prep sheet).",
           "optional": false,
-          "on_classroom": false
+          "on_classroom": false,
+          "title_sv": "Svenska boksamtal",
+          "notes_sv": "Kalender: bedömningstillfälle — boksamtal. Ingen bok/kapitel angiven i Vklass nyheter eller dokument. Vecka 39: pågående läsning + Kartläggaren (inget förberedelseblad)."
         },
         {
           "id": "ol-utvecklingssamtal",
@@ -486,7 +561,9 @@
           "title": "Utvecklingssamtal",
           "notes": "Book in Vklass.",
           "optional": false,
-          "on_classroom": false
+          "on_classroom": false,
+          "title_sv": "Utvecklingssamtal",
+          "notes_sv": "Boka i Vklass."
         },
         {
           "id": "el-spanish-exam",
@@ -498,7 +575,9 @@
           "title": "Spanish written exam",
           "notes": null,
           "optional": false,
-          "on_classroom": false
+          "on_classroom": false,
+          "title_sv": "Spanska skriftligt prov",
+          "notes_sv": null
         },
         {
           "id": "ol-hostlov",
@@ -511,7 +590,9 @@
           "title": "Höstlov",
           "notes": "Autumn break 26–30 Oct (week 44).",
           "optional": false,
-          "on_classroom": false
+          "on_classroom": false,
+          "title_sv": "Höstlov",
+          "notes_sv": "Höstlov 26–30 okt (vecka 44)."
         },
         {
           "id": "el-no-trelson",
@@ -524,7 +605,9 @@
           "title": "NO Trelson test",
           "notes": "Week 45 — date TBD.",
           "optional": false,
-          "on_classroom": false
+          "on_classroom": false,
+          "title_sv": "NO Trelson-prov",
+          "notes_sv": "Vecka 45 — datum ej fastställt."
         },
         {
           "id": "el-kartlaggaren",
@@ -537,7 +620,9 @@
           "notes": "Swedish diagnostic/activity in week 39 — no topic list in the letter.",
           "optional": false,
           "ongoing": true,
-          "on_classroom": false
+          "on_classroom": false,
+          "title_sv": "Kartläggaren (pågående)",
+          "notes_sv": "Svenska diagnostik/aktivitet i vecka 39 — ingen ämneslista i brevet."
         },
         {
           "id": "el-scratch",
@@ -550,7 +635,9 @@
           "notes": "This week ongoing in TK.",
           "optional": false,
           "ongoing": true,
-          "on_classroom": false
+          "on_classroom": false,
+          "title_sv": "Scratch-programmering (pågående)",
+          "notes_sv": "Pågår denna vecka i TK."
         },
         {
           "id": "ol-math-laxa-1",
@@ -565,7 +652,9 @@
           "on_classroom": false,
           "has_attachment": true,
           "attachment_status": "available",
-          "attachment_url": "attachments/oliver-matte-laxa-1.pdf"
+          "attachment_url": "attachments/oliver-matte-laxa-1.pdf",
+          "title_sv": "Matematikläxa 1",
+          "notes_sv": "Från åk 4 veckobrev v.37. Frivillig — “kan vara ett bra sätt för er där hemma att se vilken typ av uppgifter era barn ska klara av.” Arbetsblad bifogat."
         },
         {
           "id": "ol-math-laxa-2",
@@ -580,7 +669,9 @@
           "on_classroom": false,
           "has_attachment": true,
           "attachment_status": "available",
-          "attachment_url": "attachments/oliver-matte-laxa-2.pdf"
+          "attachment_url": "attachments/oliver-matte-laxa-2.pdf",
+          "title_sv": "Matematikläxa 2",
+          "notes_sv": "Från åk 4 veckobrev v.38. Frivillig — “kan vara ett bra sätt för er där hemma att se vilken typ av uppgifter era barn ska klara av.” Arbetsblad bifogat."
         },
         {
           "id": "ol-math-laxa-3",
@@ -595,7 +686,9 @@
           "on_classroom": false,
           "has_attachment": true,
           "attachment_status": "available",
-          "attachment_url": "attachments/oliver-matte-laxa-3.pdf"
+          "attachment_url": "attachments/oliver-matte-laxa-3.pdf",
+          "title_sv": "Matematikläxa 3",
+          "notes_sv": "Från åk 4 veckobrev v.39 (addition, subtraktion, multiplikation). Frivillig — “kan vara ett bra sätt för er där hemma att se vilken typ av uppgifter era barn ska klara av.” Arbetsblad bifogat."
         },
         {
           "id": "el-hkk-classroom",
@@ -608,21 +701,158 @@
           "notes": "Egen planering, optional work from Google Classroom. Prompt Ellie to open Google Classroom for this material.",
           "optional": true,
           "on_classroom": true,
-          "has_attachment": false
+          "has_attachment": false,
+          "title_sv": "HKK — valfritt från Classroom",
+          "notes_sv": "Egen planering, valfritt arbete från Google Classroom. Påminn Ellie att öppna Google Classroom för det här materialet."
         }
       ]
     };
 
-    const TYPE_LABELS = {
-      test: "Test",
-      homework: "Homework",
-      revision: "Revision",
-      parent_action: "Parent action",
-      event: "Event"
+    const LANG_KEY = "school-dashboard-lang";
+
+    const I18N = {
+      en: {
+        docTitle: "Källbrinksskolan — Homework & Tests",
+        pageHeading: "Homework & Tests",
+        filterAria: "Filter items",
+        filterAll: "All",
+        filterEllie: "Ellie",
+        filterOliver: "Oliver",
+        filterTests: "Tests",
+        filterHomework: "Homework",
+        sectionUpcoming: "Upcoming (next 7 days)",
+        sectionEllie: "Ellie",
+        sectionOliver: "Oliver",
+        sectionParent: "Parent actions",
+        typeTest: "Test",
+        typeHomework: "Homework",
+        typeRevision: "Revision",
+        typeParentAction: "Parent action",
+        typeEvent: "Event",
+        optional: "Optional",
+        classroomPrompt: "Google Classroom — prompt Ellie",
+        worksheet: "Worksheet",
+        attachmentVklass: "Attachment in Vklass",
+        openWorksheet: "Open worksheet (PDF)",
+        lastUpdated: "Last updated",
+        todayLabel: "Today",
+        tomorrowLabel: "Tomorrow",
+        overdueLabel: "Overdue",
+        ongoingLabel: "Ongoing",
+        dateTbd: "Date TBD",
+        thisWeek: "This week",
+        weekTbd: "Week {week} · TBD",
+        empty: "Nothing here for this filter.",
+        fritidsNote: "fritids",
+        todayPrefix: "Today",
+        langAria: "Language",
+        weekdays: ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
+        months: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+      },
+      sv: {
+        docTitle: "Källbrinksskolan — Läxor & Prov",
+        pageHeading: "Läxor & Prov",
+        filterAria: "Filtrera poster",
+        filterAll: "Alla",
+        filterEllie: "Ellie",
+        filterOliver: "Oliver",
+        filterTests: "Prov",
+        filterHomework: "Läxor",
+        sectionUpcoming: "Kommande (nästa 7 dagar)",
+        sectionEllie: "Ellie",
+        sectionOliver: "Oliver",
+        sectionParent: "Åtgärder för vårdnadshavare",
+        typeTest: "Prov",
+        typeHomework: "Läxa",
+        typeRevision: "Repetition",
+        typeParentAction: "Föräldraåtgärd",
+        typeEvent: "Evenemang",
+        optional: "Frivillig",
+        classroomPrompt: "Google Classroom — påminn Ellie",
+        worksheet: "Arbetsblad",
+        attachmentVklass: "Bilaga i Vklass",
+        openWorksheet: "Öppna arbetsblad (PDF)",
+        lastUpdated: "Senast uppdaterad",
+        todayLabel: "Idag",
+        tomorrowLabel: "Imorgon",
+        overdueLabel: "Försenad",
+        ongoingLabel: "Pågående",
+        dateTbd: "Datum ej fastställt",
+        thisWeek: "Denna vecka",
+        weekTbd: "Vecka {week} · ej fastställt",
+        empty: "Inget här för detta filter.",
+        fritidsNote: "fritids",
+        todayPrefix: "Idag",
+        langAria: "Språk",
+        weekdays: ["sön", "mån", "tis", "ons", "tor", "fre", "lör"],
+        months: ["jan", "feb", "mar", "apr", "maj", "jun", "jul", "aug", "sep", "okt", "nov", "dec"]
+      }
     };
 
-    const WEEKDAY_SHORT = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
-    const MONTH_SHORT = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+    const SUBJECT_SV = {
+      Math: "Matematik",
+      Spanish: "Spanska",
+      School: "Skola",
+      English: "Engelska",
+      Swedish: "Svenska",
+      TK: "TK",
+      PE: "Idrott",
+      NO: "NO",
+      "Hem- och konsumentkunskap": "Hem- och konsumentkunskap",
+      Samhällskunskap: "Samhällskunskap",
+      Fritids: "Fritids"
+    };
+
+    function loadLang() {
+      try {
+        const v = localStorage.getItem(LANG_KEY);
+        if (v === "sv" || v === "en") return v;
+      } catch (e) { /* ignore */ }
+      return "en";
+    }
+
+    function saveLang(lang) {
+      try { localStorage.setItem(LANG_KEY, lang); } catch (e) { /* ignore */ }
+    }
+
+    let currentLang = loadLang();
+    let currentFilter = "all";
+
+    function t() {
+      return I18N[currentLang] || I18N.en;
+    }
+
+    function typeLabel(type) {
+      const map = {
+        test: "typeTest",
+        homework: "typeHomework",
+        revision: "typeRevision",
+        parent_action: "typeParentAction",
+        event: "typeEvent"
+      };
+      const key = map[type];
+      return key ? t()[key] : type;
+    }
+
+    function itemTitle(item) {
+      if (currentLang === "sv" && item.title_sv) return item.title_sv;
+      return item.title;
+    }
+
+    function itemNotes(item) {
+      if (currentLang === "sv") {
+        if (item.notes_sv != null) return item.notes_sv;
+        if (item.notes == null) return null;
+      }
+      return item.notes;
+    }
+
+    function itemSubject(item) {
+      if (currentLang === "sv") {
+        return SUBJECT_SV[item.subject] || item.subject;
+      }
+      return item.subject;
+    }
 
     /** Today in Europe/Stockholm as YYYY-MM-DD */
     function todayStockholm() {
@@ -655,16 +885,17 @@
     }
 
     function formatDateLabel(item) {
-      if (item.ongoing) return "This week";
+      const i = t();
+      if (item.ongoing) return i.thisWeek;
       if (!item.date) {
-        if (item.week) return `Week ${item.week} · TBD`;
-        return "Date TBD";
+        if (item.week) return i.weekTbd.replace("{week}", item.week);
+        return i.dateTbd;
       }
       const d = parseYMD(item.date);
-      const base = `${WEEKDAY_SHORT[d.getDay()]} ${d.getDate()} ${MONTH_SHORT[d.getMonth()]}`;
+      const base = `${i.weekdays[d.getDay()]} ${d.getDate()} ${i.months[d.getMonth()]}`;
       if (item.endDate) {
         const e = parseYMD(item.endDate);
-        return `${base} – ${e.getDate()} ${MONTH_SHORT[e.getMonth()]}`;
+        return `${base} – ${e.getDate()} ${i.months[e.getMonth()]}`;
       }
       if (item.time) return `${base} · ${item.time}`;
       return base;
@@ -674,9 +905,8 @@
       if (item.ongoing) return "ongoing";
       if (!item.date) return null;
       if (item.date < today && !item.endDate) {
-        // Events/parent actions in the past (single day) are overdue if actionable
         if (item.type === "event" && item.endDate) return null;
-        if (item.type === "event") return null; // past one-day events: don't mark overdue
+        if (item.type === "event") return null;
         return "overdue";
       }
       if (item.endDate && item.date <= today && item.endDate >= today) return "today";
@@ -686,8 +916,16 @@
       return null;
     }
 
+    function urgencyLabel(u) {
+      const i = t();
+      if (u === "ongoing") return i.ongoingLabel;
+      if (u === "today") return i.todayLabel;
+      if (u === "tomorrow") return i.tomorrowLabel;
+      if (u === "overdue") return i.overdueLabel;
+      return u;
+    }
+
     function sortKey(item) {
-      // Dated first (ascending), then week-based, then TBD optional last
       if (item.date) return "0-" + item.date + "-" + (item.time || "99:99");
       if (item.week) return "1-week-" + String(item.week).padStart(2, "0");
       return "2-tbd-" + item.title;
@@ -717,27 +955,29 @@
     }
 
     function renderCard(item, kids, today) {
+      const i = t();
       const u = urgency(item, today);
       const childFirst = kidName(item.child, kids);
       const typeClass = item.type;
       const urgencyClass = u ? `urgency-${u}` : "";
       const urgencyHtml = u
-        ? `<span class="urgency-tag ${u}">${u === "ongoing" ? "Ongoing" : u.charAt(0).toUpperCase() + u.slice(1)}</span>`
+        ? `<span class="urgency-tag ${u}">${escapeHtml(urgencyLabel(u))}</span>`
         : "";
       const optionalHtml = item.optional
-        ? `<span class="badge badge-optional">Optional</span>`
+        ? `<span class="optional-flag">${escapeHtml(i.optional)}</span>`
         : "";
       const classroomHtml = item.on_classroom
-        ? `<span class="badge badge-classroom">Google Classroom — prompt Ellie</span>`
+        ? `<span class="badge badge-classroom">${escapeHtml(i.classroomPrompt)}</span>`
         : "";
       const attachmentHtml = item.has_attachment
-        ? `<span class="badge badge-attachment">${item.attachment_status === "pending_vklass" ? "Attachment in Vklass" : "Worksheet"}</span>`
+        ? `<span class="badge badge-attachment">${escapeHtml(item.attachment_status === "pending_vklass" ? i.attachmentVklass : i.worksheet)}</span>`
         : "";
       const attachmentLinkHtml = item.attachment_url
-        ? `<p class="attach"><a href="${item.attachment_url}" target="_blank" rel="noopener">Open worksheet (PDF)</a></p>`
+        ? `<p class="attach"><a href="${escapeHtml(item.attachment_url)}" target="_blank" rel="noopener">${escapeHtml(i.openWorksheet)}</a></p>`
         : "";
-      const notesHtml = item.notes
-        ? `<p class="card-notes">${escapeHtml(item.notes)}</p>`
+      const notes = itemNotes(item);
+      const notesHtml = notes
+        ? `<p class="card-notes">${escapeHtml(notes)}</p>`
         : "";
 
       return `
@@ -745,26 +985,27 @@
           <div class="card-top">
             <span class="date-label">${escapeHtml(formatDateLabel(item))}</span>
             ${urgencyHtml}
-            <span class="badge ${typeClass}">${TYPE_LABELS[item.type] || item.type}</span>
+            <span class="badge ${typeClass}">${escapeHtml(typeLabel(item.type))}</span>
             ${optionalHtml}${classroomHtml}${attachmentHtml}
             <span class="child-tag ${item.child}">${escapeHtml(childFirst)}</span>
           </div>
-          <h3 class="card-title">${escapeHtml(item.title)}</h3>
-          <p class="card-meta">${escapeHtml(item.subject)}</p>
+          <h3 class="card-title">${escapeHtml(itemTitle(item))}</h3>
+          <p class="card-meta">${escapeHtml(itemSubject(item))}</p>
           ${notesHtml}${attachmentLinkHtml}
         </article>
       `;
     }
 
     function sectionHtml(title, items, kids, today) {
+      const i = t();
       if (!items.length) {
         return `
           <section>
             <h2>${escapeHtml(title)} <span class="count">0</span></h2>
-            <div class="empty">Nothing here for this filter.</div>
+            <div class="empty">${escapeHtml(i.empty)}</div>
           </section>`;
       }
-      const cards = items.map((i) => renderCard(i, kids, today)).join("");
+      const cards = items.map((it) => renderCard(it, kids, today)).join("");
       return `
         <section>
           <h2>${escapeHtml(title)} <span class="count">${items.length}</span></h2>
@@ -772,58 +1013,88 @@
         </section>`;
     }
 
-    let currentFilter = "all";
+    function applyChrome() {
+      const i = t();
+      document.documentElement.lang = currentLang;
+      document.title = i.docTitle;
+      document.getElementById("page-heading").textContent = i.pageHeading;
+      document.getElementById("filters").setAttribute("aria-label", i.filterAria);
+      document.querySelector(".lang-toggle").setAttribute("aria-label", i.langAria);
+
+      const chipLabels = {
+        all: i.filterAll,
+        eleanor: i.filterEllie,
+        oliver: i.filterOliver,
+        tests: i.filterTests,
+        homework: i.filterHomework
+      };
+      document.querySelectorAll(".chip").forEach((c) => {
+        const label = chipLabels[c.dataset.filter];
+        if (label) c.textContent = label;
+      });
+
+      document.getElementById("lang-en").classList.toggle("active", currentLang === "en");
+      document.getElementById("lang-sv").classList.toggle("active", currentLang === "sv");
+    }
 
     function render() {
+      applyChrome();
+      const i = t();
       const data = DASHBOARD_DATA;
       const today = todayStockholm();
       const kids = data.kids;
       const items = [...data.items].sort((a, b) => sortKey(a).localeCompare(sortKey(b)));
-      const filtered = items.filter((i) => matchesFilter(i, currentFilter));
+      const filtered = items.filter((it) => matchesFilter(it, currentFilter));
 
-      // Header
       document.getElementById("school-line").textContent = data.school;
       document.getElementById("kids-row").innerHTML = kids.map((k) => {
-        const extra = k.notes ? ` · ${k.notes}` : "";
+        let extra = "";
+        if (k.notes) {
+          const note = k.notes === "fritids" ? i.fritidsNote : k.notes;
+          extra = ` · ${note}`;
+        }
         return `<span class="kid-pill ${k.id}">${escapeHtml(k.name)} · ${escapeHtml(k.class)}${escapeHtml(extra)}</span>`;
       }).join("");
 
       const updatedDate = parseYMD(data.updated);
       const updatedLabel = updatedDate
-        ? `${updatedDate.getDate()} ${MONTH_SHORT[updatedDate.getMonth()]} ${updatedDate.getFullYear()}`
+        ? `${updatedDate.getDate()} ${i.months[updatedDate.getMonth()]} ${updatedDate.getFullYear()}`
         : data.updated;
       document.getElementById("updated-line").textContent =
-        `Last updated: ${updatedLabel} · Europe/Stockholm · Today: ${formatDateLabel({ date: today })}`;
+        `${i.lastUpdated}: ${updatedLabel} · Europe/Stockholm · ${i.todayPrefix}: ${formatDateLabel({ date: today })}`;
 
-      // Buckets
       const end7 = addDays(today, 7);
-      const upcoming = filtered.filter((i) => {
-        if (i.ongoing) return true;
-        if (!i.date) return false;
-        if (i.endDate) return i.date <= end7 && i.endDate >= today;
-        return i.date >= today && i.date <= end7;
+      const upcoming = filtered.filter((it) => {
+        if (it.ongoing) return true;
+        if (!it.date) return false;
+        if (it.endDate) return it.date <= end7 && it.endDate >= today;
+        return it.date >= today && it.date <= end7;
       });
 
-      const eleanor = filtered.filter((i) => i.child === "eleanor");
-      const oliver = filtered.filter((i) => i.child === "oliver");
-      const parentActions = filtered.filter((i) => i.type === "parent_action");
+      const eleanor = filtered.filter((it) => it.child === "eleanor");
+      const oliver = filtered.filter((it) => it.child === "oliver");
+      const parentActions = filtered.filter((it) => it.type === "parent_action");
 
-      // Avoid duplicating: show full kid sections always (when filter allows),
-      // Upcoming = next 7 days snapshot, Parent actions = actionable list
       const main = document.getElementById("main");
       let html = "";
-      html += sectionHtml("Upcoming (next 7 days)", upcoming, kids, today);
+      html += sectionHtml(i.sectionUpcoming, upcoming, kids, today);
       if (currentFilter !== "oliver") {
-        html += sectionHtml("Ellie", eleanor, kids, today);
+        html += sectionHtml(i.sectionEllie, eleanor, kids, today);
       }
       if (currentFilter !== "eleanor") {
-        html += sectionHtml("Oliver", oliver, kids, today);
+        html += sectionHtml(i.sectionOliver, oliver, kids, today);
       }
-      html += sectionHtml("Parent actions", parentActions, kids, today);
+      html += sectionHtml(i.sectionParent, parentActions, kids, today);
       main.innerHTML = html;
     }
 
-    // Filters
+    function setLang(lang) {
+      if (lang !== "en" && lang !== "sv") return;
+      currentLang = lang;
+      saveLang(lang);
+      render();
+    }
+
     document.getElementById("filters").addEventListener("click", (e) => {
       const btn = e.target.closest(".chip");
       if (!btn) return;
@@ -832,7 +1103,12 @@
       render();
     });
 
-    // Sticky filter bar shadow
+    document.querySelector(".lang-toggle").addEventListener("click", (e) => {
+      const btn = e.target.closest("button[data-lang]");
+      if (!btn) return;
+      setLang(btn.dataset.lang);
+    });
+
     const filtersEl = document.getElementById("filters");
     const observer = new IntersectionObserver(
       ([entry]) => filtersEl.classList.toggle("is-stuck", entry.intersectionRatio < 1),

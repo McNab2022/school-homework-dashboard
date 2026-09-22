@@ -29,7 +29,9 @@
       "title": "Parent info meeting",
       "notes": "Aula then home classrooms. Parent event, not a test.",
       "optional": false,
-      "on_classroom": false
+      "on_classroom": false,
+      "title_sv": "Informationsmöte för vårdnadshavare",
+      "notes_sv": "Aula, sedan hemklassrum. Föräldraevenemang, inte ett prov."
     },
     {
       "id": "el-spanish-vocab",
@@ -41,7 +43,9 @@
       "title": "Spanish vocab quiz (läxförhör)",
       "notes": "Chapter 4 glosses.",
       "optional": false,
-      "on_classroom": false
+      "on_classroom": false,
+      "title_sv": "Spanska läxförhör — glosor",
+      "notes_sv": "Kapitel 4 glosor."
     },
     {
       "id": "el-samhall",
@@ -53,7 +57,9 @@
       "title": "Samhällskunskap test",
       "notes": "Statsskick, politik, ideologi. Prep in Classroom Examinationer (“Att kunna inför testet…”). Also politics group presentation from valstugor interviews. Prompt Ellie to open Google Classroom for this material.",
       "optional": false,
-      "on_classroom": true
+      "on_classroom": true,
+      "title_sv": "Prov i samhällskunskap",
+      "notes_sv": "Statsskick, politik, ideologi. Förberedelse i Classroom Examinationer (“Att kunna inför testet…”). Även politik gruppresentation från valstugor-intervjuer. Påminn Ellie att öppna Google Classroom för det här materialet."
     },
     {
       "id": "ol-fritids-schema",
@@ -65,7 +71,9 @@
       "title": "Register fritids omsorgsschema for höstlov",
       "notes": "Deadline — register care schedule for höstlov week 44 (26–30 Oct). Action for parents.",
       "optional": false,
-      "on_classroom": false
+      "on_classroom": false,
+      "title_sv": "Registrera fritids omsorgsschema för höstlov",
+      "notes_sv": "Deadline — registrera omsorgsschema för höstlov vecka 44 (26–30 okt). Åtgärd för vårdnadshavare."
     },
     {
       "id": "el-kallbrinks-os",
@@ -77,7 +85,9 @@
       "title": "Källbrinks OS",
       "notes": "PE event.",
       "optional": false,
-      "on_classroom": false
+      "on_classroom": false,
+      "title_sv": "Källbrinks OS",
+      "notes_sv": "Idrottsevenemang."
     },
     {
       "id": "el-math-prov-1",
@@ -89,7 +99,9 @@
       "title": "Math Prov del 1 (tal)",
       "notes": "Moment “Tal”. From week-38 letter for 7B–7D: finish chapter 1; round whole numbers & decimals; överslagsräkning; Magma. Pages — Avrunda heltal: stöttande s.39, grundläggande s.22, fördjupande s.46; Avrunda decimaltal: stöttande s.39, grundläggande s.23; Överslagsräkning: stöttande s.40, grundläggande s.24–25, fördjupande s.47–48.",
       "optional": false,
-      "on_classroom": false
+      "on_classroom": false,
+      "title_sv": "Matematik Prov del 1 (tal)",
+      "notes_sv": "Moment “Tal”. Från veckobrev v.38 för 7B–7D: avsluta kapitel 1; avrunda heltal & decimaltal; överslagsräkning; Magma. Sidor — Avrunda heltal: stöttande s.39, grundläggande s.22, fördjupande s.46; Avrunda decimaltal: stöttande s.39, grundläggande s.23; Överslagsräkning: stöttande s.40, grundläggande s.24–25, fördjupande s.47–48."
     },
     {
       "id": "ol-math-test-1",
@@ -101,7 +113,9 @@
       "title": "Math test 1",
       "notes": null,
       "optional": false,
-      "on_classroom": false
+      "on_classroom": false,
+      "title_sv": "Matematikprov 1",
+      "notes_sv": null
     },
     {
       "id": "el-math-prov-2",
@@ -113,7 +127,9 @@
       "title": "Math Prov del 2 (tal)",
       "notes": "Moment “Tal”. From week-38 letter for 7B–7D: finish chapter 1; round whole numbers & decimals; överslagsräkning; Magma. Pages — Avrunda heltal: stöttande s.39, grundläggande s.22, fördjupande s.46; Avrunda decimaltal: stöttande s.39, grundläggande s.23; Överslagsräkning: stöttande s.40, grundläggande s.24–25, fördjupande s.47–48.",
       "optional": false,
-      "on_classroom": false
+      "on_classroom": false,
+      "title_sv": "Matematik Prov del 2 (tal)",
+      "notes_sv": "Moment “Tal”. Från veckobrev v.38 för 7B–7D: avsluta kapitel 1; avrunda heltal & decimaltal; överslagsräkning; Magma. Sidor — Avrunda heltal: stöttande s.39, grundläggande s.22, fördjupande s.46; Avrunda decimaltal: stöttande s.39, grundläggande s.23; Överslagsräkning: stöttande s.40, grundläggande s.24–25, fördjupande s.47–48."
     },
     {
       "id": "ol-no-skogen",
@@ -125,7 +141,9 @@
       "title": "NO checkout/test “Skogen”",
       "notes": "4B+4C.",
       "optional": false,
-      "on_classroom": false
+      "on_classroom": false,
+      "title_sv": "NO avstämning/prov “Skogen”",
+      "notes_sv": "4B+4C."
     },
     {
       "id": "el-english-oral",
@@ -137,7 +155,9 @@
       "title": "English oral group discussion",
       "notes": "UK and travel.",
       "optional": false,
-      "on_classroom": false
+      "on_classroom": false,
+      "title_sv": "Engelska muntlig grupdiskussion",
+      "notes_sv": "Storbritannien och resor."
     },
     {
       "id": "el-swedish-boksamtal",
@@ -149,7 +169,9 @@
       "title": "Swedish boksamtal",
       "notes": "Calendar: bedömningstillfälle — boksamtal. No book/chapters listed in Vklass news or documents. Week 39: ongoing reading + Kartläggaren (no prep sheet).",
       "optional": false,
-      "on_classroom": false
+      "on_classroom": false,
+      "title_sv": "Svenska boksamtal",
+      "notes_sv": "Kalender: bedömningstillfälle — boksamtal. Ingen bok/kapitel angiven i Vklass nyheter eller dokument. Vecka 39: pågående läsning + Kartläggaren (inget förberedelseblad)."
     },
     {
       "id": "ol-utvecklingssamtal",
@@ -161,7 +183,9 @@
       "title": "Utvecklingssamtal",
       "notes": "Book in Vklass.",
       "optional": false,
-      "on_classroom": false
+      "on_classroom": false,
+      "title_sv": "Utvecklingssamtal",
+      "notes_sv": "Boka i Vklass."
     },
     {
       "id": "el-spanish-exam",
@@ -173,7 +197,9 @@
       "title": "Spanish written exam",
       "notes": null,
       "optional": false,
-      "on_classroom": false
+      "on_classroom": false,
+      "title_sv": "Spanska skriftligt prov",
+      "notes_sv": null
     },
     {
       "id": "ol-hostlov",
@@ -186,7 +212,9 @@
       "title": "Höstlov",
       "notes": "Autumn break 26–30 Oct (week 44).",
       "optional": false,
-      "on_classroom": false
+      "on_classroom": false,
+      "title_sv": "Höstlov",
+      "notes_sv": "Höstlov 26–30 okt (vecka 44)."
     },
     {
       "id": "el-no-trelson",
@@ -199,7 +227,9 @@
       "title": "NO Trelson test",
       "notes": "Week 45 — date TBD.",
       "optional": false,
-      "on_classroom": false
+      "on_classroom": false,
+      "title_sv": "NO Trelson-prov",
+      "notes_sv": "Vecka 45 — datum ej fastställt."
     },
     {
       "id": "el-kartlaggaren",
@@ -212,7 +242,9 @@
       "notes": "Swedish diagnostic/activity in week 39 — no topic list in the letter.",
       "optional": false,
       "ongoing": true,
-      "on_classroom": false
+      "on_classroom": false,
+      "title_sv": "Kartläggaren (pågående)",
+      "notes_sv": "Svenska diagnostik/aktivitet i vecka 39 — ingen ämneslista i brevet."
     },
     {
       "id": "el-scratch",
@@ -225,7 +257,9 @@
       "notes": "This week ongoing in TK.",
       "optional": false,
       "ongoing": true,
-      "on_classroom": false
+      "on_classroom": false,
+      "title_sv": "Scratch-programmering (pågående)",
+      "notes_sv": "Pågår denna vecka i TK."
     },
     {
       "id": "ol-math-laxa-1",
@@ -240,7 +274,9 @@
       "on_classroom": false,
       "has_attachment": true,
       "attachment_status": "available",
-      "attachment_url": "attachments/oliver-matte-laxa-1.pdf"
+      "attachment_url": "attachments/oliver-matte-laxa-1.pdf",
+      "title_sv": "Matematikläxa 1",
+      "notes_sv": "Från åk 4 veckobrev v.37. Frivillig — “kan vara ett bra sätt för er där hemma att se vilken typ av uppgifter era barn ska klara av.” Arbetsblad bifogat."
     },
     {
       "id": "ol-math-laxa-2",
@@ -255,7 +291,9 @@
       "on_classroom": false,
       "has_attachment": true,
       "attachment_status": "available",
-      "attachment_url": "attachments/oliver-matte-laxa-2.pdf"
+      "attachment_url": "attachments/oliver-matte-laxa-2.pdf",
+      "title_sv": "Matematikläxa 2",
+      "notes_sv": "Från åk 4 veckobrev v.38. Frivillig — “kan vara ett bra sätt för er där hemma att se vilken typ av uppgifter era barn ska klara av.” Arbetsblad bifogat."
     },
     {
       "id": "ol-math-laxa-3",
@@ -270,7 +308,9 @@
       "on_classroom": false,
       "has_attachment": true,
       "attachment_status": "available",
-      "attachment_url": "attachments/oliver-matte-laxa-3.pdf"
+      "attachment_url": "attachments/oliver-matte-laxa-3.pdf",
+      "title_sv": "Matematikläxa 3",
+      "notes_sv": "Från åk 4 veckobrev v.39 (addition, subtraktion, multiplikation). Frivillig — “kan vara ett bra sätt för er där hemma att se vilken typ av uppgifter era barn ska klara av.” Arbetsblad bifogat."
     },
     {
       "id": "el-hkk-classroom",
@@ -283,7 +323,9 @@
       "notes": "Egen planering, optional work from Google Classroom. Prompt Ellie to open Google Classroom for this material.",
       "optional": true,
       "on_classroom": true,
-      "has_attachment": false
+      "has_attachment": false,
+      "title_sv": "HKK — valfritt från Classroom",
+      "notes_sv": "Egen planering, valfritt arbete från Google Classroom. Påminn Ellie att öppna Google Classroom för det här materialet."
     }
   ]
 }
