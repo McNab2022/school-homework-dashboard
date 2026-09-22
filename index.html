@@ -809,7 +809,7 @@
       </section>
       <section class="sport-section" aria-labelledby="drums-heading">
         <h2 id="drums-heading">Drums</h2>
-        <div id="drums-body" class="sport-placeholder-card"></div>
+        <div id="drums-body" class="sport-list" aria-live="polite"></div>
       </section>
     </div>
 
@@ -1187,8 +1187,13 @@
         sportTitle: "Sport & Hobbies",
         footballHeading: "Football (Ollie)",
         sportMessagesHeading: "Messages / Info",
-        drumsHeading: "Drums",
+        drumsHeading: "Drums (Ollie)",
         drumsComingSoon: "Coming soon",
+        drumsLoadError: "Could not load drums info.",
+        drumsTeacher: "Teacher",
+        drumsSchedule: "Schedule",
+        drumsLocation: "Location",
+        drumsCourseStart: "Course start",
         kindMatch: "Match",
         kindTraining: "Training",
         kindOther: "Other",
@@ -1268,8 +1273,13 @@
         sportTitle: "Sport & hobbies",
         footballHeading: "Fotboll (Ollie)",
         sportMessagesHeading: "Meddelanden / Info",
-        drumsHeading: "Trummor",
+        drumsHeading: "Trummor (Ollie)",
         drumsComingSoon: "Kommer snart",
+        drumsLoadError: "Kunde inte ladda truminfo.",
+        drumsTeacher: "Lärare",
+        drumsSchedule: "Schema",
+        drumsLocation: "Plats",
+        drumsCourseStart: "Kursstart",
         kindMatch: "Match",
         kindTraining: "Träning",
         kindOther: "Övrigt",
@@ -1586,6 +1596,8 @@
     let sportEventsLoadState = "pending";
     let sportMessagesData = null;
     let sportMessagesLoadState = "pending"; // pending | ok | error
+    let drumsData = null;
+    let drumsLoadState = "pending"; // pending | ok | error
     let healthData = null;
     let healthLoadState = "pending"; // pending | ok | error
 
@@ -2056,6 +2068,52 @@
       }).join("");
     }
 
+
+    function renderDrums() {
+      const i = t();
+      const el = document.getElementById("drums-body");
+      if (!el) return;
+      if (drumsLoadState === "pending") {
+        el.innerHTML = "";
+        return;
+      }
+      if (drumsLoadState === "error" || !drumsData) {
+        el.innerHTML = `<div class="custody-empty">${escapeHtml(i.drumsLoadError)}</div>`;
+        return;
+      }
+      const d = drumsData;
+      const dayLabel = currentLang === "sv" ? (d.day_sv || d.day) : d.day;
+      const schedule = `${dayLabel} ${d.time_start}–${d.time_end}`;
+      const teacherBits = [d.teacher, d.teacher_email, d.teacher_phone].filter(Boolean).join(" · ");
+      const title = currentLang === "sv" ? "Trummor / slagverk" : "Drums / percussion";
+      el.innerHTML = `<article class="sport-item kind-other">
+          <div class="sport-when">${escapeHtml(schedule)}</div>
+          <div class="sport-summary">${escapeHtml(title)}</div>
+          <div class="sport-location">${escapeHtml(d.location || "")}${d.room ? " · " + escapeHtml(d.room) : ""}</div>
+          <div class="sport-location">${escapeHtml(i.drumsCourseStart)}: ${escapeHtml(d.course_start || "")}</div>
+          ${teacherBits ? `<div class="sport-location">${escapeHtml(i.drumsTeacher)}: ${escapeHtml(teacherBits)}</div>` : ""}
+          <div class="sport-badges">
+            <span class="who-badge ollie">${escapeHtml(d.who || "Ollie")}</span>
+            ${d.course ? `<span class="kind-badge other">${escapeHtml(d.course)}</span>` : ""}
+          </div>
+        </article>`;
+    }
+
+    async function loadDrumsFeed() {
+      drumsLoadState = "pending";
+      renderDrums();
+      try {
+        const res = await fetch("feeds/drums.json", { cache: "no-store" });
+        if (!res.ok) throw new Error("HTTP " + res.status);
+        drumsData = await res.json();
+        drumsLoadState = "ok";
+      } catch (e) {
+        drumsData = null;
+        drumsLoadState = "error";
+      }
+      renderDrums();
+    }
+
     async function loadOtherDatesFeed() {
       otherDatesLoadState = "pending";
       renderOtherDates();
@@ -2127,7 +2185,7 @@
       document.getElementById("football-heading").textContent = i.footballHeading;
       document.getElementById("sport-messages-heading").textContent = i.sportMessagesHeading;
       document.getElementById("drums-heading").textContent = i.drumsHeading;
-      document.getElementById("drums-body").textContent = i.drumsComingSoon;
+      renderDrums();
       document.getElementById("health-title").textContent = i.healthTitle;
       const otherHeading = document.getElementById("other-dates-heading");
       if (otherHeading) otherHeading.textContent = i.otherImportantDates;
@@ -2253,6 +2311,7 @@
     loadCustodyFeed();
     loadOtherDatesFeed();
     loadSportFeeds();
+    loadDrumsFeed();
     loadHealthFeed();
   </script>
 </body>
