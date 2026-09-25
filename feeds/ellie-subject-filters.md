@@ -64,6 +64,10 @@ For every known Ellie test, add a **Test revision** homework item referencing th
 - Only use topics from the letter or the existing test item — do not invent topics. If the test date is unconfirmed, say so (e.g. `Test revision: NO (date TBC)`).
 - When a test moves or is removed, update or remove its revision item too.
 
+## Completed tests (standing rule)
+
+Past tests that Alex reports on get marked completed, not removed: set `status: "completed"`, `completed_date`, `feedback` + `feedback_sv` (what Alex reported), and `result` (`null` until the result is known, then fill it in). The dashboard shows these with a ✓ Completed / Genomfört badge, muted styling and the feedback line. Refreshes must **not** remove or overwrite completed items (keep their feedback/result), and they need no Test revision item.
+
 ## Refresh checklist
 
 1. Identify subject (Spanish / Maths / English / other).
@@ -71,8 +75,9 @@ For every known Ellie test, add a **Test revision** homework item referencing th
 3. If teacher/group is unclear and the item was already on Ellie’s list from a prior correct parse, **keep** it and tag with the correct `teacher` / `group`.
 4. Remove an existing Ellie item only if notes clearly attribute it to a different teacher/group that fails these filters.
 5. Do **not** invent new homework/tests (Test revision items for known tests are required, see above). Do **not** change Ollie items.
-6. Make sure every Ellie test has a matching `el-rev-` Test revision homework item.
-7. Keep `data.json` and the embedded school data in `index.html` in sync (app embeds data for `file://`).
+6. Make sure every Ellie test has a matching `el-rev-` Test revision homework item (upcoming tests only).
+7. Never remove items with `status: "completed"`; keep their `feedback`, `feedback_sv` and `result`.
+8. Keep `data.json` and the embedded school data in `index.html` in sync (app embeds data for `file://`).
 
 ## Related
 

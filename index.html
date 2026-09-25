@@ -229,6 +229,8 @@
     .card.urgency-tomorrow { border-left-color: var(--tomorrow); }
     .card.type-test { /* keep urgency override */ }
     .card.type-parent_action { border-left-color: var(--parent); }
+    .card.status-completed { border-left-color: #a0aec0; background: #f7fafc; opacity: 0.85; }
+    .card.status-completed .card-title { color: var(--text-muted); }
 
     .card-top {
       display: flex;
@@ -273,6 +275,8 @@
     .badge.revision { background: var(--revision-bg); color: var(--revision); }
     .badge.parent_action { background: var(--parent-bg); color: var(--parent); }
     .badge.event { background: var(--event-bg); color: var(--event); }
+    .badge.status-completed { background: #c6f6d5; color: #276749; }
+    .card-feedback { font-size: 0.85rem; margin-top: 0.45rem; color: #276749; }
 
     .optional-flag {
       font-size: 0.68rem;
@@ -962,7 +966,12 @@
       "optional": false,
       "on_classroom": true,
       "title_sv": "Prov i samhällskunskap",
-      "notes_sv": "Statsskick, politik, ideologi. Förberedelse i Classroom Examinationer (“Att kunna inför testet…”). Även politik gruppresentation från valstugor-intervjuer. Påminn Ellie att öppna Google Classroom för det här materialet."
+      "notes_sv": "Statsskick, politik, ideologi. Förberedelse i Classroom Examinationer (“Att kunna inför testet…”). Även politik gruppresentation från valstugor-intervjuer. Påminn Ellie att öppna Google Classroom för det här materialet.",
+      "status": "completed",
+      "completed_date": "2026-09-24",
+      "feedback": "Ellie felt it was \"not too bad\" and feels confident. Results TBC.",
+      "feedback_sv": "Ellie tyckte att det gick \"inte så dåligt\" och känner sig trygg. Resultat kommer senare.",
+      "result": null
     },
     {
       "id": "ol-fritids-schema",
@@ -1475,6 +1484,9 @@
         todayLabel: "Today",
         tomorrowLabel: "Tomorrow",
         overdueLabel: "Overdue",
+        completedLabel: "Completed",
+        feedbackLabel: "Feedback",
+        resultLabel: "Result",
         ongoingLabel: "Ongoing",
         dateTbd: "Date TBD",
         thisWeek: "This week",
@@ -1568,6 +1580,9 @@
         todayLabel: "Idag",
         tomorrowLabel: "Imorgon",
         overdueLabel: "Försenad",
+        completedLabel: "Genomfört",
+        feedbackLabel: "Återkoppling",
+        resultLabel: "Resultat",
         ongoingLabel: "Pågående",
         dateTbd: "Datum ej fastställt",
         thisWeek: "Denna vecka",
@@ -1693,7 +1708,12 @@
       return base;
     }
 
+    function isCompleted(item) {
+      return item.status === "completed";
+    }
+
     function urgency(item, today) {
+      if (isCompleted(item)) return null;
       if (item.ongoing) return "ongoing";
       if (!item.date) return null;
       if (item.date < today && !item.endDate) {
@@ -1758,7 +1778,18 @@
       const optionalHtml = item.optional
         ? `<span class="optional-flag">${escapeHtml(i.optional)}</span>`
         : "";
-      const classroomHtml = item.on_classroom
+      const completed = isCompleted(item);
+      const statusHtml = completed
+        ? `<span class="badge status-completed">✓ ${escapeHtml(i.completedLabel)}</span>`
+        : "";
+      const feedback = currentLang === "sv" && item.feedback_sv != null ? item.feedback_sv : item.feedback;
+      const resultText = item.result != null && item.result !== ""
+        ? `${i.resultLabel}: ${item.result}`
+        : "";
+      const feedbackHtml = completed && (feedback || resultText)
+        ? `<p class="card-feedback">${feedback ? `<strong>${escapeHtml(i.feedbackLabel)}:</strong> ${escapeHtml(feedback)} ` : ""}${resultText ? `<em>${escapeHtml(resultText)}</em>` : ""}</p>`
+        : "";
+      const classroomHtml = item.on_classroom && !completed
         ? `<span class="badge badge-classroom">${escapeHtml(i.classroomPrompt)}</span>`
         : "";
       const attachmentHtml = item.has_attachment
@@ -1773,17 +1804,17 @@
         : "";
 
       return `
-        <article class="card type-${typeClass} ${urgencyClass}" data-child="${item.child}" data-type="${item.type}">
+        <article class="card type-${typeClass} ${urgencyClass}${completed ? " status-completed" : ""}" data-child="${item.child}" data-type="${item.type}">
           <div class="card-top">
             <span class="date-label">${escapeHtml(formatDateLabel(item))}</span>
             ${urgencyHtml}
             <span class="badge ${typeClass}">${escapeHtml(typeLabel(item.type))}</span>
-            ${optionalHtml}${classroomHtml}${attachmentHtml}
+            ${statusHtml}${optionalHtml}${classroomHtml}${attachmentHtml}
             <span class="child-tag ${item.child}">${escapeHtml(childFirst)}</span>
           </div>
           <h3 class="card-title">${escapeHtml(itemTitle(item))}</h3>
           <p class="card-meta">${escapeHtml(itemSubject(item))}</p>
-          ${notesHtml}${attachmentLinkHtml}
+          ${feedbackHtml}${notesHtml}${attachmentLinkHtml}
         </article>
       `;
     }

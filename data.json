@@ -45,7 +45,12 @@
       "optional": false,
       "on_classroom": true,
       "title_sv": "Prov i samhällskunskap",
-      "notes_sv": "Statsskick, politik, ideologi. Förberedelse i Classroom Examinationer (“Att kunna inför testet…”). Även politik gruppresentation från valstugor-intervjuer. Påminn Ellie att öppna Google Classroom för det här materialet."
+      "notes_sv": "Statsskick, politik, ideologi. Förberedelse i Classroom Examinationer (“Att kunna inför testet…”). Även politik gruppresentation från valstugor-intervjuer. Påminn Ellie att öppna Google Classroom för det här materialet.",
+      "status": "completed",
+      "completed_date": "2026-09-24",
+      "feedback": "Ellie felt it was \"not too bad\" and feels confident. Results TBC.",
+      "feedback_sv": "Ellie tyckte att det gick \"inte så dåligt\" och känner sig trygg. Resultat kommer senare.",
+      "result": null
     },
     {
       "id": "ol-fritids-schema",
