@@ -142,11 +142,11 @@
       "subject": "NO",
       "type": "homework",
       "title": "Test revision: NO (date TBC)",
-      "notes": "Revise for the NO test (Trelson), expected week 40 (28 Sep to 2 Oct); exact day to be confirmed, teacher Rebecca Strandestaa off sick. No topic list available — the week-40 Veckobrev NO section is blank and the existing test item only names it “Trelson”. Check the Vklass provkalender and Classroom for topics and the confirmed date.",
+      "notes": "Revise for the NO test (Trelson), expected week 40 (28 Sep to 2 Oct); exact day to be confirmed, teacher Rebecca Strandestaa off sick. Not in the Vklass test calendar yet; NO lessons Tue 29/9, Wed 30/9, Fri 2/10, so start revising Monday. No topic list available — the week-40 Veckobrev NO section is blank and the existing test item only names it “Trelson”. Check the Vklass provkalender and Classroom for topics and the confirmed date.",
       "optional": false,
       "on_classroom": false,
       "title_sv": "Repetition inför prov: NO (datum ej bekräftat)",
-      "notes_sv": "Repetera inför NO-provet (Trelson), väntas vecka 40 (28 sep–2 okt); exakt dag ej bekräftad, läraren Rebecca Strandestaa är sjuk. Ingen ämneslista finns — NO-avsnittet i veckobrevet v.40 är tomt och provet heter bara “Trelson” i befintlig post. Kolla provkalendern i Vklass och Classroom för innehåll och bekräftat datum.",
+      "notes_sv": "Repetera inför NO-provet (Trelson), väntas vecka 40 (28 sep–2 okt); exakt dag ej bekräftad, läraren Rebecca Strandestaa är sjuk. Finns inte i provkalendern i Vklass ännu; NO-lektioner tis 29/9, ons 30/9, fre 2/10, så börja repetera på måndagen. Ingen ämneslista finns — NO-avsnittet i veckobrevet v.40 är tomt och provet heter bara “Trelson” i befintlig post. Kolla provkalendern i Vklass och Classroom för innehåll och bekräftat datum.",
       "teacher": "Rebecca Strandestaa",
       "related_tests": [
         "el-no-trelson"
@@ -264,7 +264,7 @@
     {
       "id": "el-swedish-boksamtal",
       "date": "2026-10-09",
-      "time": "07:00",
+      "time": null,
       "child": "eleanor",
       "subject": "Swedish",
       "type": "test",
@@ -330,11 +330,11 @@
       "subject": "NO",
       "type": "test",
       "title": "NO test (Trelson) — expected week 40, day TBC",
-      "notes": "NO test, expected week 40 (28 Sep to 2 Oct), exact day to be confirmed; teacher (Rebecca Strandestaa) off sick. The week-40 Veckobrev NO section is blank. Previously listed as week 45 — confirm the date with the school / the Vklass provkalender.",
+      "notes": "NO test, expected week 40 (28 Sep to 2 Oct), exact day to be confirmed; teacher (Rebecca Strandestaa, REBSTR) off sick. Not in the Vklass test calendar yet; NO lessons Tue 29/9, Wed 30/9, Fri 2/10 — the test is probably on one of those days. The week-40 Veckobrev NO section is blank. Previously listed as week 45.",
       "optional": false,
       "on_classroom": false,
       "title_sv": "NO-prov (Trelson) — väntas vecka 40, dag ej bekräftad",
-      "notes_sv": "NO-prov, väntas vecka 40 (28 sep–2 okt), exakt dag ej bekräftad; läraren (Rebecca Strandestaa) är sjuk. NO-avsnittet i veckobrevet v.40 är tomt. Tidigare angivet som vecka 45 — bekräfta datum med skolan / provkalendern i Vklass.",
+      "notes_sv": "NO-prov, väntas vecka 40 (28 sep–2 okt), exakt dag ej bekräftad; läraren (Rebecca Strandestaa, REBSTR) är sjuk. Finns inte i provkalendern i Vklass ännu; NO-lektioner tis 29/9, ons 30/9, fre 2/10 — provet är troligen någon av de dagarna. NO-avsnittet i veckobrevet v.40 är tomt. Tidigare angivet som vecka 45.",
       "teacher": "Rebecca Strandestaa"
     },
     {
