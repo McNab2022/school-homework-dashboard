@@ -53,14 +53,26 @@ Item fields: `teacher`: `"Aleyna Bulduk"`, `group`: `"7B–7D"`. Notes should ke
 
 Item fields: `teacher`: `"Emilia Isaksson"`, `group`: `"7C+7D"`. Prefer a short note naming Emilia / 7C+7D when missing.
 
+## Test revision items (standing rule)
+
+For every known Ellie test, add a **Test revision** homework item referencing the test, date, topics and Veckobrev resources, dated from the start of the week before or of the test week.
+
+- `type`: `"homework"` (shows under the Homework filter), `id` prefixed `el-rev-`, `related_tests`: list of the test item id(s).
+- Title e.g. `Test revision: Maths (Tal, parts 1 & 2)` / `title_sv` `Repetition inför prov: Matematik (Tal, del 1 & 2)`.
+- `date`: the Monday of the week before the test, or the Monday of the test week (e.g. 2026-09-28 for week-40/41 tests).
+- `notes` + `notes_sv`: test date(s), what it covers, and the resources named in the Veckobrev (book, Magma, Classroom, Vklass…). Set `on_classroom: true` when Classroom material is mentioned.
+- Only use topics from the letter or the existing test item — do not invent topics. If the test date is unconfirmed, say so (e.g. `Test revision: NO (date TBC)`).
+- When a test moves or is removed, update or remove its revision item too.
+
 ## Refresh checklist
 
 1. Identify subject (Spanish / Maths / English / other).
 2. For Spanish, Maths, English: match **both** teacher (name or ICS code) **and** group as above.
 3. If teacher/group is unclear and the item was already on Ellie’s list from a prior correct parse, **keep** it and tag with the correct `teacher` / `group`.
 4. Remove an existing Ellie item only if notes clearly attribute it to a different teacher/group that fails these filters.
-5. Do **not** invent new homework/tests. Do **not** change Ollie items.
-6. Keep `data.json` and the embedded school data in `index.html` in sync (app embeds data for `file://`).
+5. Do **not** invent new homework/tests (Test revision items for known tests are required, see above). Do **not** change Ollie items.
+6. Make sure every Ellie test has a matching `el-rev-` Test revision homework item.
+7. Keep `data.json` and the embedded school data in `index.html` in sync (app embeds data for `file://`).
 
 ## Related
 

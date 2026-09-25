@@ -78,6 +78,81 @@
       "group": "7C"
     },
     {
+      "id": "el-rev-math-tal",
+      "date": "2026-09-28",
+      "time": null,
+      "child": "eleanor",
+      "subject": "Math",
+      "type": "homework",
+      "title": "Test revision: Maths (Tal, parts 1 & 2)",
+      "notes": "Revise for the chapter 1 “Tal” test: part 1 Thu 1 Oct (no calculator) and part 2 Fri 2 Oct (with calculator). Covers: number system (base ten and place value); divisibility rules and divisibility; primes, composite numbers and factor trees; vocabulary of the four operations; calculating with the four operations; multiplying and dividing by 10, 100 and 1000; rounding whole numbers and decimals; estimation. Resources (week-40 Veckobrev, Aleyna Bulduk, 7B–7D): the textbook and Magma, plus the worksheet on Google Classroom — prompt Ellie to open Classroom.",
+      "optional": false,
+      "on_classroom": true,
+      "title_sv": "Repetition inför prov: Matematik (Tal, del 1 & 2)",
+      "notes_sv": "Repetera inför provet på kapitel 1 “Tal”: del 1 tor 1 okt (utan miniräknare) och del 2 fre 2 okt (med miniräknare). Omfattar: talsystem (tiosystemet och platsvärde); delbarhetsreglerna och delbarhet; primtal och sammansatta tal samt faktorisering med faktorträd; begreppen för de fyra räknesätten; räkna med de fyra räknesätten; multiplicera och dividera med 10, 100 och 1000; avrunda hela tal och decimaltal; överslagsräkning. Resurser (veckobrev v.40, Aleyna Bulduk, 7B–7D): boken och Magma, samt arbetsbladet på Google Classroom — påminn Ellie att öppna Classroom.",
+      "teacher": "Aleyna Bulduk",
+      "group": "7B–7D",
+      "related_tests": [
+        "el-math-prov-1",
+        "el-math-prov-2"
+      ]
+    },
+    {
+      "id": "el-rev-english-oral",
+      "date": "2026-09-28",
+      "time": null,
+      "child": "eleanor",
+      "subject": "English",
+      "type": "homework",
+      "title": "Test revision: English (oral group discussion)",
+      "notes": "Prepare for the oral group discussion on Tue 6 Oct (week 41). Topic: UK / travel — the last UK stop is Northern Ireland, which the class covers in week 40 while starting to prepare for the discussion. Resources (week-40 Veckobrev, Emilia Isaksson, 7C+7D): lesson work on Northern Ireland and the UK unit; no extra materials listed.",
+      "optional": false,
+      "on_classroom": false,
+      "title_sv": "Repetition inför prov: Engelska (muntlig gruppdiskussion)",
+      "notes_sv": "Förbered den muntliga gruppdiskussionen tis 6 okt (v.41). Tema: Storbritannien / resor — sista stoppet är Northern Ireland, som klassen går igenom v.40 samtidigt som de börjar förbereda diskussionen. Resurser (veckobrev v.40, Emilia Isaksson, 7C+7D): lektionsarbetet om Northern Ireland och Storbritannien-området; inget extra material angivet.",
+      "teacher": "Emilia Isaksson",
+      "group": "7C+7D",
+      "related_tests": [
+        "el-english-oral"
+      ]
+    },
+    {
+      "id": "el-rev-swedish-boksamtal",
+      "date": "2026-09-28",
+      "time": null,
+      "child": "eleanor",
+      "subject": "Swedish",
+      "type": "homework",
+      "title": "Test revision: Swedish (boksamtal)",
+      "notes": "Prepare for the assessed group book discussion (boksamtal) on Fri 9 Oct: finish reading the book and prepare questions and answers. Resources (week-40 Veckobrev, Sara Stoltz): the class reads and prepares questions/answers during lesson time in week 40; no specific book/chapters listed.",
+      "optional": false,
+      "on_classroom": false,
+      "title_sv": "Repetition inför prov: Svenska (boksamtal)",
+      "notes_sv": "Förbered det bedömda boksamtalet i grupp fre 9 okt: läs klart boken och förbered frågor och svar. Resurser (veckobrev v.40, Sara Stoltz): klassen läser och förbereder frågor/svar under lektionstid v.40; ingen specifik bok/kapitel angiven.",
+      "teacher": "Sara Stoltz",
+      "related_tests": [
+        "el-swedish-boksamtal"
+      ]
+    },
+    {
+      "id": "el-rev-no",
+      "date": "2026-09-28",
+      "time": null,
+      "child": "eleanor",
+      "subject": "NO",
+      "type": "homework",
+      "title": "Test revision: NO (date TBC)",
+      "notes": "Revise for the NO test (Trelson), expected week 40 (28 Sep to 2 Oct); exact day to be confirmed, teacher Rebecca Strandestaa off sick. No topic list available — the week-40 Veckobrev NO section is blank and the existing test item only names it “Trelson”. Check the Vklass provkalender and Classroom for topics and the confirmed date.",
+      "optional": false,
+      "on_classroom": false,
+      "title_sv": "Repetition inför prov: NO (datum ej bekräftat)",
+      "notes_sv": "Repetera inför NO-provet (Trelson), väntas vecka 40 (28 sep–2 okt); exakt dag ej bekräftad, läraren Rebecca Strandestaa är sjuk. Ingen ämneslista finns — NO-avsnittet i veckobrevet v.40 är tomt och provet heter bara “Trelson” i befintlig post. Kolla provkalendern i Vklass och Classroom för innehåll och bekräftat datum.",
+      "teacher": "Rebecca Strandestaa",
+      "related_tests": [
+        "el-no-trelson"
+      ]
+    },
+    {
       "id": "el-kallbrinks-os",
       "date": "2026-09-30",
       "time": null,
@@ -150,6 +225,25 @@
       "on_classroom": false,
       "title_sv": "NO avstämning/prov “Skogen”",
       "notes_sv": "4B+4C: måndag 5 okt. Vecka 40/41 avslutar “Skogen” (vad vi får av skogen; pappersmassa av returpapper)."
+    },
+    {
+      "id": "el-rev-spanish-exam",
+      "date": "2026-10-05",
+      "time": null,
+      "child": "eleanor",
+      "subject": "Spanish",
+      "type": "homework",
+      "title": "Test revision: Spanish (written exam)",
+      "notes": "Revise for the written exam (skriftlig framställning) on Wed 14 Oct. Practise: describing yourself; conjugating AR verbs in the singular; the genitive (possessive form). Resources (week-40 Veckobrev, Sebastian, M2SP71/7C): more info in Vklass and Google Classroom — prompt Ellie to open Classroom.",
+      "optional": false,
+      "on_classroom": true,
+      "title_sv": "Repetition inför prov: Spanska (skriftlig framställning)",
+      "notes_sv": "Repetera inför det skriftliga provet (skriftlig framställning) ons 14 okt. Öva: berätta om sig själv; böja AR-verb i singular; genitiv (ägandeform). Resurser (veckobrev v.40, Sebastian, M2SP71/7C): mer info i Vklass och Google Classroom — påminn Ellie att öppna Classroom.",
+      "teacher": "Sebastian",
+      "group": "7C",
+      "related_tests": [
+        "el-spanish-exam"
+      ]
     },
     {
       "id": "el-english-oral",
@@ -230,17 +324,18 @@
     {
       "id": "el-no-trelson",
       "date": null,
-      "week": "45",
+      "week": "40",
       "time": null,
       "child": "eleanor",
       "subject": "NO",
       "type": "test",
-      "title": "NO Trelson test",
-      "notes": "Week 45 — date TBD.",
+      "title": "NO test (Trelson) — expected week 40, day TBC",
+      "notes": "NO test, expected week 40 (28 Sep to 2 Oct), exact day to be confirmed; teacher (Rebecca Strandestaa) off sick. The week-40 Veckobrev NO section is blank. Previously listed as week 45 — confirm the date with the school / the Vklass provkalender.",
       "optional": false,
       "on_classroom": false,
-      "title_sv": "NO Trelson-prov",
-      "notes_sv": "Vecka 45 — datum ej fastställt."
+      "title_sv": "NO-prov (Trelson) — väntas vecka 40, dag ej bekräftad",
+      "notes_sv": "NO-prov, väntas vecka 40 (28 sep–2 okt), exakt dag ej bekräftad; läraren (Rebecca Strandestaa) är sjuk. NO-avsnittet i veckobrevet v.40 är tomt. Tidigare angivet som vecka 45 — bekräfta datum med skolan / provkalendern i Vklass.",
+      "teacher": "Rebecca Strandestaa"
     },
     {
       "id": "el-kartlaggaren",
