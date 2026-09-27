@@ -1,18 +1,9 @@
 {
-  "updated": "2026-09-26",
+  "updated": "2026-09-27",
   "timezone": "Europe/Stockholm",
   "source": "https://portalweb.sportadmin.se/webcal?id=f619c1f3-826c-4bd7-a8c8-a344b3470d48",
   "calendarName": "Sportadmin Huddinge Idrottsförening",
   "events": [
-    {
-      "start": "2026-08-26T19:00+02:00",
-      "end": "2026-08-26T20:15+02:00",
-      "summary": "Onsdagsträning - P2016:3",
-      "location": "Glömsta BP",
-      "description": "Samling: 18:55, Utanför planen.\nOnsdagsträning. Vi har planen till 20:30.",
-      "kind": "training",
-      "gathering": "18:55"
-    },
     {
       "start": "2026-08-27T17:45+02:00",
       "end": "2026-08-27T19:00+02:00",
