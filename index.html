@@ -679,6 +679,9 @@
       color: var(--text-muted);
       margin-top: 0.2rem;
     }
+    .sport-item .event-notes {
+      white-space: pre-line;
+    }
 
     .sport-badges {
       display: flex;
@@ -2395,7 +2398,7 @@
           ? `<div class="event-meta">${escapeHtml(ev.location)}</div>`
           : "";
         const notesHtml = notes
-          ? `<div class="event-meta">${escapeHtml(notes)}</div>`
+          ? `<div class="event-meta event-notes">${escapeHtml(notes)}</div>`
           : "";
         const flags = [];
         if (isToday) flags.push(`<span class="sport-flag">${escapeHtml(i.todayLabel)}</span>`);

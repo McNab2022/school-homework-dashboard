@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-22",
+  "updated": "2026-09-28",
   "timezone": "Europe/Stockholm",
   "events": [
     {
@@ -20,8 +20,8 @@
       "end": "2026-10-18T18:00:00+02:00",
       "summary": "Alex & Ellie in London",
       "summary_sv": "Alex & Ellie i London",
-      "notes": "",
-      "notes_sv": "",
+      "notes": "Outbound Fri 16 Oct: SAS SK1527, Stockholm Arlanda (ARN) 19:45 → London Heathrow (LHR) 21:20 UK time (22:20 Stockholm time).\nReturn Sun 18 Oct: SAS SK532, London Heathrow (LHR) 13:55 UK time (14:55 Stockholm time) → Stockholm Arlanda (ARN) 17:25 Stockholm time.",
+      "notes_sv": "Utresa fre 16 okt: SAS SK1527, Stockholm Arlanda (ARN) 19:45 → London Heathrow (LHR) 21:20 brittisk tid (22:20 svensk tid).\nHemresa sön 18 okt: SAS SK532, London Heathrow (LHR) 13:55 brittisk tid (14:55 svensk tid) → Stockholm Arlanda (ARN) 17:25 svensk tid.",
       "location": "London",
       "who": [
         "Alex",
