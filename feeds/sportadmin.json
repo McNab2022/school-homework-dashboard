@@ -1,18 +1,9 @@
 {
-  "updated": "2026-09-27",
+  "updated": "2026-09-28",
   "timezone": "Europe/Stockholm",
   "source": "https://portalweb.sportadmin.se/webcal?id=f619c1f3-826c-4bd7-a8c8-a344b3470d48",
   "calendarName": "Sportadmin Huddinge Idrottsförening",
   "events": [
-    {
-      "start": "2026-08-27T17:45+02:00",
-      "end": "2026-08-27T19:00+02:00",
-      "summary": "Torsdagsträning - P2016:3",
-      "location": "Glömsta BP",
-      "description": "Samling: 17:45, Utanför planen för uppvärmning\nTorsdagsträning.\n\nTräningen inleds med 15 minuters uppvärmning utanför planen.\n\nPlantid 18-19.",
-      "kind": "training",
-      "gathering": "17:45"
-    },
     {
       "start": "2026-08-30T12:45+02:00",
       "end": "2026-08-30T14:15+02:00",
@@ -221,15 +212,6 @@
       "gathering": "17:45"
     },
     {
-      "start": "2026-10-03T10:30+02:00",
-      "end": "2026-10-03T12:00+02:00",
-      "summary": "Match: Huddinge IF Gul - Marockanska FC 2 (P2016- 2)",
-      "location": "Maxihallen 1",
-      "description": "Samling: 09:45\nSerie: P2016- 2",
-      "kind": "match",
-      "gathering": "09:45"
-    },
-    {
       "start": "2026-10-04T10:00+02:00",
       "end": "2026-10-04T12:00+02:00",
       "summary": "Spontanfotboll eller match - P2016:3",
@@ -237,6 +219,15 @@
       "description": "Samling: 10:00\n\tDenna tid används för spontanfotboll, matchflyttar i Sanktan eller träningsmatch.\n\nVid spontanfotboll räknas närvaron INTE in i träningsnärvaron så denna aktivitet är endast till för de som vill spela extra fotboll tillsammans med laget - Fria kläder = Inga krav på Huddinge IF-kläder.\n\nVid någon typ av match skickas separat kallelse och spontanfotbollen utgår.\n\nOavsett aktivitet så genomförs den endast om kallelse skickas först.",
       "kind": "other",
       "gathering": "10:00"
+    },
+    {
+      "start": "2026-10-04T12:00+02:00",
+      "end": "2026-10-04T13:15+02:00",
+      "summary": "Match: Marockanska FC 3 - Huddinge IF P20163 Vit",
+      "location": "Maxihallen, Norsborg/Hallunda",
+      "description": "Samling: 11:30\nSista matchen i Sanktan 2026.\n\nFlyttad match. \n\nSpelare som var kallade första gången och som har tränat kallas i första hand.",
+      "kind": "match",
+      "gathering": "11:30"
     },
     {
       "start": "2026-10-06T18:30+02:00",
