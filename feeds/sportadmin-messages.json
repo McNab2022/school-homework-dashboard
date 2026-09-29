@@ -1,7 +1,13 @@
 {
-  "updated": "2026-09-26",
+  "updated": "2026-09-29",
   "source": "gmail:from:no_reply@foreningsutskick.sportadmin.se",
   "messages": [
+    {
+      "date": "2026-09-28",
+      "subject": "Nyhet från Huddinge Idrottsförening. Ny anställd på kansliet!",
+      "summary_sv": "Stefan Nilsson (\"Tifen\") är tillbaka på kansliet som deltids-konsulent: förenings-/medlemsservice, anläggningsfrågor och omformning av Knatteskoleverksamheten. Jobbar tills vidare mån–tis kontorstid. stefan.nilsson@huddingeif.se / 08-120 419 44.",
+      "summary_en": "Stefan Nilsson (\"Tifen\") is back at the club office as a part-time konsulent: member/club service, facilities, and reshaping Knatteskola. Currently Mon–Tue office hours. stefan.nilsson@huddingeif.se / 08-120 419 44."
+    },
     {
       "date": "2026-09-20",
       "subject": "Information sept/okt.",
