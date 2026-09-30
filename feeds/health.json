@@ -39,9 +39,7 @@
       "who": "Ellie",
       "kind": "logoped",
       "location": "Logopedmottagningen Rosenlund",
-      "calendar": "Family",
-      "flag": "Clashes with 14:10 school pickup; pickup cover needed.",
-      "flag_sv": "Krockar med skolhämtningen 14:10; någon behöver hämta."
+      "calendar": "Family"
     },
     {
       "start": "2026-11-05T15:45:00+01:00",

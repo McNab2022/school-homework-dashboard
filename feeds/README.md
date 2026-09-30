@@ -52,7 +52,7 @@ There is no public ICS feed. Refresh manually or via Grok Bot from Google Calend
 
 Include upcoming appointments only. Past events are omitted.
 
-Optional per-event `flag` / `flag_sv` (EN/SV) shows a visible warning line on the Health card (e.g. a pickup clash). These are added by hand/Grok after checking custody week + Family pickup events — **preserve them when regenerating** `health.json` (match on start + summary).
+Do not add pickup-clash flags: school finish times are FYI only; Ollie can go to fritids/Eftis or home.
 
 ## Other important dates (family / travel)
 
