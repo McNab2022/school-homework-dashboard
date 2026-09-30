@@ -759,6 +759,13 @@
       line-height: 1.4;
     }
 
+    .health-flag {
+      margin-top: 0.3rem;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: #b91c1c;
+    }
+
     .sport-item.kind-logoped {
       border-left-color: #7c3aed;
       background: linear-gradient(90deg, #ede9fe 0%, var(--surface) 42%);
@@ -2276,6 +2283,12 @@
         const loc = ev.location
           ? `<div class="event-meta">${escapeHtml(ev.location)}</div>`
           : "";
+        const flagText = (currentLang === "sv"
+          ? (ev.flag_sv || ev.flag || "")
+          : (ev.flag || ev.flag_sv || "")).trim();
+        const flagHtml = flagText
+          ? `<div class="health-flag">⚠ ${escapeHtml(flagText)}</div>`
+          : "";
         const flags = [];
         if (isToday) flags.push(`<span class="sport-flag">${escapeHtml(i.todayLabel)}</span>`);
         const wClass = whoClass(who);
@@ -2285,6 +2298,7 @@
               <div class="event-when">${escapeHtml(formatHealthWhen(ev))}</div>
               <div class="event-summary">${escapeHtml(ev.summary || "")}</div>
               ${loc}
+              ${flagHtml}
             </div>
             <div class="sport-badges">
               ${who ? `<span class="who-badge ${escapeHtml(wClass)}">${escapeHtml(whoLabel(who))}</span>` : ""}

@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-29",
+  "updated": "2026-09-30",
   "timezone": "Europe/Stockholm",
   "sources": [
     {
@@ -31,6 +31,17 @@
       "kind": "logoped",
       "location": "",
       "calendar": "primary"
+    },
+    {
+      "start": "2026-10-20T13:30:00+02:00",
+      "end": "2026-10-20T15:00:00+02:00",
+      "summary": "Ellie Logoped",
+      "who": "Ellie",
+      "kind": "logoped",
+      "location": "Logopedmottagningen Rosenlund",
+      "calendar": "Family",
+      "flag": "Clashes with 14:10 school pickup; pickup cover needed.",
+      "flag_sv": "Krockar med skolhämtningen 14:10; någon behöver hämta."
     },
     {
       "start": "2026-11-05T15:45:00+01:00",
