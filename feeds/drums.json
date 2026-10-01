@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-22",
+  "updated": "2026-10-01",
   "timezone": "Europe/Stockholm",
   "source": "StudyAlong forward from annakarinlundback@gmail.com (2026-09-02)",
   "who": "Ollie",
@@ -14,5 +14,32 @@
   "course_start": "2026-09-04",
   "teacher": "Johan Kalla",
   "teacher_email": "johan.kalla@huddinge.se",
-  "teacher_phone": "+46701981220"
+  "teacher_phone": "+46701981220",
+  "orchestra": {
+    "title": "Orchestra (drums)",
+    "title_sv": "Orkester (trummor)",
+    "day": "Thursday",
+    "day_sv": "torsdag",
+    "time_start": "18:10",
+    "time_end": "18:50",
+    "pattern": "Every other Thursday, alternating with Thursday football",
+    "pattern_sv": "Varannan torsdag, växlar med torsdagsfotboll",
+    "dates": [
+      "2026-10-01",
+      "2026-10-15",
+      "2026-10-29",
+      "2026-11-12",
+      "2026-11-26",
+      "2026-12-10"
+    ],
+    "date_notes": {
+      "2026-10-29": {
+        "en": "höstlov week, v.44",
+        "sv": "höstlov, v.44"
+      }
+    },
+    "skip_football_on_dates": true,
+    "skip_football_label": "Orchestra week, no football",
+    "skip_football_label_sv": "Orkestervecka, ingen fotboll"
+  }
 }

@@ -552,6 +552,33 @@
       color: var(--text-muted);
       font-weight: 500;
     }
+    .standing-items {
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+      margin: -0.35rem 0 0.85rem;
+      padding: 0.5rem 0.85rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      box-shadow: var(--shadow);
+      font-size: 0.88rem;
+      color: var(--text);
+    }
+    .standing-items:empty { display: none; }
+    .standing-item .standing-label {
+      font-weight: 700;
+      color: var(--text-muted);
+      margin-right: 0.35rem;
+    }
+    .sport-item.is-skipped {
+      opacity: 0.6;
+      background: var(--surface);
+      border-left-color: #94a3b8;
+    }
+    .sport-item.is-skipped .event-summary { text-decoration: line-through; }
+    .sport-flag.skipped { background: #64748b; }
+    .orchestra-dates { margin-top: 0.25rem; font-size: 0.85rem; color: var(--text-muted); }
 
     .custody-section h2 {
       margin-top: 0.25rem;
@@ -879,6 +906,7 @@
       </div>
 
       <div id="finish-times" class="finish-times" aria-live="polite"></div>
+      <div id="standing-items" class="standing-items" aria-live="polite"></div>
 
       <div class="filters" id="filters" role="group" aria-label="Filter items">
         <button type="button" class="chip active" data-filter="all">All</button>
@@ -1432,6 +1460,8 @@
         drumsSchedule: "Schedule",
         drumsLocation: "Location",
         drumsCourseStart: "Course start",
+        orchestraUpcoming: "Upcoming",
+        standingWeekly: "Weekly",
         kindMatch: "Match",
         kindTraining: "Training",
         kindOther: "Other",
@@ -1528,6 +1558,8 @@
         drumsSchedule: "Schema",
         drumsLocation: "Plats",
         drumsCourseStart: "Kursstart",
+        orchestraUpcoming: "Kommande",
+        standingWeekly: "Varje vecka",
         kindMatch: "Match",
         kindTraining: "Träning",
         kindOther: "Övrigt",
@@ -1873,6 +1905,7 @@
     let sportMessagesData = null;
     let sportMessagesLoadState = "pending"; // pending | ok | error
     let drumsData = null;
+    let standingData = null;
     let drumsLoadState = "pending"; // pending | ok | error
     let healthData = null;
     let healthLoadState = "pending"; // pending | ok | error
@@ -2104,6 +2137,21 @@
       }) || null;
     }
 
+    // Orchestra weeks: Thursday football training is skipped. Rule lives in
+    // feeds/drums.json (orchestra.dates) so a SportAdmin refresh can't undo it.
+    function orchestraSkipFor(ev) {
+      const o = drumsData && drumsData.orchestra;
+      if (!o || !o.skip_football_on_dates || !Array.isArray(o.dates)) return null;
+      if (!ev || ev.kind !== "training") return null;
+      const d = eventStartDate(ev);
+      if (!d || !o.dates.includes(d)) return null;
+      const pd = parseYMD(d);
+      if (!pd || pd.getDay() !== 4) return null; // Thursday only
+      return currentLang === "sv"
+        ? (o.skip_football_label_sv || o.skip_football_label)
+        : (o.skip_football_label || o.skip_football_label_sv);
+    }
+
     function renderSport() {
       const i = t();
       const eventsEl = document.getElementById("sport-events");
@@ -2126,8 +2174,10 @@
             const isToday = d === today;
             const isNextMatch = nextMatch && ev.start === nextMatch.start && ev.summary === nextMatch.summary;
             const flags = [];
+            const skipLabel = orchestraSkipFor(ev);
             if (isToday) flags.push(`<span class="sport-flag">${escapeHtml(i.todayLabel)}</span>`);
             if (isNextMatch) flags.push(`<span class="sport-flag next-match">${escapeHtml(i.nextMatchFlag)}</span>`);
+            if (skipLabel) flags.push(`<span class="sport-flag skipped">${escapeHtml(skipLabel)}</span>`);
             const gathering = ev.gathering
               ? `<div class="event-meta">${escapeHtml(i.gatheringLabel.replace("{time}", ev.gathering))}</div>`
               : "";
@@ -2135,7 +2185,7 @@
               ? `<div class="event-meta">${escapeHtml(ev.location)}</div>`
               : "";
             return `
-              <article class="sport-item kind-${escapeHtml(ev.kind || "other")}${isToday ? " is-today" : ""}${isNextMatch ? " is-next-match" : ""}">
+              <article class="sport-item kind-${escapeHtml(ev.kind || "other")}${isToday ? " is-today" : ""}${isNextMatch ? " is-next-match" : ""}${skipLabel ? " is-skipped" : ""}">
                 <div>
                   <div class="event-when">${escapeHtml(formatEventWhen(ev))}</div>
                   <div class="event-summary">${escapeHtml(ev.summary || "")}</div>
@@ -2460,6 +2510,38 @@
             <span class="who-badge ollie">${escapeHtml(d.who || "Ollie")}</span>
             ${d.course ? `<span class="kind-badge other">${escapeHtml(d.course)}</span>` : ""}
           </div>
+        </article>` + renderOrchestra(d.orchestra, d.who);
+    }
+
+    function renderOrchestra(o, who) {
+      if (!o) return "";
+      const i = t();
+      const sv = currentLang === "sv";
+      const today = todayStockholm();
+      const dayLabel = sv ? (o.day_sv || o.day) : o.day;
+      const title = sv ? (o.title_sv || o.title) : (o.title || o.title_sv);
+      const pattern = sv ? (o.pattern_sv || o.pattern) : (o.pattern || o.pattern_sv);
+      const notes = o.date_notes || {};
+      const upcoming = (o.dates || []).filter((x) => x >= today);
+      const isToday = upcoming[0] === today;
+      const dateBits = upcoming.map((x) => {
+        const pd = parseYMD(x);
+        let s = `${pd.getDate()} ${i.months[pd.getMonth()]}`;
+        const n = notes[x];
+        if (n) s += ` (${sv ? (n.sv || n.en) : (n.en || n.sv)})`;
+        return s;
+      });
+      return `<article class="sport-item kind-other${isToday ? " is-today" : ""}">
+          <div>
+            <div class="sport-when">${escapeHtml(`${dayLabel} ${o.time_start}–${o.time_end}`)}</div>
+            <div class="sport-summary">${escapeHtml(title)}</div>
+            ${pattern ? `<div class="sport-location">${escapeHtml(pattern)}</div>` : ""}
+            ${dateBits.length ? `<div class="orchestra-dates">${escapeHtml(i.orchestraUpcoming)}: ${escapeHtml(dateBits.join(", "))}</div>` : ""}
+          </div>
+          <div class="sport-badges">
+            <span class="who-badge ollie">${escapeHtml(who || "Ollie")}</span>
+            ${isToday ? `<span class="sport-flag">${escapeHtml(i.todayLabel)}</span>` : ""}
+          </div>
         </article>`;
     }
 
@@ -2476,6 +2558,33 @@
         drumsLoadState = "error";
       }
       renderDrums();
+      renderSport();
+    }
+
+    function renderStanding() {
+      const el = document.getElementById("standing-items");
+      if (!el) return;
+      const i = t();
+      const items = (standingData && standingData.items) || [];
+      if (!items.length) { el.innerHTML = ""; return; }
+      const wd = new Date(new Date().toLocaleString("en-US", { timeZone: "Europe/Stockholm" })).getDay();
+      el.innerHTML = items.map((it) => {
+        const text = currentLang === "sv" ? (it.text_sv || it.text) : (it.text || it.text_sv);
+        const who = (it.who || []).join(" & ");
+        const todayFlag = it.weekday === wd ? ` <span class="sport-flag">${escapeHtml(i.todayLabel)}</span>` : "";
+        return `<div class="standing-item"><span class="standing-label">${escapeHtml(i.standingWeekly)} · ${escapeHtml(who)}:</span>${escapeHtml(text)}${todayFlag}</div>`;
+      }).join("");
+    }
+
+    async function loadStandingFeed() {
+      try {
+        const res = await fetch("feeds/standing.json", { cache: "no-store" });
+        if (!res.ok) throw new Error("HTTP " + res.status);
+        standingData = await res.json();
+      } catch (e) {
+        standingData = null;
+      }
+      renderStanding();
     }
 
     async function loadOtherDatesFeed() {
@@ -2679,6 +2788,7 @@
       setTab(currentTab);
       renderSchool();
       renderFinishTimes();
+      renderStanding();
       renderCustody();
       renderOtherDates();
       renderSport();
@@ -2732,6 +2842,7 @@
     loadOtherDatesFeed();
     loadSportFeeds();
     loadDrumsFeed();
+    loadStandingFeed();
     loadHealthFeed();
   </script>
 </body>

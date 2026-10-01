@@ -71,3 +71,19 @@ No public ICS URL yet. Maintain as a static snapshot (Grok Bot or hand-edit). La
 - **Builder:** `python3 feeds/build_schedule.py`
 
 Finish time per weekday = modal max `DTEND` of lessons that day. Keys are JS `getDay()` strings (`"1"`=Mon … `"5"`=Fri). Display names in the UI are Ellie / Ollie.
+
+## Drums + orchestra (Ollie)
+
+- **JSON for the UI:** `drums.json` (hand-maintained — edit OK)
+- Friday drum lesson fields are at the top level (`day`, `time_start`, …).
+- `orchestra` block: Thursday orchestra 18:10–18:50, every other Thursday, alternating with Thursday football. `orchestra.dates` lists the session dates (ISO `YYYY-MM-DD`); `date_notes` holds per-date notes (e.g. höstlov).
+
+### Orchestra-week football skip rule
+
+When `orchestra.skip_football_on_dates` is `true`, `index.html` marks any SportAdmin **training** event on a **Thursday** whose date is in `orchestra.dates` as skipped (greyed, struck through, flag "Orchestra week, no football" / "Orkestervecka, ingen fotboll"). The rule is applied at render time, so `sportadmin.json` stays untouched and `refresh_sportadmin.py` can regenerate it freely without undoing the skip. To change the alternation, edit `orchestra.dates` only.
+
+## Standing weekly items (School tab)
+
+- **JSON for the UI:** `standing.json` (hand-maintained — edit OK)
+- Shown under the finish-time bar on the School tab. Bilingual `text` / `text_sv`, `who` array, `weekday` as JS `getDay()` number (4 = Thursday) for the "Today" flag.
+- Kept separate from `data.json` / embedded `DASHBOARD_DATA` so the Friday Veckobrev refresh (which rewrites `items`) does not remove it.

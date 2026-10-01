@@ -1,0 +1,21 @@
+{
+  "updated": "2026-10-01",
+  "timezone": "Europe/Stockholm",
+  "notes": "Hand-maintained standing weekly items for the School tab. Not touched by the Veckobrev refresh (data.json) or build_schedule.py.",
+  "items": [
+    {
+      "id": "modersmal",
+      "who": [
+        "Ellie",
+        "Ollie"
+      ],
+      "weekday": 4,
+      "time_start": "16:10",
+      "time_end": "17:10",
+      "title": "Mother tongue (modersmål)",
+      "title_sv": "Modersmål",
+      "text": "Mother tongue classes, Thursdays 16:10–17:10, room B12, Högstadiet building",
+      "text_sv": "Modersmål, torsdagar 16:10–17:10, sal B12, Högstadiebyggnaden"
+    }
+  ]
+}
