@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-25",
+  "updated": "2026-10-03",
   "school": "Källbrinksskolan",
   "timezone": "Europe/Stockholm",
   "kids": [
@@ -60,11 +60,11 @@
       "subject": "Fritids",
       "type": "parent_action",
       "title": "Register fritids omsorgsschema for höstlov",
-      "notes": "Deadline — register care schedule for höstlov week 44 (26–30 Oct). Action for parents.",
+      "notes": "Register höstlov attendance (care schedule) at Eftis for week 44 (26–30 Oct). Original deadline 28 Sep; Eftis (Carina Arringe) reminded again in the v.40 letter (2 Oct): register even if Oliver will not be attending. Action for parents — check in Vklass that it's done.",
       "optional": false,
       "on_classroom": false,
       "title_sv": "Registrera fritids omsorgsschema för höstlov",
-      "notes_sv": "Deadline — registrera omsorgsschema för höstlov vecka 44 (26–30 okt). Åtgärd för vårdnadshavare."
+      "notes_sv": "Anmäl höstlovsnärvaro (omsorgsschema) till Eftis för vecka 44 (26–30 okt). Ursprunglig deadline 28 sep; Eftis (Carina Arringe) påminde igen i veckobrevet v.40 (2 okt): anmäl även om Oliver inte ska vara där. Åtgärd för vårdnadshavare — kolla i Vklass att det är gjort."
     },
     {
       "id": "el-so-partier",
@@ -83,26 +83,6 @@
       "group": "7C"
     },
     {
-      "id": "el-rev-math-tal",
-      "date": "2026-09-28",
-      "time": null,
-      "child": "eleanor",
-      "subject": "Math",
-      "type": "homework",
-      "title": "Test revision: Maths (Tal, parts 1 & 2)",
-      "notes": "Revise for the chapter 1 “Tal” test: part 1 Thu 1 Oct (no calculator) and part 2 Fri 2 Oct (with calculator). Covers: number system (base ten and place value); divisibility rules and divisibility; primes, composite numbers and factor trees; vocabulary of the four operations; calculating with the four operations; multiplying and dividing by 10, 100 and 1000; rounding whole numbers and decimals; estimation. Resources (week-40 Veckobrev, Aleyna Bulduk, 7B–7D): the textbook and Magma, plus the worksheet on Google Classroom — prompt Ellie to open Classroom.",
-      "optional": false,
-      "on_classroom": true,
-      "title_sv": "Repetition inför prov: Matematik (Tal, del 1 & 2)",
-      "notes_sv": "Repetera inför provet på kapitel 1 “Tal”: del 1 tor 1 okt (utan miniräknare) och del 2 fre 2 okt (med miniräknare). Omfattar: talsystem (tiosystemet och platsvärde); delbarhetsreglerna och delbarhet; primtal och sammansatta tal samt faktorisering med faktorträd; begreppen för de fyra räknesätten; räkna med de fyra räknesätten; multiplicera och dividera med 10, 100 och 1000; avrunda hela tal och decimaltal; överslagsräkning. Resurser (veckobrev v.40, Aleyna Bulduk, 7B–7D): boken och Magma, samt arbetsbladet på Google Classroom — påminn Ellie att öppna Classroom.",
-      "teacher": "Aleyna Bulduk",
-      "group": "7B–7D",
-      "related_tests": [
-        "el-math-prov-1",
-        "el-math-prov-2"
-      ]
-    },
-    {
       "id": "el-rev-english-oral",
       "date": "2026-09-28",
       "time": null,
@@ -110,11 +90,11 @@
       "subject": "English",
       "type": "homework",
       "title": "Test revision: English (oral group discussion)",
-      "notes": "Prepare for the oral group discussion on Tue 6 Oct (week 41). Topic: UK / travel — the last UK stop is Northern Ireland, which the class covers in week 40 while starting to prepare for the discussion. Resources (week-40 Veckobrev, Emilia Isaksson, 7C+7D): lesson work on Northern Ireland and the UK unit; no extra materials listed.",
+      "notes": "Prepare for the oral group discussion on Tue 6 Oct (confirmed in the week-41 Veckobrev). Topic: the UK and travel — in small groups, speak English, give your opinions and ask each other questions; the UK unit ended with Northern Ireland. Resources (Veckobrev v.40–41, Emilia Isaksson, 7C+7D): lesson work on the UK unit and Northern Ireland; no extra materials listed.",
       "optional": false,
       "on_classroom": false,
       "title_sv": "Repetition inför prov: Engelska (muntlig gruppdiskussion)",
-      "notes_sv": "Förbered den muntliga gruppdiskussionen tis 6 okt (v.41). Tema: Storbritannien / resor — sista stoppet är Northern Ireland, som klassen går igenom v.40 samtidigt som de börjar förbereda diskussionen. Resurser (veckobrev v.40, Emilia Isaksson, 7C+7D): lektionsarbetet om Northern Ireland och Storbritannien-området; inget extra material angivet.",
+      "notes_sv": "Förbered den muntliga gruppdiskussionen tis 6 okt (bekräftad i veckobrev v.41). Tema: Storbritannien och resor — i mindre grupper, prata engelska, uttryck åsikter och ställ frågor till varandra; området avslutades med Northern Ireland. Resurser (veckobrev v.40–41, Emilia Isaksson, 7C+7D): lektionsarbetet om Storbritannien och Northern Ireland; inget extra material angivet.",
       "teacher": "Emilia Isaksson",
       "group": "7C+7D",
       "related_tests": [
@@ -123,17 +103,17 @@
     },
     {
       "id": "el-rev-swedish-boksamtal",
-      "date": "2026-09-28",
+      "date": "2026-10-05",
       "time": null,
       "child": "eleanor",
       "subject": "Swedish",
       "type": "homework",
       "title": "Test revision: Swedish (boksamtal)",
-      "notes": "Prepare for the assessed group book discussion (boksamtal) on Fri 9 Oct: finish reading the book and prepare questions and answers. Resources (week-40 Veckobrev, Sara Stoltz): the class reads and prepares questions/answers during lesson time in week 40; no specific book/chapters listed.",
+      "notes": "Prepare for the assessed group book discussion (boksamtal) on Fri 9 Oct (confirmed in the week-41 Veckobrev): finish reading the book and prepare questions and answers. Resources (Veckobrev v.40–41, Sara Stoltz): reading and question/answer prep done in lessons; no specific book/chapters listed.",
       "optional": false,
       "on_classroom": false,
       "title_sv": "Repetition inför prov: Svenska (boksamtal)",
-      "notes_sv": "Förbered det bedömda boksamtalet i grupp fre 9 okt: läs klart boken och förbered frågor och svar. Resurser (veckobrev v.40, Sara Stoltz): klassen läser och förbereder frågor/svar under lektionstid v.40; ingen specifik bok/kapitel angiven.",
+      "notes_sv": "Förbered det bedömda boksamtalet i grupp fre 9 okt (bekräftat i veckobrev v.41): läs klart boken och förbered frågor och svar. Resurser (veckobrev v.40–41, Sara Stoltz): läsning och förberedelse av frågor/svar under lektionerna; ingen specifik bok/kapitel angiven.",
       "teacher": "Sara Stoltz",
       "related_tests": [
         "el-swedish-boksamtal"
@@ -141,17 +121,17 @@
     },
     {
       "id": "el-rev-no",
-      "date": "2026-09-28",
+      "date": "2026-10-05",
       "time": null,
       "child": "eleanor",
       "subject": "NO",
       "type": "homework",
       "title": "Test revision: NO (date TBC)",
-      "notes": "Revise for the NO test (Trelson), expected week 40 (28 Sep to 2 Oct); exact day to be confirmed, teacher Rebecca Strandestaa off sick. Not in the Vklass test calendar yet; NO lessons Tue 29/9, Wed 30/9, Fri 2/10, so start revising Monday. No topic list available — the week-40 Veckobrev NO section is blank and the existing test item only names it “Trelson”. Check the Vklass provkalender and Classroom for topics and the confirmed date.",
+      "notes": "Revise for the NO test (Trelson); date TBC — not held in week 40 (teacher Rebecca Strandestaa off sick) and not in the week-41 Veckobrev test list. No topic list available yet — the letters don't name topics and the test item only says “Trelson”. Check the Vklass provkalender and Classroom for topics and the confirmed date.",
       "optional": false,
       "on_classroom": false,
       "title_sv": "Repetition inför prov: NO (datum ej bekräftat)",
-      "notes_sv": "Repetera inför NO-provet (Trelson), väntas vecka 40 (28 sep–2 okt); exakt dag ej bekräftad, läraren Rebecca Strandestaa är sjuk. Finns inte i provkalendern i Vklass ännu; NO-lektioner tis 29/9, ons 30/9, fre 2/10, så börja repetera på måndagen. Ingen ämneslista finns — NO-avsnittet i veckobrevet v.40 är tomt och provet heter bara “Trelson” i befintlig post. Kolla provkalendern i Vklass och Classroom för innehåll och bekräftat datum.",
+      "notes_sv": "Repetera inför NO-provet (Trelson); datum ej bekräftat — blev inte av vecka 40 (läraren Rebecca Strandestaa sjuk) och finns inte i provlistan i veckobrev v.41. Ingen ämneslista ännu — breven nämner inga moment och provet heter bara “Trelson”. Kolla provkalendern i Vklass och Classroom för innehåll och bekräftat datum.",
       "teacher": "Rebecca Strandestaa",
       "related_tests": [
         "el-no-trelson"
@@ -185,7 +165,12 @@
       "title_sv": "Matematik Prov del 1 (tal)",
       "notes_sv": "Moment “Tal” / kapitel 1. Från veckobrev v.40 för 7B–7D (Aleyna Bulduk): Prov del 1 utan miniräknare torsdag 1 okt; Prov del 2 med miniräknare fredag 2 okt. Ska kunna: talsystem (tiosystemet & platsvärde); delbarhetsregler & delbarhet; primtal & sammansatta tal samt faktorisering med faktorträd; begrepp för de fyra räknesätten; räkna med de fyra räknesätten; multiplicera/dividera med 10, 100 och 1000; avrunda hela tal och decimaltal; överslagsräkning. Repetera i boken och Magma; arbetsblad finns även på Classroom. Del 1 utan miniräknare.",
       "teacher": "Aleyna Bulduk",
-      "group": "7B–7D"
+      "group": "7B–7D",
+      "status": "completed",
+      "completed_date": "2026-10-01",
+      "feedback": "TBC",
+      "feedback_sv": "TBC",
+      "result": null
     },
     {
       "id": "ol-math-test-1",
@@ -195,11 +180,11 @@
       "subject": "Math",
       "type": "test",
       "title": "Math test 1",
-      "notes": "Thursday 1 Oct — first math test (test 1), end of kapitel 1 Taluppfattning och huvudräkning. Revise on Alfa Beta Gamma: https://www.matematikabg.se/elever/filmer.html",
+      "notes": "Thursday 1 Oct — first math test (test 1), end of kapitel 1 Taluppfattning och huvudräkning. Revise on Alfa Beta Gamma: https://www.matematikabg.se/elever/filmer.html Agneta's 2 Oct Vklass post shared a concept list (begreppslista) for revising at home; a paper copy was sent home too (attachment only in Vklass).",
       "optional": false,
       "on_classroom": false,
       "title_sv": "Matematikprov 1",
-      "notes_sv": "Torsdag 1 okt — första matteprovet (test 1), sista veckan med kapitel 1 Taluppfattning och huvudräkning. Repetera på Alfa Beta Gamma: https://www.matematikabg.se/elever/filmer.html"
+      "notes_sv": "Torsdag 1 okt — första matteprovet (test 1), sista veckan med kapitel 1 Taluppfattning och huvudräkning. Repetera på Alfa Beta Gamma: https://www.matematikabg.se/elever/filmer.html Agnetas Vklass-inlägg 2 okt delade en begreppslista att repetera hemma; barnen fick även listan i pappersform (bilagan finns bara i Vklass)."
     },
     {
       "id": "el-math-prov-2",
@@ -215,7 +200,12 @@
       "title_sv": "Matematik Prov del 2 (tal)",
       "notes_sv": "Moment “Tal” / kapitel 1. Från veckobrev v.40 för 7B–7D (Aleyna Bulduk): Prov del 1 utan miniräknare torsdag 1 okt; Prov del 2 med miniräknare fredag 2 okt. Ska kunna: talsystem (tiosystemet & platsvärde); delbarhetsregler & delbarhet; primtal & sammansatta tal samt faktorisering med faktorträd; begrepp för de fyra räknesätten; räkna med de fyra räknesätten; multiplicera/dividera med 10, 100 och 1000; avrunda hela tal och decimaltal; överslagsräkning. Repetera i boken och Magma; arbetsblad finns även på Classroom. Del 2 med miniräknare.",
       "teacher": "Aleyna Bulduk",
-      "group": "7B–7D"
+      "group": "7B–7D",
+      "status": "completed",
+      "completed_date": "2026-10-02",
+      "feedback": "TBC",
+      "feedback_sv": "TBC",
+      "result": null
     },
     {
       "id": "ol-no-skogen",
@@ -230,6 +220,21 @@
       "on_classroom": false,
       "title_sv": "NO avstämning/prov “Skogen”",
       "notes_sv": "4B+4C: måndag 5 okt. Vecka 40/41 avslutar “Skogen” (vad vi får av skogen; pappersmassa av returpapper)."
+    },
+    {
+      "id": "ol-eftis-v41",
+      "date": "2026-10-05",
+      "endDate": "2026-10-09",
+      "time": null,
+      "child": "oliver",
+      "subject": "Fritids",
+      "type": "event",
+      "title": "Eftis this week",
+      "notes": "From Eftis (Carina Arringe): Blooket twice this week (requested at Thursday's meeting); making stickers in craft time; the week ends with bingo and a film as usual.",
+      "optional": false,
+      "on_classroom": false,
+      "title_sv": "Eftis denna vecka",
+      "notes_sv": "Från Eftis (Carina Arringe): Blooket två gånger i veckan (önskemål från mötet i torsdags); tillverkar klistermärken under pysslet; veckan avslutas som vanligt med bingo och film."
     },
     {
       "id": "el-rev-spanish-exam",
@@ -258,11 +263,11 @@
       "subject": "English",
       "type": "test",
       "title": "English oral group discussion",
-      "notes": "UK / travel — last stop Northern Ireland; prepare for oral group discussion in week 41. Teacher Emilia Isaksson (EMIISA), group 7C+7D.",
+      "notes": "Assessed oral group discussion (week-41 Veckobrev test list): discuss the UK and travel in small groups, speaking English, giving your opinions and asking each other questions. UK unit ended with Northern Ireland. Teacher Emilia Isaksson (EMIISA), group 7C+7D.",
       "optional": false,
       "on_classroom": false,
-      "title_sv": "Engelska muntlig grupdiskussion",
-      "notes_sv": "Storbritannien / resor — sista stoppet Northern Ireland; förbered muntlig gruppdiskussion v.41. Lärare Emilia Isaksson (EMIISA), grupp 7C+7D.",
+      "title_sv": "Engelska muntlig gruppdiskussion",
+      "notes_sv": "Bedömd muntlig gruppdiskussion (provlistan i veckobrev v.41): diskutera Storbritannien och resor i mindre grupper, prata engelska, uttrycka åsikter och ställa frågor till varandra. Storbritannien-området avslutades med Northern Ireland. Lärare Emilia Isaksson (EMIISA), grupp 7C+7D.",
       "teacher": "Emilia Isaksson",
       "group": "7C+7D"
     },
@@ -274,11 +279,12 @@
       "subject": "Swedish",
       "type": "test",
       "title": "Swedish boksamtal",
-      "notes": "Bedömningstillfälle — boksamtal in groups. Week 40: classes prepare during lesson time (read + prepare questions/answers). No specific book/chapters listed in Vklass news.",
+      "notes": "Bedömningstillfälle — assessed book discussion (boksamtal) in groups, Fri 9 Oct (confirmed in the week-41 Veckobrev test list). Week 40: classes prepared during lesson time (read + prepare questions/answers). No specific book/chapters listed in the letter.",
       "optional": false,
       "on_classroom": false,
       "title_sv": "Svenska boksamtal",
-      "notes_sv": "Bedömningstillfälle — boksamtal i grupper. Vecka 40: klasserna förbereder under lektionstid (läsa + förbereda frågor/svar). Ingen specifik bok/kapitel angiven i Vklass-nyheten."
+      "notes_sv": "Bedömningstillfälle — boksamtal i grupper, fre 9 okt (bekräftat i provlistan i veckobrev v.41). Vecka 40: klasserna förberedde under lektionstid (läsa + förbereda frågor/svar). Ingen specifik bok/kapitel angiven i brevet.",
+      "teacher": "Sara Stoltz"
     },
     {
       "id": "ol-utvecklingssamtal",
@@ -320,26 +326,26 @@
       "subject": "School",
       "type": "event",
       "title": "Höstlov",
-      "notes": "Autumn break 26–30 Oct (week 44).",
+      "notes": "Autumn break 26–30 Oct (week 44). Register Eftis attendance for höstlov even if Oliver won't attend.",
       "optional": false,
       "on_classroom": false,
       "title_sv": "Höstlov",
-      "notes_sv": "Höstlov 26–30 okt (vecka 44)."
+      "notes_sv": "Höstlov 26–30 okt (vecka 44). Anmäl höstlovsnärvaro till Eftis även om Oliver inte ska vara där."
     },
     {
       "id": "el-no-trelson",
       "date": null,
-      "week": "40",
+      "week": null,
       "time": null,
       "child": "eleanor",
       "subject": "NO",
       "type": "test",
-      "title": "NO test (Trelson) — expected week 40, day TBC",
-      "notes": "NO test, expected week 40 (28 Sep to 2 Oct), exact day to be confirmed; teacher (Rebecca Strandestaa, REBSTR) off sick. Not in the Vklass test calendar yet; NO lessons Tue 29/9, Wed 30/9, Fri 2/10 — the test is probably on one of those days. The week-40 Veckobrev NO section is blank. Previously listed as week 45.",
+      "title": "NO test (Trelson) — date TBC",
+      "notes": "NO test, date still to be confirmed. It was expected in week 40 but teacher Rebecca Strandestaa (REBSTR) was off sick; it is not in the week-41 Veckobrev test list either (only English oral 6 Oct and Swedish boksamtal 9 Oct), so it is probably week 42 or later. No topic list in the letters. Check the Vklass provkalender / Classroom for the new date. Previously listed as week 45, then week 40.",
       "optional": false,
       "on_classroom": false,
-      "title_sv": "NO-prov (Trelson) — väntas vecka 40, dag ej bekräftad",
-      "notes_sv": "NO-prov, väntas vecka 40 (28 sep–2 okt), exakt dag ej bekräftad; läraren (Rebecca Strandestaa, REBSTR) är sjuk. Finns inte i provkalendern i Vklass ännu; NO-lektioner tis 29/9, ons 30/9, fre 2/10 — provet är troligen någon av de dagarna. NO-avsnittet i veckobrevet v.40 är tomt. Tidigare angivet som vecka 45.",
+      "title_sv": "NO-prov (Trelson) — datum ej bekräftat",
+      "notes_sv": "NO-prov, datum ännu inte bekräftat. Det väntades vecka 40 men läraren Rebecca Strandestaa (REBSTR) var sjuk; det finns inte heller med i provlistan i veckobrev v.41 (bara engelska muntligt 6 okt och svenska boksamtal 9 okt), så troligen vecka 42 eller senare. Ingen ämneslista i breven. Kolla provkalendern i Vklass / Classroom för nytt datum. Tidigare angivet som vecka 45, sedan vecka 40.",
       "teacher": "Rebecca Strandestaa"
     },
     {
