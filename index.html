@@ -2237,7 +2237,7 @@
               ? `<div class="event-meta">${escapeHtml(i.gatheringLabel.replace("{time}", ev.gathering))}</div>`
               : "";
             const loc = ev.location
-              ? `<div class="event-meta">${mapLink(ev.location)}</div>`
+              ? `<div class="event-meta">${ev.kind === "match" ? mapLink(ev.location) : escapeHtml(ev.location)}</div>`
               : "";
             return `
               <article class="sport-item kind-${escapeHtml(ev.kind || "other")}${isToday ? " is-today" : ""}${isNextMatch ? " is-next-match" : ""}${skipLabel ? " is-skipped" : ""}">
@@ -2386,7 +2386,7 @@
         const kind = ev.kind || "other";
         const who = ev.who || "";
         const loc = ev.location
-          ? `<div class="event-meta">${mapLink(ev.location)}</div>`
+          ? `<div class="event-meta">${escapeHtml(ev.location)}</div>`
           : "";
         const flagText = (currentLang === "sv"
           ? (ev.flag_sv || ev.flag || "")
@@ -2514,7 +2514,7 @@
           : (ev.notes || ev.notes_sv || "");
         const notes = (notesRaw || "").trim();
         const loc = ev.location
-          ? `<div class="event-meta">${mapLink(ev.location)}</div>`
+          ? `<div class="event-meta">${escapeHtml(ev.location)}</div>`
           : "";
         const notesHtml = notes
           ? `<div class="event-meta event-notes">${escapeHtml(notes)}</div>`
@@ -2558,7 +2558,7 @@
       el.innerHTML = `<article class="sport-item kind-other">
           <div class="sport-when">${escapeHtml(schedule)}</div>
           <div class="sport-summary">${escapeHtml(title)}</div>
-          <div class="sport-location">${mapLink(d.location || "")}${d.room ? " · " + escapeHtml(d.room) : ""}</div>
+          <div class="sport-location">${escapeHtml(d.location || "")}${d.room ? " · " + escapeHtml(d.room) : ""}</div>
           <div class="sport-location">${escapeHtml(i.drumsCourseStart)}: ${escapeHtml(d.course_start || "")}</div>
           ${teacherBits ? `<div class="sport-location">${escapeHtml(i.drumsTeacher)}: ${escapeHtml(teacherBits)}</div>` : ""}
           <div class="sport-badges">
