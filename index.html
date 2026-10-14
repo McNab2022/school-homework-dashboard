@@ -701,6 +701,8 @@
       font-size: 0.95rem;
       color: var(--text);
     }
+    .map-link { color: inherit; text-decoration: underline dotted; text-underline-offset: 2px; }
+    .map-link:hover { text-decoration: underline; }
     .sport-item .event-meta {
       font-size: 0.85rem;
       color: var(--text-muted);
@@ -1807,6 +1809,13 @@
       return k ? k.name.split(" ")[0] : id;
     }
 
+    function mapLink(loc) {
+      const t = String(loc || "").trim();
+      if (!t || /^(online|digital|zoom|teams)/i.test(t)) return escapeHtml(t);
+      const q = /stockholm|huddinge/i.test(t) ? t : t + ", Stockholm";
+      const url = "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(q);
+      return `<a class="map-link" href="${url}" target="_blank" rel="noopener noreferrer" title="Google Maps">\u{1F4CD} ${escapeHtml(t)}</a>`;
+    }
     function escapeHtml(str) {
       if (!str) return "";
       return String(str)
@@ -2228,7 +2237,7 @@
               ? `<div class="event-meta">${escapeHtml(i.gatheringLabel.replace("{time}", ev.gathering))}</div>`
               : "";
             const loc = ev.location
-              ? `<div class="event-meta">${escapeHtml(ev.location)}</div>`
+              ? `<div class="event-meta">${mapLink(ev.location)}</div>`
               : "";
             return `
               <article class="sport-item kind-${escapeHtml(ev.kind || "other")}${isToday ? " is-today" : ""}${isNextMatch ? " is-next-match" : ""}${skipLabel ? " is-skipped" : ""}">
@@ -2377,7 +2386,7 @@
         const kind = ev.kind || "other";
         const who = ev.who || "";
         const loc = ev.location
-          ? `<div class="event-meta">${escapeHtml(ev.location)}</div>`
+          ? `<div class="event-meta">${mapLink(ev.location)}</div>`
           : "";
         const flagText = (currentLang === "sv"
           ? (ev.flag_sv || ev.flag || "")
@@ -2505,7 +2514,7 @@
           : (ev.notes || ev.notes_sv || "");
         const notes = (notesRaw || "").trim();
         const loc = ev.location
-          ? `<div class="event-meta">${escapeHtml(ev.location)}</div>`
+          ? `<div class="event-meta">${mapLink(ev.location)}</div>`
           : "";
         const notesHtml = notes
           ? `<div class="event-meta event-notes">${escapeHtml(notes)}</div>`
@@ -2549,7 +2558,7 @@
       el.innerHTML = `<article class="sport-item kind-other">
           <div class="sport-when">${escapeHtml(schedule)}</div>
           <div class="sport-summary">${escapeHtml(title)}</div>
-          <div class="sport-location">${escapeHtml(d.location || "")}${d.room ? " · " + escapeHtml(d.room) : ""}</div>
+          <div class="sport-location">${mapLink(d.location || "")}${d.room ? " · " + escapeHtml(d.room) : ""}</div>
           <div class="sport-location">${escapeHtml(i.drumsCourseStart)}: ${escapeHtml(d.course_start || "")}</div>
           ${teacherBits ? `<div class="sport-location">${escapeHtml(i.drumsTeacher)}: ${escapeHtml(teacherBits)}</div>` : ""}
           <div class="sport-badges">
