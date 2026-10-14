@@ -1,7 +1,13 @@
 {
-  "updated": "2026-09-29",
+  "updated": "2026-10-14",
   "source": "gmail:from:no_reply@foreningsutskick.sportadmin.se",
   "messages": [
+    {
+      "date": "2026-10-14",
+      "subject": "Ny avsparkstid lördag.",
+      "summary_sv": "Lördagens match (17 okt, Mälarhöjden/Hägerstens FF – Huddinge IF P2016:3, Hägerstensåsens BP) flyttad p.g.a. planproblematik: samling 08:30, avspark 09:00 (tidigare 09:30/10:00). David ber höra av sig om tiden inte fungerar. Målvakt: Oliver.",
+      "summary_en": "Saturday's match (17 Oct, Mälarhöjden/Hägerstens FF vs Huddinge IF P2016:3 at Hägerstensåsens BP) moved for pitch issues: gather 08:30, kickoff 09:00 (was 09:30/10:00). David asks parents to say if that doesn't work. Goalkeeper: Oliver."
+    },
     {
       "date": "2026-09-28",
       "subject": "Nyhet från Huddinge Idrottsförening. Ny anställd på kansliet!",
