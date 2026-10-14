@@ -1,99 +1,9 @@
 {
-  "updated": "2026-09-29",
+  "updated": "2026-10-14",
   "timezone": "Europe/Stockholm",
   "source": "https://portalweb.sportadmin.se/webcal?id=f619c1f3-826c-4bd7-a8c8-a344b3470d48",
   "calendarName": "Sportadmin Huddinge Idrottsförening",
   "events": [
-    {
-      "start": "2026-08-30T12:45+02:00",
-      "end": "2026-08-30T14:15+02:00",
-      "summary": "Match: Huddinge IF Svart - Arameisk-Syrianska IF Röd 1 (P2016- 1)",
-      "location": "Källbrinksskolans IP 1",
-      "description": "Samling: 12:00\nSerie: P2016- 1\nSanktan 7v7\n\nMålvakt: Oliver.",
-      "kind": "match",
-      "gathering": "12:00"
-    },
-    {
-      "start": "2026-09-01T18:30+02:00",
-      "end": "2026-09-01T20:00+02:00",
-      "summary": "Tisdagsträning - P2016:3",
-      "location": "Vistaskolans BP",
-      "description": "Samling: 18:25, Utanför planen\nTisdagsträning.",
-      "kind": "training",
-      "gathering": "18:25"
-    },
-    {
-      "start": "2026-09-02T19:00+02:00",
-      "end": "2026-09-02T20:30+02:00",
-      "summary": "Onsdagsträning - P2016:3",
-      "location": "Glömsta BP",
-      "description": "Samling: 18:55, Utanför planen.\nOnsdagsträning. Vi kör till 20:30.",
-      "kind": "training",
-      "gathering": "18:55"
-    },
-    {
-      "start": "2026-09-03T17:45+02:00",
-      "end": "2026-09-03T19:00+02:00",
-      "summary": "Torsdagsträning - P2016:3",
-      "location": "Glömsta BP",
-      "description": "Samling: 17:45, Utanför planen för uppvärmning\nTorsdagsträning.\n\nTräningen inleds med 15 minuters uppvärmning utanför planen.\n\nPlantid 18-19.",
-      "kind": "training",
-      "gathering": "17:45"
-    },
-    {
-      "start": "2026-09-05T14:30+02:00",
-      "end": "2026-09-05T16:00+02:00",
-      "summary": "Match: Boo FF 2016:12-2 från Medel - Huddinge IF Vit från Medel (P2016- 3)",
-      "location": "Boovallen 215",
-      "description": "Samling: 14:00\nSerie: P2016- 3\nSanktan 7v7.\n\nKallelse stänger torsdag 21:00 men svara gärna så snabbt som möjligt.\n\nMålvakt löses på plats.\n\nEndast 30 min samlingstid så kom i tid!",
-      "kind": "match",
-      "gathering": "14:00"
-    },
-    {
-      "start": "2026-09-08T18:30+02:00",
-      "end": "2026-09-08T20:00+02:00",
-      "summary": "Tisdagsträning - P2016:3",
-      "location": "Vistaskolans BP",
-      "description": "Samling: 18:25, Utanför planen\nTisdagsträning.",
-      "kind": "training",
-      "gathering": "18:25"
-    },
-    {
-      "start": "2026-09-09T19:00+02:00",
-      "end": "2026-09-09T20:30+02:00",
-      "summary": "Onsdagsträning - P2016:3",
-      "location": "Glömsta BP",
-      "description": "Samling: 18:55, Utanför planen.\nOnsdagsträning. Vi kör till 20:30.",
-      "kind": "training",
-      "gathering": "18:55"
-    },
-    {
-      "start": "2026-09-10T17:45+02:00",
-      "end": "2026-09-10T19:00+02:00",
-      "summary": "Torsdagsträning - P2016:3",
-      "location": "Glömsta BP",
-      "description": "Samling: 17:45, Utanför planen för uppvärmning\nTorsdagsträning.\n\nTräningen inleds med 15 minuters uppvärmning utanför planen.\n\nPlantid 18-19.",
-      "kind": "training",
-      "gathering": "17:45"
-    },
-    {
-      "start": "2026-09-12T09:30+02:00",
-      "end": "2026-09-12T10:45+02:00",
-      "summary": "Match: Marockanska FC 1 - Huddinge IF Svart (P2016- 1)",
-      "location": "Glömstaskolans BP 1",
-      "description": "Samling: 08:45\nSerie: P2016- 1\nSanktan 7v7.\n\nMålvakt: Oliver.\n\nSvara gärna före sista svarsdatum.",
-      "kind": "match",
-      "gathering": "08:45"
-    },
-    {
-      "start": "2026-09-13T10:15+02:00",
-      "end": "2026-09-13T11:45+02:00",
-      "summary": "Match: Huddinge IF svart - Bollmora Internacional IKF 1 (P2016- 1)",
-      "location": "Källbrinksskolans IP 1",
-      "description": "Samling: 09:30\nSerie: P2016- 1\nSanktan 7v7.\n\nMålvakt: Oliver.\n\nSvara gärna före sista svarsdatum.",
-      "kind": "match",
-      "gathering": "09:30"
-    },
     {
       "start": "2026-09-15T18:30+02:00",
       "end": "2026-09-15T20:00+02:00",
@@ -212,15 +122,6 @@
       "gathering": "17:45"
     },
     {
-      "start": "2026-10-04T10:00+02:00",
-      "end": "2026-10-04T12:00+02:00",
-      "summary": "Spontanfotboll eller match - P2016:3",
-      "location": "Glömsta BP",
-      "description": "Samling: 10:00\n\tDenna tid används för spontanfotboll, matchflyttar i Sanktan eller träningsmatch.\n\nVid spontanfotboll räknas närvaron INTE in i träningsnärvaron så denna aktivitet är endast till för de som vill spela extra fotboll tillsammans med laget - Fria kläder = Inga krav på Huddinge IF-kläder.\n\nVid någon typ av match skickas separat kallelse och spontanfotbollen utgår.\n\nOavsett aktivitet så genomförs den endast om kallelse skickas först.",
-      "kind": "other",
-      "gathering": "10:00"
-    },
-    {
       "start": "2026-10-04T12:00+02:00",
       "end": "2026-10-04T13:15+02:00",
       "summary": "Match: Marockanska FC 3 - Huddinge IF P20163 Vit",
@@ -261,7 +162,7 @@
       "end": "2026-10-10T10:15+02:00",
       "summary": "Match: Sköndals IK - Huddinge IF P2016:3",
       "location": "Sturebyskolans BP",
-      "description": "Samling: 08:30\nTräningsmatch (L).",
+      "description": "Samling: 08:30\nTräningsmatch.\n\nVi ordnar och betalar domare. Kostnaden delas mellan de som spelar. Swishas till ledare på plats.",
       "kind": "match",
       "gathering": "08:30"
     },
@@ -270,9 +171,9 @@
       "end": "2026-10-11T11:15+02:00",
       "summary": "Match: Huddinge IF P2016:3 - Stuvsta IF",
       "location": "Glömsta BP",
-      "description": "Samling: 09:15\nTräningsmatch (S).",
+      "description": "Samling: 09:30\nTräningsmatch.\n\nMålvakt: Oliver.\n\nVi står för domare. Kostnaden 300kr delas på de som spelar och swishas till ledare på plats på matchdagen.",
       "kind": "match",
-      "gathering": "09:15"
+      "gathering": "09:30"
     },
     {
       "start": "2026-10-13T18:30+02:00",
@@ -302,22 +203,13 @@
       "gathering": "17:45"
     },
     {
-      "start": "2026-10-17T09:00+02:00",
-      "end": "2026-10-17T11:00+02:00",
-      "summary": "Spontanfotboll eller match - P2016:3",
-      "location": "Glömsta BP",
-      "description": "Samling: 09:00\nDenna tid används för spontanfotboll, matchflyttar i Sanktan eller träningsmatch.\n\nVid spontanfotboll räknas närvaron INTE in i träningsnärvaron så denna aktivitet är endast till för de som vill spela extra fotboll tillsammans med laget - Fria kläder = Inga krav på Huddinge IF-kläder.\n\nVid någon typ av match skickas separat kallelse och spontanfotbollen utgår.\n\nOavsett aktivitet så genomförs den endast om kallelse skickas först.",
-      "kind": "other",
-      "gathering": "09:00"
-    },
-    {
-      "start": "2026-10-18T10:00+02:00",
-      "end": "2026-10-18T12:00+02:00",
-      "summary": "Spontanfotboll eller match - P2016:3",
-      "location": "Glömsta BP",
-      "description": "Samling: 10:00\n\tDenna tid används för spontanfotboll, matchflyttar i Sanktan eller träningsmatch.\n\nVid spontanfotboll räknas närvaron INTE in i träningsnärvaron så denna aktivitet är endast till för de som vill spela extra fotboll tillsammans med laget - Fria kläder = Inga krav på Huddinge IF-kläder.\n\nVid någon typ av match skickas separat kallelse och spontanfotbollen utgår.\n\nOavsett aktivitet så genomförs den endast om kallelse skickas först.",
-      "kind": "other",
-      "gathering": "10:00"
+      "start": "2026-10-17T10:00+02:00",
+      "end": "2026-10-17T11:15+02:00",
+      "summary": "Match: Mälarhöjden/Hägerstens FF - Huddinge IF P2016:3",
+      "location": "Hägerstensåsens BP",
+      "description": "Samling: 09:30\nTräningsmatch nivå svår. Av aktuella spelare kallar vi de som tränat flitigast efter sommaren. Vid behov fyller vi på successivt och önskar därför snabba svar.\n\nMålvakt: Oliver.\n\nVi ansvarar för domare.",
+      "kind": "match",
+      "gathering": "09:30"
     },
     {
       "start": "2026-10-20T18:30+02:00",
@@ -351,24 +243,15 @@
       "end": "2026-10-24T15:00+02:00",
       "summary": "Höstcup - P2016:3",
       "location": "Källbrinks IP konstgräs",
-      "description": "Samling: 09:00\nVi har två lag anmälda till cup.",
+      "description": "Samling: 09:00\nFörhandskoll:\n\nVi har två lag anmälda till cup och kommer med största sannolikhet att mixa grupperna. Vi lär även få möta varandra. Detta på grund av svalt intresse i P2016-klassen.\n\nPreliminärt spelschema säger start 09:00 och totalt fyra matcher.\n\nCupen är gratis för oss.\n\nNär kallelse skickats ut gäller svar för att kunna delta. Ny kallelse kommer därefter med lagindelning och exakta tider.",
       "kind": "other",
       "gathering": "09:00"
-    },
-    {
-      "start": "2026-10-25T10:00+01:00",
-      "end": "2026-10-25T12:00+01:00",
-      "summary": "Spontanfotboll eller match - P2016:3",
-      "location": "Glömsta BP",
-      "description": "Samling: 10:00\n\tDenna tid används för spontanfotboll, matchflyttar i Sanktan eller träningsmatch.\n\nVid spontanfotboll räknas närvaron INTE in i träningsnärvaron så denna aktivitet är endast till för de som vill spela extra fotboll tillsammans med laget - Fria kläder = Inga krav på Huddinge IF-kläder.\n\nVid någon typ av match skickas separat kallelse och spontanfotbollen utgår.\n\nOavsett aktivitet så genomförs den endast om kallelse skickas först.",
-      "kind": "other",
-      "gathering": "10:00"
     },
     {
       "start": "2026-10-25T10:30+01:00",
       "end": "2026-10-25T11:45+01:00",
       "summary": "Match: Huddinge IF P2016:3 - Stuvsta IF",
-      "location": "Glömsta BP",
+      "location": "Källbrinksskolans IP 7-spel",
       "description": "Samling: 10:00\nTräningsmatch\n\n(M-).",
       "kind": "match",
       "gathering": "10:00"
@@ -401,6 +284,15 @@
       "gathering": "17:45"
     },
     {
+      "start": "2026-11-01T10:00+01:00",
+      "end": "2026-11-01T12:00+01:00",
+      "summary": "Utomhusträning eller matchspel - P2016:3",
+      "location": "Vistaskolans BP",
+      "description": "Samling: 10:00\nTräning eller match.",
+      "kind": "training",
+      "gathering": "10:00"
+    },
+    {
       "start": "2026-11-03T18:30+01:00",
       "end": "2026-11-03T20:00+01:00",
       "summary": "Tisdagsträning - P2016:3",
@@ -428,6 +320,15 @@
       "gathering": "18:00"
     },
     {
+      "start": "2026-11-07T08:00+01:00",
+      "end": "2026-11-07T09:00+01:00",
+      "summary": "Match: Sörskogens IF 1 - Huddinge IF P2016:3",
+      "location": "Vårbyhallen sporthall",
+      "description": "Samling: 07:30\nFutsal-serie",
+      "kind": "match",
+      "gathering": "07:30"
+    },
+    {
       "start": "2026-11-07T10:00+01:00",
       "end": "2026-11-07T12:00+01:00",
       "summary": "Utomhusträning eller matchspel - P2016:3",
@@ -437,13 +338,22 @@
       "gathering": "10:00"
     },
     {
-      "start": "2026-11-08T08:30+01:00",
-      "end": "2026-11-08T10:30+01:00",
+      "start": "2026-11-08T10:00+01:00",
+      "end": "2026-11-08T12:00+01:00",
       "summary": "Utomhusträning eller matchspel - P2016:3",
-      "location": "Glömsta BP",
-      "description": "Samling: 08:30\nUtomhusträning - Kan omvandlas till matchspel.",
+      "location": "Vistaskolans BP",
+      "description": "Samling: 10:00\nTräning eller match.",
       "kind": "training",
-      "gathering": "08:30"
+      "gathering": "10:00"
+    },
+    {
+      "start": "2026-11-08T13:00+01:00",
+      "end": "2026-11-08T14:00+01:00",
+      "summary": "Match: Huddinge IF P2016:3 - IFK Aspudden-Tellus Vit",
+      "location": "Vårbyhallen sporthall",
+      "description": "Samling: 12:30\nFutsal-serie.",
+      "kind": "match",
+      "gathering": "12:30"
     },
     {
       "start": "2026-11-10T18:30+01:00",
@@ -473,22 +383,31 @@
       "gathering": "18:00"
     },
     {
+      "start": "2026-11-14T09:00+01:00",
+      "end": "2026-11-14T10:00+01:00",
+      "summary": "Match: Årsta FF 2 - Huddinge IF P2016:3",
+      "location": "Liljeholmshallen 2",
+      "description": "Samling: 08:30\nFutsal-serie",
+      "kind": "match",
+      "gathering": "08:30"
+    },
+    {
       "start": "2026-11-14T10:00+01:00",
-      "end": "2026-11-14T12:00+01:00",
+      "end": "2026-11-14T11:00+01:00",
+      "summary": "Match: Huddinge IF P2016:3 - Älvsjö AIK Svart",
+      "location": "Vårbyhallen sporthall",
+      "description": "Samling: 10:00\nFutsal-serie",
+      "kind": "match",
+      "gathering": "10:00"
+    },
+    {
+      "start": "2026-11-15T10:00+01:00",
+      "end": "2026-11-15T12:00+01:00",
       "summary": "Utomhusträning eller matchspel - P2016:3",
       "location": "Vistaskolans BP",
       "description": "Samling: 10:00\nTräning eller match.",
       "kind": "training",
       "gathering": "10:00"
-    },
-    {
-      "start": "2026-11-15T08:30+01:00",
-      "end": "2026-11-15T10:30+01:00",
-      "summary": "Utomhusträning eller matchspel - P2016:3",
-      "location": "Glömsta BP",
-      "description": "Samling: 08:30\nUtomhusträning - Kan omvandlas till matchspel.",
-      "kind": "training",
-      "gathering": "08:30"
     },
     {
       "start": "2026-11-17T18:30+01:00",
@@ -518,6 +437,15 @@
       "gathering": "18:00"
     },
     {
+      "start": "2026-11-21T09:00+01:00",
+      "end": "2026-11-21T10:00+01:00",
+      "summary": "Match: Huddinge IF P2016:3 - Stuvsta IF 1",
+      "location": "Vårbyhallen sporthall",
+      "description": "Samling: 09:00\nFutsal-serie",
+      "kind": "match",
+      "gathering": "09:00"
+    },
+    {
       "start": "2026-11-21T10:00+01:00",
       "end": "2026-11-21T12:00+01:00",
       "summary": "Utomhusträning eller matchspel - P2016:3",
@@ -527,13 +455,22 @@
       "gathering": "10:00"
     },
     {
-      "start": "2026-11-22T08:30+01:00",
-      "end": "2026-11-22T10:30+01:00",
+      "start": "2026-11-22T10:00+01:00",
+      "end": "2026-11-22T12:00+01:00",
       "summary": "Utomhusträning eller matchspel - P2016:3",
-      "location": "Glömsta BP",
-      "description": "Samling: 08:30\nUtomhusträning - Kan omvandlas till matchspel.",
+      "location": "Vistaskolans BP",
+      "description": "Samling: 10:00\nTräning eller match.",
       "kind": "training",
-      "gathering": "08:30"
+      "gathering": "10:00"
+    },
+    {
+      "start": "2026-11-22T17:00+01:00",
+      "end": "2026-11-22T18:00+01:00",
+      "summary": "Match: Huddinge IF P2016:3 - Skogås-Trångsunds FF Blå",
+      "location": "Vårbyhallen sporthall",
+      "description": "Samling: 17:00\nFutsal-serie",
+      "kind": "match",
+      "gathering": "17:00"
     },
     {
       "start": "2026-11-24T18:30+01:00",
@@ -563,22 +500,31 @@
       "gathering": "18:00"
     },
     {
-      "start": "2026-11-28T10:00+01:00",
-      "end": "2026-11-28T12:00+01:00",
+      "start": "2026-11-28T08:00+01:00",
+      "end": "2026-11-28T09:00+01:00",
+      "summary": "Match: Huddinge IF P2016:3 - Älvsjö AIK FF 1",
+      "location": "Vårbyhallen sporthall",
+      "description": "Samling: 08:00\nFutsal-serie",
+      "kind": "match",
+      "gathering": "08:00"
+    },
+    {
+      "start": "2026-11-28T14:00+01:00",
+      "end": "2026-11-28T15:00+01:00",
+      "summary": "Match: Älvsjö AIK Röd - Huddinge IF P2016:3",
+      "location": "Bredängshallen",
+      "description": "Samling: 14:00\nFutsal-serie",
+      "kind": "match",
+      "gathering": "14:00"
+    },
+    {
+      "start": "2026-11-29T10:00+01:00",
+      "end": "2026-11-29T12:00+01:00",
       "summary": "Utomhusträning eller matchspel - P2016:3",
       "location": "Vistaskolans BP",
       "description": "Samling: 10:00\nTräning eller match.",
       "kind": "training",
       "gathering": "10:00"
-    },
-    {
-      "start": "2026-11-29T08:30+01:00",
-      "end": "2026-11-29T10:30+01:00",
-      "summary": "Utomhusträning eller matchspel - P2016:3",
-      "location": "Glömsta BP",
-      "description": "Samling: 08:30\nUtomhusträning - Kan omvandlas till matchspel.",
-      "kind": "training",
-      "gathering": "08:30"
     },
     {
       "start": "2026-12-04T19:00+01:00",
@@ -592,15 +538,6 @@
     {
       "start": "2026-12-11T19:00+01:00",
       "end": "2026-12-11T21:00+01:00",
-      "summary": "Fredagsträning - P2016:3",
-      "location": "Balingsnässkolans gymnastiksal",
-      "description": "Samling: 19:00\nInomhusträning - Medtag utrustning för inomhusspel (inneskor).\n\nFokus: Match, teknik, koordination.",
-      "kind": "training",
-      "gathering": "19:00"
-    },
-    {
-      "start": "2026-12-18T19:00+01:00",
-      "end": "2026-12-18T21:00+01:00",
       "summary": "Fredagsträning - P2016:3",
       "location": "Balingsnässkolans gymnastiksal",
       "description": "Samling: 19:00\nInomhusträning - Medtag utrustning för inomhusspel (inneskor).\n\nFokus: Match, teknik, koordination.",

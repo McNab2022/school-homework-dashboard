@@ -730,6 +730,7 @@
     .kind-badge.match { background: #ffedd5; color: #9a3412; }
     .kind-badge.training { background: #dcfce7; color: #166534; }
     .kind-badge.other { background: #e2e8f0; color: #475569; }
+    .kind-badge.drums { background: #fef9c3; color: #854d0e; }
 
     .sport-flag {
       font-size: 0.7rem;
@@ -2108,6 +2109,7 @@
       const i = t();
       if (kind === "match") return i.kindMatch;
       if (kind === "training") return i.kindTraining;
+      if (kind === "drums") return currentLang === "sv" ? "Trummor" : "Drums";
       return i.kindOther;
     }
 
@@ -2133,8 +2135,45 @@
       const list = (events || []).filter((ev) => {
         const d = eventStartDate(ev);
         return d && d >= today && d <= end;
-      });
+      }).concat(drumsSportEvents(today, end));
+      list.sort((a, b) => (a.start < b.start ? -1 : a.start > b.start ? 1 : 0));
       return list.slice(0, maxCount);
+    }
+
+    // Weekly Friday drums lesson + orchestra dates from feeds/drums.json,
+    // merged into the Sport list so they show alongside football.
+    function drumsSportEvents(today, end) {
+      const d = drumsData;
+      if (!d) return [];
+      const out = [];
+      const ymd = (x) => `${x.getFullYear()}-${String(x.getMonth() + 1).padStart(2, "0")}-${String(x.getDate()).padStart(2, "0")}`;
+      const off = (ds) => { const m = parseInt(ds.slice(5, 7), 10); return (m >= 4 && m <= 10) ? "+02:00" : "+01:00"; };
+      const sv = currentLang === "sv";
+      if (d.time_start && d.time_end) {
+        let cur = parseYMD(today);
+        const startFrom = d.course_start && d.course_start > today ? d.course_start : today;
+        cur = parseYMD(startFrom);
+        while (cur && cur.getDay() !== 5) cur.setDate(cur.getDate() + 1);
+        const exc = d.exceptions || [];
+        while (cur && ymd(cur) <= end) {
+          const ds = ymd(cur);
+          if (!exc.includes(ds)) out.push({
+            start: `${ds}T${d.time_start}${off(ds)}`, end: `${ds}T${d.time_end}${off(ds)}`,
+            summary: sv ? "Trumlektion (Ollie)" : "Drums lesson (Ollie)",
+            location: d.location || "", kind: "drums",
+          });
+          cur.setDate(cur.getDate() + 7);
+        }
+      }
+      const o = d.orchestra;
+      if (o && Array.isArray(o.dates)) o.dates.forEach((ds) => {
+        if (ds >= today && ds <= end) out.push({
+          start: `${ds}T${o.time_start}${off(ds)}`, end: `${ds}T${o.time_end}${off(ds)}`,
+          summary: sv ? (o.title_sv || o.title) : (o.title || o.title_sv),
+          location: d.location || "", kind: "drums",
+        });
+      });
+      return out;
     }
 
     function findNextMatch(events, today) {
