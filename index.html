@@ -805,6 +805,10 @@
       background: linear-gradient(90deg, #e0f2fe 0%, var(--surface) 42%);
     }
 
+    .sport-item.is-cancelled { opacity: 0.65; }
+    .sport-item.is-cancelled .event-when,
+    .sport-item.is-cancelled .event-summary { text-decoration: line-through; }
+    .cancelled-badge { background: #fee2e2; color: #b91c1c; font-weight: 700; }
     .kind-badge.logoped { background: #ede9fe; color: #5b21b6; }
     .kind-badge.dentist { background: #e0f2fe; color: #075985; }
 
@@ -1486,6 +1490,7 @@
         healthEmpty: "No upcoming logoped or dentist appointments. Add them to Google Calendar (Family or main calendar), then refresh this feed.",
         healthLoadError: "Could not load health appointments. Try refreshing the page.",
         kindLogoped: "Logoped",
+        cancelledLabel: "Cancelled",
         kindDentist: "Dentist",
         whoEllie: "Ellie",
         whoOllie: "Ollie",
@@ -1584,6 +1589,7 @@
         healthEmpty: "Inga kommande logoped- eller tandläkarbesök. Lägg till dem i Google Kalender (Family eller huvudkalender) och uppdatera flödet.",
         healthLoadError: "Kunde inte ladda hälsobesök. Uppdatera sidan.",
         kindLogoped: "Logoped",
+        cancelledLabel: "Inställt",
         kindDentist: "Tandläkare",
         whoEllie: "Ellie",
         whoOllie: "Ollie",
@@ -2395,10 +2401,12 @@
           ? `<div class="health-flag">⚠ ${escapeHtml(flagText)}</div>`
           : "";
         const flags = [];
+        const isCancelled = !!ev.cancelled;
+        if (isCancelled) flags.push(`<span class="kind-badge cancelled-badge">${escapeHtml(i.cancelledLabel)}</span>`);
         if (isToday) flags.push(`<span class="sport-flag">${escapeHtml(i.todayLabel)}</span>`);
         const wClass = whoClass(who);
         return `
-          <article class="sport-item kind-${escapeHtml(kind)}${isToday ? " is-today" : ""}">
+          <article class="sport-item kind-${escapeHtml(kind)}${isToday ? " is-today" : ""}${isCancelled ? " is-cancelled" : ""}">
             <div>
               <div class="event-when">${escapeHtml(formatHealthWhen(ev))}</div>
               <div class="event-summary">${escapeHtml(ev.summary || "")}</div>
