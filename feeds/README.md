@@ -87,3 +87,8 @@ When `orchestra.skip_football_on_dates` is `true`, `index.html` marks any SportA
 - **JSON for the UI:** `standing.json` (hand-maintained — edit OK)
 - Shown under the finish-time bar on the School tab. Bilingual `text` / `text_sv`, `who` array, `weekday` as JS `getDay()` number (4 = Thursday) for the "Today" flag.
 - Kept separate from `data.json` / embedded `DASHBOARD_DATA` so the Friday Veckobrev refresh (which rewrites `items`) does not remove it.
+
+## School tab expiry
+
+- `index.html` hides School items whose `date` (or `endDate`) is before today (Europe/Stockholm) at render time. Ongoing and undated (TBC) items still show.
+- On each Veckobrev refresh, move past or stale items out of `data.json` (and the embedded copy) into `feeds/school-archive.json`, which the UI does not read. Completed tests keep their feedback/result there.
