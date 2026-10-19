@@ -518,12 +518,471 @@
     },
     {
       "start": "2026-12-14",
-      "end": "2027-01-03",
-      "endExclusive": "2027-01-04",
+      "end": "2027-01-10",
+      "endExclusive": "2027-01-11",
       "parent": "alex",
       "label": "Alex",
-      "days": 21,
-      "summary": "👨 Alex (21 days)"
+      "days": 28,
+      "summary": "👨 Alex (28 days)"
+    },
+    {
+      "start": "2027-01-11",
+      "end": "2027-01-17",
+      "endExclusive": "2027-01-18",
+      "parent": "anna-karin",
+      "label": "Anna-Karin",
+      "days": 7,
+      "summary": "👩 Anna-Karin (7 days)"
+    },
+    {
+      "start": "2027-01-18",
+      "end": "2027-01-24",
+      "endExclusive": "2027-01-25",
+      "parent": "alex",
+      "label": "Alex",
+      "days": 7,
+      "summary": "👨 Alex (7 days)"
+    },
+    {
+      "start": "2027-01-25",
+      "end": "2027-01-31",
+      "endExclusive": "2027-02-01",
+      "parent": "anna-karin",
+      "label": "Anna-Karin",
+      "days": 7,
+      "summary": "👩 Anna-Karin (7 days)"
+    },
+    {
+      "start": "2027-02-01",
+      "end": "2027-02-07",
+      "endExclusive": "2027-02-08",
+      "parent": "alex",
+      "label": "Alex",
+      "days": 7,
+      "summary": "👨 Alex (7 days)"
+    },
+    {
+      "start": "2027-02-08",
+      "end": "2027-02-14",
+      "endExclusive": "2027-02-15",
+      "parent": "anna-karin",
+      "label": "Anna-Karin",
+      "days": 7,
+      "summary": "👩 Anna-Karin (7 days)"
+    },
+    {
+      "start": "2027-02-15",
+      "end": "2027-02-21",
+      "endExclusive": "2027-02-22",
+      "parent": "alex",
+      "label": "Alex",
+      "days": 7,
+      "summary": "👨 Alex (7 days)"
+    },
+    {
+      "start": "2027-02-22",
+      "end": "2027-02-28",
+      "endExclusive": "2027-03-01",
+      "parent": "anna-karin",
+      "label": "Anna-Karin",
+      "days": 7,
+      "summary": "👩 Anna-Karin (7 days)"
+    },
+    {
+      "start": "2027-03-01",
+      "end": "2027-03-07",
+      "endExclusive": "2027-03-08",
+      "parent": "alex",
+      "label": "Alex",
+      "days": 7,
+      "summary": "👨 Alex (7 days)"
+    },
+    {
+      "start": "2027-03-08",
+      "end": "2027-03-14",
+      "endExclusive": "2027-03-15",
+      "parent": "anna-karin",
+      "label": "Anna-Karin",
+      "days": 7,
+      "summary": "👩 Anna-Karin (7 days)"
+    },
+    {
+      "start": "2027-03-15",
+      "end": "2027-03-21",
+      "endExclusive": "2027-03-22",
+      "parent": "alex",
+      "label": "Alex",
+      "days": 7,
+      "summary": "👨 Alex (7 days)"
+    },
+    {
+      "start": "2027-03-22",
+      "end": "2027-03-28",
+      "endExclusive": "2027-03-29",
+      "parent": "anna-karin",
+      "label": "Anna-Karin",
+      "days": 7,
+      "summary": "👩 Anna-Karin (7 days)"
+    },
+    {
+      "start": "2027-03-29",
+      "end": "2027-04-04",
+      "endExclusive": "2027-04-05",
+      "parent": "alex",
+      "label": "Alex",
+      "days": 7,
+      "summary": "👨 Alex (7 days)"
+    },
+    {
+      "start": "2027-04-05",
+      "end": "2027-04-11",
+      "endExclusive": "2027-04-12",
+      "parent": "anna-karin",
+      "label": "Anna-Karin",
+      "days": 7,
+      "summary": "👩 Anna-Karin (7 days)"
+    },
+    {
+      "start": "2027-04-12",
+      "end": "2027-04-18",
+      "endExclusive": "2027-04-19",
+      "parent": "alex",
+      "label": "Alex",
+      "days": 7,
+      "summary": "👨 Alex (7 days)"
+    },
+    {
+      "start": "2027-04-19",
+      "end": "2027-04-25",
+      "endExclusive": "2027-04-26",
+      "parent": "anna-karin",
+      "label": "Anna-Karin",
+      "days": 7,
+      "summary": "👩 Anna-Karin (7 days)"
+    },
+    {
+      "start": "2027-04-26",
+      "end": "2027-05-02",
+      "endExclusive": "2027-05-03",
+      "parent": "alex",
+      "label": "Alex",
+      "days": 7,
+      "summary": "👨 Alex (7 days)"
+    },
+    {
+      "start": "2027-05-03",
+      "end": "2027-05-09",
+      "endExclusive": "2027-05-10",
+      "parent": "anna-karin",
+      "label": "Anna-Karin",
+      "days": 7,
+      "summary": "👩 Anna-Karin (7 days)"
+    },
+    {
+      "start": "2027-05-10",
+      "end": "2027-05-16",
+      "endExclusive": "2027-05-17",
+      "parent": "alex",
+      "label": "Alex",
+      "days": 7,
+      "summary": "👨 Alex (7 days)"
+    },
+    {
+      "start": "2027-05-17",
+      "end": "2027-05-23",
+      "endExclusive": "2027-05-24",
+      "parent": "anna-karin",
+      "label": "Anna-Karin",
+      "days": 7,
+      "summary": "👩 Anna-Karin (7 days)"
+    },
+    {
+      "start": "2027-05-24",
+      "end": "2027-05-30",
+      "endExclusive": "2027-05-31",
+      "parent": "alex",
+      "label": "Alex",
+      "days": 7,
+      "summary": "👨 Alex (7 days)"
+    },
+    {
+      "start": "2027-05-31",
+      "end": "2027-06-06",
+      "endExclusive": "2027-06-07",
+      "parent": "anna-karin",
+      "label": "Anna-Karin",
+      "days": 7,
+      "summary": "👩 Anna-Karin (7 days)"
+    },
+    {
+      "start": "2027-06-07",
+      "end": "2027-06-13",
+      "endExclusive": "2027-06-14",
+      "parent": "alex",
+      "label": "Alex",
+      "days": 7,
+      "summary": "👨 Alex (7 days)"
+    },
+    {
+      "start": "2027-06-14",
+      "end": "2027-06-20",
+      "endExclusive": "2027-06-21",
+      "parent": "anna-karin",
+      "label": "Anna-Karin",
+      "days": 7,
+      "summary": "👩 Anna-Karin (7 days)"
+    },
+    {
+      "start": "2027-06-21",
+      "end": "2027-06-27",
+      "endExclusive": "2027-06-28",
+      "parent": "alex",
+      "label": "Alex",
+      "days": 7,
+      "summary": "👨 Alex (7 days)"
+    },
+    {
+      "start": "2027-06-28",
+      "end": "2027-07-04",
+      "endExclusive": "2027-07-05",
+      "parent": "anna-karin",
+      "label": "Anna-Karin",
+      "days": 7,
+      "summary": "👩 Anna-Karin (7 days)"
+    },
+    {
+      "start": "2027-07-05",
+      "end": "2027-07-11",
+      "endExclusive": "2027-07-12",
+      "parent": "alex",
+      "label": "Alex",
+      "days": 7,
+      "summary": "👨 Alex (7 days)"
+    },
+    {
+      "start": "2027-07-12",
+      "end": "2027-07-18",
+      "endExclusive": "2027-07-19",
+      "parent": "anna-karin",
+      "label": "Anna-Karin",
+      "days": 7,
+      "summary": "👩 Anna-Karin (7 days)"
+    },
+    {
+      "start": "2027-07-19",
+      "end": "2027-07-25",
+      "endExclusive": "2027-07-26",
+      "parent": "alex",
+      "label": "Alex",
+      "days": 7,
+      "summary": "👨 Alex (7 days)"
+    },
+    {
+      "start": "2027-07-26",
+      "end": "2027-08-01",
+      "endExclusive": "2027-08-02",
+      "parent": "anna-karin",
+      "label": "Anna-Karin",
+      "days": 7,
+      "summary": "👩 Anna-Karin (7 days)"
+    },
+    {
+      "start": "2027-08-02",
+      "end": "2027-08-08",
+      "endExclusive": "2027-08-09",
+      "parent": "alex",
+      "label": "Alex",
+      "days": 7,
+      "summary": "👨 Alex (7 days)"
+    },
+    {
+      "start": "2027-08-09",
+      "end": "2027-08-15",
+      "endExclusive": "2027-08-16",
+      "parent": "anna-karin",
+      "label": "Anna-Karin",
+      "days": 7,
+      "summary": "👩 Anna-Karin (7 days)"
+    },
+    {
+      "start": "2027-08-16",
+      "end": "2027-08-22",
+      "endExclusive": "2027-08-23",
+      "parent": "alex",
+      "label": "Alex",
+      "days": 7,
+      "summary": "👨 Alex (7 days)"
+    },
+    {
+      "start": "2027-08-23",
+      "end": "2027-08-29",
+      "endExclusive": "2027-08-30",
+      "parent": "anna-karin",
+      "label": "Anna-Karin",
+      "days": 7,
+      "summary": "👩 Anna-Karin (7 days)"
+    },
+    {
+      "start": "2027-08-30",
+      "end": "2027-09-05",
+      "endExclusive": "2027-09-06",
+      "parent": "alex",
+      "label": "Alex",
+      "days": 7,
+      "summary": "👨 Alex (7 days)"
+    },
+    {
+      "start": "2027-09-06",
+      "end": "2027-09-12",
+      "endExclusive": "2027-09-13",
+      "parent": "anna-karin",
+      "label": "Anna-Karin",
+      "days": 7,
+      "summary": "👩 Anna-Karin (7 days)"
+    },
+    {
+      "start": "2027-09-13",
+      "end": "2027-09-19",
+      "endExclusive": "2027-09-20",
+      "parent": "alex",
+      "label": "Alex",
+      "days": 7,
+      "summary": "👨 Alex (7 days)"
+    },
+    {
+      "start": "2027-09-20",
+      "end": "2027-09-26",
+      "endExclusive": "2027-09-27",
+      "parent": "anna-karin",
+      "label": "Anna-Karin",
+      "days": 7,
+      "summary": "👩 Anna-Karin (7 days)"
+    },
+    {
+      "start": "2027-09-27",
+      "end": "2027-10-03",
+      "endExclusive": "2027-10-04",
+      "parent": "alex",
+      "label": "Alex",
+      "days": 7,
+      "summary": "👨 Alex (7 days)"
+    },
+    {
+      "start": "2027-10-04",
+      "end": "2027-10-10",
+      "endExclusive": "2027-10-11",
+      "parent": "anna-karin",
+      "label": "Anna-Karin",
+      "days": 7,
+      "summary": "👩 Anna-Karin (7 days)"
+    },
+    {
+      "start": "2027-10-11",
+      "end": "2027-10-17",
+      "endExclusive": "2027-10-18",
+      "parent": "alex",
+      "label": "Alex",
+      "days": 7,
+      "summary": "👨 Alex (7 days)"
+    },
+    {
+      "start": "2027-10-18",
+      "end": "2027-10-24",
+      "endExclusive": "2027-10-25",
+      "parent": "anna-karin",
+      "label": "Anna-Karin",
+      "days": 7,
+      "summary": "👩 Anna-Karin (7 days)"
+    },
+    {
+      "start": "2027-10-25",
+      "end": "2027-10-31",
+      "endExclusive": "2027-11-01",
+      "parent": "alex",
+      "label": "Alex",
+      "days": 7,
+      "summary": "👨 Alex (7 days)"
+    },
+    {
+      "start": "2027-11-01",
+      "end": "2027-11-07",
+      "endExclusive": "2027-11-08",
+      "parent": "anna-karin",
+      "label": "Anna-Karin",
+      "days": 7,
+      "summary": "👩 Anna-Karin (7 days)"
+    },
+    {
+      "start": "2027-11-08",
+      "end": "2027-11-14",
+      "endExclusive": "2027-11-15",
+      "parent": "alex",
+      "label": "Alex",
+      "days": 7,
+      "summary": "👨 Alex (7 days)"
+    },
+    {
+      "start": "2027-11-15",
+      "end": "2027-11-21",
+      "endExclusive": "2027-11-22",
+      "parent": "anna-karin",
+      "label": "Anna-Karin",
+      "days": 7,
+      "summary": "👩 Anna-Karin (7 days)"
+    },
+    {
+      "start": "2027-11-22",
+      "end": "2027-11-28",
+      "endExclusive": "2027-11-29",
+      "parent": "alex",
+      "label": "Alex",
+      "days": 7,
+      "summary": "👨 Alex (7 days)"
+    },
+    {
+      "start": "2027-11-29",
+      "end": "2027-12-05",
+      "endExclusive": "2027-12-06",
+      "parent": "anna-karin",
+      "label": "Anna-Karin",
+      "days": 7,
+      "summary": "👩 Anna-Karin (7 days)"
+    },
+    {
+      "start": "2027-12-06",
+      "end": "2027-12-12",
+      "endExclusive": "2027-12-13",
+      "parent": "alex",
+      "label": "Alex",
+      "days": 7,
+      "summary": "👨 Alex (7 days)"
+    },
+    {
+      "start": "2027-12-13",
+      "end": "2027-12-19",
+      "endExclusive": "2027-12-20",
+      "parent": "anna-karin",
+      "label": "Anna-Karin",
+      "days": 7,
+      "summary": "👩 Anna-Karin (7 days)"
+    },
+    {
+      "start": "2027-12-20",
+      "end": "2027-12-26",
+      "endExclusive": "2027-12-27",
+      "parent": "alex",
+      "label": "Alex",
+      "days": 7,
+      "summary": "👨 Alex (7 days)"
+    },
+    {
+      "start": "2027-12-27",
+      "end": "2028-01-02",
+      "endExclusive": "2028-01-03",
+      "parent": "anna-karin",
+      "label": "Anna-Karin",
+      "days": 7,
+      "summary": "👩 Anna-Karin (7 days)"
     }
   ]
 }
