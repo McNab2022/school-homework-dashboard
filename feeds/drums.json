@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-14",
+  "updated": "2026-10-19",
   "timezone": "Europe/Stockholm",
   "source": "StudyAlong forward from annakarinlundback@gmail.com (2026-09-02)",
   "who": "Ollie",
@@ -41,5 +41,30 @@
     "skip_football_on_dates": true,
     "skip_football_label": "Orchestra week, no football",
     "skip_football_label_sv": "Orkestervecka, ingen fotboll"
-  }
+  },
+  "exceptions": [
+    "2026-10-30"
+  ],
+  "exception_notes": {
+    "2026-10-30": {
+      "en": "höstlov, no regular lesson (assumed)",
+      "sv": "höstlov, ingen ordinarie lektion (antaget)"
+    }
+  },
+  "courses": [
+    {
+      "title": "Drums höstlov course",
+      "title_sv": "Trummor höstlovskurs",
+      "dates": [
+        "2026-10-26",
+        "2026-10-27",
+        "2026-10-28"
+      ],
+      "time_start": "10:00",
+      "time_end": "12:00",
+      "location": "Kulturskolan Huddinge, Paradistorget 16, Huddinge",
+      "pattern": "Three days in a row, Mon 26 to Wed 28 Oct (v.44)",
+      "pattern_sv": "Tre dagar i rad, mån 26 till ons 28 okt (v.44)"
+    }
+  ]
 }

@@ -2245,6 +2245,13 @@
           cur.setDate(cur.getDate() + 7);
         }
       }
+      (d.courses || []).forEach((c) => (c.dates || []).forEach((ds) => {
+        if (ds >= today && ds <= end) out.push({
+          start: `${ds}T${c.time_start}${off(ds)}`, end: `${ds}T${c.time_end}${off(ds)}`,
+          summary: (sv ? (c.title_sv || c.title) : (c.title || c.title_sv)) + " (Ollie)",
+          location: c.location || d.location || "", kind: "drums",
+        });
+      }));
       const o = d.orchestra;
       if (o && Array.isArray(o.dates)) o.dates.forEach((ds) => {
         if (ds >= today && ds <= end) out.push({
@@ -2638,7 +2645,37 @@
             <span class="who-badge ollie">${escapeHtml(d.who || "Ollie")}</span>
             ${d.course ? `<span class="kind-badge other">${escapeHtml(d.course)}</span>` : ""}
           </div>
-        </article>` + renderOrchestra(d.orchestra, d.who);
+        </article>` + renderCourses(d.courses, d.who) + renderOrchestra(d.orchestra, d.who);
+    }
+
+    function renderCourses(courses, who) {
+      const i = t();
+      const sv = currentLang === "sv";
+      const today = todayStockholm();
+      return (courses || []).map((c) => {
+        const upcoming = (c.dates || []).filter((x) => x >= today);
+        if (!upcoming.length) return "";
+        const isToday = upcoming[0] === today;
+        const title = sv ? (c.title_sv || c.title) : (c.title || c.title_sv);
+        const pattern = sv ? (c.pattern_sv || c.pattern) : (c.pattern || c.pattern_sv);
+        const dateBits = upcoming.map((x) => {
+          const pd = parseYMD(x);
+          return `${i.weekdays[pd.getDay()]} ${pd.getDate()} ${i.months[pd.getMonth()]}`;
+        });
+        return `<article class="sport-item kind-other${isToday ? " is-today" : ""}">
+          <div>
+            <div class="sport-when">${escapeHtml(`${c.time_start}–${c.time_end}`)}</div>
+            <div class="sport-summary">${escapeHtml(title)}</div>
+            ${pattern ? `<div class="sport-location">${escapeHtml(pattern)}</div>` : ""}
+            <div class="sport-location">${escapeHtml(c.location || "")}</div>
+            <div class="orchestra-dates">${escapeHtml(dateBits.join(", "))}</div>
+          </div>
+          <div class="sport-badges">
+            <span class="who-badge ollie">${escapeHtml(who || "Ollie")}</span>
+            ${isToday ? `<span class="sport-flag">${escapeHtml(i.todayLabel)}</span>` : ""}
+          </div>
+        </article>`;
+      }).join("");
     }
 
     function renderOrchestra(o, who) {
