@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-29",
+  "updated": "2026-10-19",
   "timezone": "Europe/Stockholm",
   "source": "https://script.google.com/macros/s/AKfycbxfOcUXPSFwl6NFLjOQp4rSGwoqc6V_zZ8Ra2-oKMVIrobNknJfABtdcnSxfigTeBQ/exec",
   "blocks": [
@@ -518,48 +518,12 @@
     },
     {
       "start": "2026-12-14",
-      "end": "2026-12-20",
-      "endExclusive": "2026-12-21",
-      "parent": "alex",
-      "label": "Alex",
-      "days": 7,
-      "summary": "👨 Alex (7 days)"
-    },
-    {
-      "start": "2026-12-21",
-      "end": "2026-12-24",
-      "endExclusive": "2026-12-25",
-      "parent": "anna-karin",
-      "label": "Anna-Karin",
-      "days": 4,
-      "summary": "👩 Anna-Karin (4 days)"
-    },
-    {
-      "start": "2026-12-25",
-      "end": "2026-12-27",
-      "endExclusive": "2026-12-28",
-      "parent": "alex",
-      "label": "Alex",
-      "days": 3,
-      "summary": "👨 Alex (3 days)"
-    },
-    {
-      "start": "2026-12-28",
-      "end": "2026-12-30",
-      "endExclusive": "2026-12-31",
-      "parent": "anna-karin",
-      "label": "Anna-Karin",
-      "days": 3,
-      "summary": "👩 Anna-Karin (3 days)"
-    },
-    {
-      "start": "2026-12-31",
       "end": "2027-01-03",
       "endExclusive": "2027-01-04",
       "parent": "alex",
       "label": "Alex",
-      "days": 4,
-      "summary": "👨 Alex (4 days)"
+      "days": 21,
+      "summary": "👨 Alex (21 days)"
     }
   ]
 }
