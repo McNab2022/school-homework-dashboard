@@ -1,7 +1,13 @@
 {
-  "updated": "2026-10-14",
+  "updated": "2026-10-19",
   "source": "gmail:from:no_reply@foreningsutskick.sportadmin.se",
   "messages": [
+    {
+      "date": "2026-10-16",
+      "subject": "Match mot Mälarhöjden inställd!",
+      "summary_sv": "Lördagens match mot Mälarhöjden (17 okt) inställd. 2–3 spelare kunde i stället spela med lag 2 i Glömsta (samling 13:00); svar behövdes samma kväll.",
+      "summary_en": "Saturday's match against Mälarhöjden (17 Oct) was cancelled. Two or three players could play with team 2 at Glömsta instead (gather 13:00); replies were needed the same evening."
+    },
     {
       "date": "2026-10-14",
       "subject": "Match lördag, ny tid igen!",
