@@ -1,27 +1,9 @@
 {
-  "updated": "2026-10-19",
+  "updated": "2026-10-21",
   "timezone": "Europe/Stockholm",
   "source": "https://portalweb.sportadmin.se/webcal?id=f619c1f3-826c-4bd7-a8c8-a344b3470d48",
   "calendarName": "Sportadmin Huddinge Idrottsförening",
   "events": [
-    {
-      "start": "2026-09-19T11:00+02:00",
-      "end": "2026-09-19T12:15+02:00",
-      "summary": "Målvaktsclinic 7v7 - Målvaktsclinic 7v7 2026",
-      "location": "Snättringe IP",
-      "description": "Samling: 11:00",
-      "kind": "other",
-      "gathering": "11:00"
-    },
-    {
-      "start": "2026-09-20T08:00+02:00",
-      "end": "2026-09-20T09:15+02:00",
-      "summary": "Match: IF Brommapojkarna P16-5 - Huddinge IF svart (P2016- 1)",
-      "location": "Stora Mossens IP 2",
-      "description": "Samling: 07:35\nSerie: P2016- 1\nSanktan \n\nObs: Kort samlingstid - Kom i tid!\n\nMålvakt: Oliver (om han kan)",
-      "kind": "match",
-      "gathering": "07:35"
-    },
     {
       "start": "2026-09-22T18:30+02:00",
       "end": "2026-09-22T20:00+02:00",
@@ -207,18 +189,9 @@
       "end": "2026-10-24T13:30+02:00",
       "summary": "Huddinge Höstcup lag Gul - P2016:3",
       "location": "Källbrinks IP konstgräs",
-      "description": "Samling: 08:00\nHuddinge höstcup lag Gul.\n\nSamling 08:00.\n\n4 matcher som är 1x25 minuter långa.\n\nMatcher: 08:30, 10:00, 11:30 & 13:30.\n\nAlla spelare behöver ha med svart träningströja om vi möter andra gula lag.",
+      "description": "Samling: 08:00\nHuddinge höstcup lag Gul.\n\nSamling 08:00.\n\n4 matcher som är 1x25 minuter långa.\n\nMatcher: 08:30, 10:00, 11:30 & 13:30.\n\nAlla spelare behöver ha med svart träningströja om vi möter andra gula lag.\n\n08:30 - FOC Farsta Röd\n10:00 - Tullinge BK Vit\n11:30 - FC Brandbergen\n13:00 - Huddinge lag 4 (vi är hemmalag)",
       "kind": "other",
       "gathering": "08:00"
-    },
-    {
-      "start": "2026-10-24T09:00+02:00",
-      "end": "2026-10-24T15:00+02:00",
-      "summary": "Höstcup - P2016:3",
-      "location": "Källbrinks IP konstgräs",
-      "description": "Samling: 09:00\nFörhandskoll:\n\nVi har två lag anmälda till cup och kommer med största sannolikhet att mixa grupperna. Vi lär även få möta varandra. Detta på grund av svalt intresse i P2016-klassen.\n\nPreliminärt spelschema säger start 09:00 och totalt fyra matcher.\n\nCupen är gratis för oss.\n\nNär kallelse skickats ut gäller svar för att kunna delta. Ny kallelse kommer därefter med lagindelning och exakta tider.",
-      "kind": "other",
-      "gathering": "09:00"
     },
     {
       "start": "2026-10-27T18:30+01:00",
@@ -300,6 +273,15 @@
       "description": "Samling: 07:30\nSerie: Futsal P2016-3",
       "kind": "match",
       "gathering": "07:30"
+    },
+    {
+      "start": "2026-11-07T13:00+01:00",
+      "end": "2026-11-07T14:30+01:00",
+      "summary": "Futsalträning - P2016:3",
+      "location": "Glömstahallen sporthall",
+      "description": "Samling: 12:55\nFutsalträning inför seriestart.",
+      "kind": "training",
+      "gathering": "12:55"
     },
     {
       "start": "2026-11-08T13:00+01:00",
