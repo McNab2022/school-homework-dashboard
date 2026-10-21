@@ -2067,7 +2067,7 @@
         const kind = ev.kind || "other";
         const who = ev.who || "";
         const loc = ev.location
-          ? `<div class="event-meta">${escapeHtml(ev.location)}</div>`
+          ? `<div class="event-meta">${ev.maps_url ? `<a class="map-link" href="${escapeHtml(ev.maps_url)}" target="_blank" rel="noopener noreferrer" title="Google Maps">\u{1F4CD} ${escapeHtml(ev.location)}</a>` : escapeHtml(ev.location)}</div>`
           : "";
         const flagText = (currentLang === "sv"
           ? (ev.flag_sv || ev.flag || "")
