@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-19",
+  "updated": "2026-10-23",
   "school": "Källbrinksskolan",
   "timezone": "Europe/Stockholm",
   "kids": [
@@ -147,6 +147,40 @@
       "has_attachment": false,
       "title_sv": "HKK — valfritt från Classroom",
       "notes_sv": "Egen planering, valfritt arbete från Google Classroom. Påminn Ellie att öppna Google Classroom för det här materialet."
+    },
+    {
+      "id": "ol-hostlov-ovningar",
+      "date": "2026-10-26",
+      "endDate": "2026-10-30",
+      "time": null,
+      "child": "oliver",
+      "subject": "School",
+      "type": "homework",
+      "title": "Höstlov practice exercises (maths, SO, NO)",
+      "notes": "The åk 4 Veckobrev before week 45 has PDFs attached with practice exercises in maths, SO and NO for the autumn break. The PDFs are on the Vklass news post (custodian login), not in the email. The letter doesn't say they are compulsory.",
+      "optional": true,
+      "on_classroom": false,
+      "title_sv": "Övningsuppgifter på höstlovet (matte, SO, NO)",
+      "notes_sv": "Veckobrevet inför v.45 för åk 4 har bifogade PDF:er med övningsuppgifter i matte, SO och NO till höstlovet. PDF:erna finns i nyheten i Vklass (vårdnadshavarinloggning), inte i mejlet. Brevet säger inte att de är obligatoriska.",
+      "week": "44",
+      "teacher": "Agneta Lundin"
+    },
+    {
+      "id": "ol-hostlov-loss",
+      "date": "2026-10-26",
+      "endDate": "2026-10-30",
+      "time": null,
+      "child": "oliver",
+      "subject": "School",
+      "type": "event",
+      "title": "Lice check over höstlov",
+      "notes": "School nurse Johanna asks all families to comb their children's hair over höstlov because several classes have had head lice this autumn. If you find live lice, treat with a product from the pharmacy. More info on 1177.se (huvudlöss).",
+      "optional": false,
+      "on_classroom": false,
+      "title_sv": "Kamma efter löss på höstlovet",
+      "notes_sv": "Skolsköterskan Johanna ber alla familjer kamma sina barn under höstlovet eftersom flera klasser haft löss i höst. Hittar ni levande löss, behandla med medel från apoteket. Mer info på 1177.se (huvudlöss).",
+      "week": "44",
+      "teacher": "Johanna (skolsköterska)"
     }
   ]
 }
