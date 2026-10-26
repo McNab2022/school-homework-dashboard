@@ -1,27 +1,9 @@
 {
-  "updated": "2026-10-23",
+  "updated": "2026-10-26",
   "timezone": "Europe/Stockholm",
   "source": "https://portalweb.sportadmin.se/webcal?id=f619c1f3-826c-4bd7-a8c8-a344b3470d48",
   "calendarName": "Sportadmin Huddinge Idrottsförening",
   "events": [
-    {
-      "start": "2026-09-23T19:00+02:00",
-      "end": "2026-09-23T20:30+02:00",
-      "summary": "Onsdagsträning - P2016:3",
-      "location": "Glömsta BP",
-      "description": "Samling: 18:55, Utanför planen.\nOnsdagsträning. Vi kör till 20:30.",
-      "kind": "training",
-      "gathering": "18:55"
-    },
-    {
-      "start": "2026-09-24T17:45+02:00",
-      "end": "2026-09-24T19:00+02:00",
-      "summary": "Torsdagsträning - P2016:3",
-      "location": "Glömsta BP",
-      "description": "Samling: 17:45, Utanför planen för uppvärmning\nTorsdagsträning.\n\nTräningen inleds med 15 minuters uppvärmning utanför planen.\n\nPlantid 18-19.",
-      "kind": "training",
-      "gathering": "17:45"
-    },
     {
       "start": "2026-09-26T09:30+02:00",
       "end": "2026-09-26T10:45+02:00",
@@ -207,7 +189,7 @@
       "end": "2026-10-31T15:00+01:00",
       "summary": "Futsal-träning - P2016:3",
       "location": "Kvarnbergshallen",
-      "description": "Samling: 13:00\nFutsal-träning inför säsongen.",
+      "description": "Samling: 13:00\nFutsal-träning inför säsongen.\n\nOBS: Inneskor!",
       "kind": "training",
       "gathering": "13:00"
     },
@@ -216,7 +198,7 @@
       "end": "2026-11-01T15:00+01:00",
       "summary": "Futsal-träning - P2016:3",
       "location": "Kvarnbergshallen",
-      "description": "Samling: 13:00\nFutsal-träning inför säsongen.",
+      "description": "Samling: 13:00\nFutsal-träning inför säsongen.\n\nOBS: Inneskor!",
       "kind": "training",
       "gathering": "13:00"
     },

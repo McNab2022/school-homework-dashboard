@@ -1,7 +1,13 @@
 {
-  "updated": "2026-10-19",
+  "updated": "2026-10-26",
   "source": "gmail:from:no_reply@foreningsutskick.sportadmin.se",
   "messages": [
+    {
+      "date": "2026-10-25",
+      "subject": "Höstlov och november.",
+      "summary_sv": "Träning som vanligt på höstlovet, plus två futsal-träningar nästa helg (31 okt och 1 nov, Kvarnbergshallen, inneskor) inför futsalsäsongen. Vanliga tider i november, eventuellt fler inomhuspass. Lite lägre ambitionsnivå i december men några helgmatcher. Ledarna söker frivilliga för föräldramöte och avslutning. Fakturor för 2027 kan komma; meddela ledarna om ni inte vill fortsätta.",
+      "summary_en": "Training carries on as normal over höstlov, plus two futsal sessions next weekend (31 Oct and 1 Nov, Kvarnbergshallen, indoor shoes) before the futsal season starts. Usual times in November, maybe more indoor sessions. A lighter December but still some weekend matches. Coaches want volunteers for a parents' meeting and an end-of-season do. 2027 invoices may come; tell the coaches if Ollie won't continue."
+    },
     {
       "date": "2026-10-16",
       "subject": "Match mot Mälarhöjden inställd!",
