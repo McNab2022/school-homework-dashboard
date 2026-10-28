@@ -1,27 +1,9 @@
 {
-  "updated": "2026-10-26",
+  "updated": "2026-10-28",
   "timezone": "Europe/Stockholm",
   "source": "https://portalweb.sportadmin.se/webcal?id=f619c1f3-826c-4bd7-a8c8-a344b3470d48",
   "calendarName": "Sportadmin Huddinge Idrottsförening",
   "events": [
-    {
-      "start": "2026-09-26T09:30+02:00",
-      "end": "2026-09-26T10:45+02:00",
-      "summary": "Match: Huddinge IF P2016:3 - Mälarhöjdens IK",
-      "location": "Glömsta BP",
-      "description": "Samling: 09:00\nTräningsmatch 7v7.\n\nDen här matchen riktar sig primärt till de som nyligen börjat i laget samt de som inte spelat så många matcher, alternativt missat under hösten. Även en chans för målvakter att spela ute. Vi kommer även fylla på med fler. Viktigt att prioritera denna samt snabba svar önskas.\n\nMålvakt: Ossian om han kan.",
-      "kind": "match",
-      "gathering": "09:00"
-    },
-    {
-      "start": "2026-09-27T11:30+02:00",
-      "end": "2026-09-27T12:45+02:00",
-      "summary": "Match: Huddinge IF Svart - Vendelsö IK Vit (P2016- 1)",
-      "location": "Källbrinksskolans IP 1",
-      "description": "Samling: 11:00\nSerie: P2016- 1\nSanktan 7v7.\n\nDe som spelar matchen innan ansluter när matchen är slut.\n\nMålvakt: Oliver.",
-      "kind": "match",
-      "gathering": "11:00"
-    },
     {
       "start": "2026-09-29T18:30+02:00",
       "end": "2026-09-29T20:00+02:00",
