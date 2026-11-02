@@ -139,6 +139,17 @@ def parse_events(ics_text: str) -> tuple[str | None, list[dict]]:
             event["gathering"] = gathering
         events.append(event)
 
+    # SportAdmin sometimes republishes the same fixture under a new UID, so
+    # collapse duplicates (same start, end and summary), keeping the copy with
+    # the fullest description.
+    deduped: dict[tuple, dict] = {}
+    for ev in events:
+        key = (ev["start"], ev["end"], ev["summary"])
+        kept = deduped.get(key)
+        if kept is None or len(ev["description"]) > len(kept["description"]):
+            deduped[key] = ev
+    events = list(deduped.values())
+
     events.sort(key=lambda e: e["start"])
     return calendar_name, events
 
