@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-19",
+  "updated": "2026-11-02",
   "timezone": "Europe/Stockholm",
   "source": "StudyAlong forward from annakarinlundback@gmail.com (2026-09-02)",
   "who": "Ollie",
@@ -43,12 +43,17 @@
     "skip_football_label_sv": "Orkestervecka, ingen fotboll"
   },
   "exceptions": [
-    "2026-10-30"
+    "2026-10-30",
+    "2026-12-11"
   ],
   "exception_notes": {
     "2026-10-30": {
       "en": "höstlov, no regular lesson (assumed)",
       "sv": "höstlov, ingen ordinarie lektion (antaget)"
+    },
+    "2026-12-11": {
+      "en": "v.50, no lessons, only concerts",
+      "sv": "v.50, ingen undervisning, bara konserter"
     }
   },
   "courses": [
@@ -65,6 +70,19 @@
       "location": "Kulturskolan Huddinge, Paradistorget 16, Huddinge",
       "pattern": "Three days in a row, Mon 26 to Wed 28 Oct (v.44)",
       "pattern_sv": "Tre dagar i rad, mån 26 till ons 28 okt (v.44)"
+    },
+    {
+      "title": "End-of-term drum concert",
+      "title_sv": "Trumkonsert, terminsavslutning",
+      "dates": [
+        "2026-12-07"
+      ],
+      "time_start": "17:00",
+      "time_end": "19:00",
+      "location": "Stora salen (rum 7), Kulturskolan Skogås, Storvretsvägen 60, 142 34 Skogås",
+      "maps_url": "https://www.google.com/maps/search/?api=1&query=Kulturskolan+Skog%C3%A5s+Storvretsv%C3%A4gen+60+142+34+Skog%C3%A5s",
+      "pattern": "Mon 7 Dec: pupils gather 17:00, concert 18:00. Family welcome. No lessons in v.50 (Isak Andersson)",
+      "pattern_sv": "Mån 7 dec: samling elever 17:00, konsert 18:00. Familjen välkommen. Ingen undervisning v.50 (Isak Andersson)"
     }
   ]
 }

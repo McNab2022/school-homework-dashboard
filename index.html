@@ -2231,7 +2231,7 @@
           : (ev.notes || ev.notes_sv || "");
         const notes = (notesRaw || "").trim();
         const loc = ev.location
-          ? `<div class="event-meta">${escapeHtml(ev.location)}</div>`
+          ? `<div class="event-meta">${ev.maps_url ? `<a class="map-link" href="${escapeHtml(ev.maps_url)}" target="_blank" rel="noopener noreferrer" title="Google Maps">\u{1F4CD} ${escapeHtml(ev.location)}</a>` : escapeHtml(ev.location)}</div>`
           : "";
         const notesHtml = notes
           ? `<div class="event-meta event-notes">${escapeHtml(notes)}</div>`
@@ -2304,7 +2304,7 @@
             <div class="sport-when">${escapeHtml(`${c.time_start}–${c.time_end}`)}</div>
             <div class="sport-summary">${escapeHtml(title)}</div>
             ${pattern ? `<div class="sport-location">${escapeHtml(pattern)}</div>` : ""}
-            <div class="sport-location">${escapeHtml(c.location || "")}</div>
+            <div class="sport-location">${c.maps_url ? `<a class="map-link" href="${escapeHtml(c.maps_url)}" target="_blank" rel="noopener noreferrer" title="Google Maps">\u{1F4CD} ${escapeHtml(c.location || "")}</a>` : escapeHtml(c.location || "")}</div>
             <div class="orchestra-dates">${escapeHtml(dateBits.join(", "))}</div>
           </div>
           <div class="sport-badges">

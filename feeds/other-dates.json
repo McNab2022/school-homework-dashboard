@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-19",
+  "updated": "2026-11-02",
   "timezone": "Europe/Stockholm",
   "events": [
     {
@@ -28,6 +28,20 @@
         "Ellie"
       ],
       "source": "Family calendar"
+    },
+    {
+      "start": "2026-12-07T17:00:00+01:00",
+      "end": "2026-12-07T19:00:00+01:00",
+      "summary": "Ollie drum concert (end of term)",
+      "summary_sv": "Ollies trumkonsert (terminsavslutning)",
+      "notes": "Pupils gather 17:00, concert 18:00. Family warmly welcome. From Isak Andersson. No drum lessons in v.50, only concerts.",
+      "notes_sv": "Samling elever 17:00, konsert 18:00. Familjen varmt välkommen. Från Isak Andersson. Ingen undervisning v.50, bara konserter.",
+      "location": "Stora salen (rum 7), Kulturskolan Skogås, Storvretsvägen 60, 142 34 Skogås",
+      "maps_url": "https://www.google.com/maps/search/?api=1&query=Kulturskolan+Skog%C3%A5s+Storvretsv%C3%A4gen+60+142+34+Skog%C3%A5s",
+      "who": [
+        "Ollie"
+      ],
+      "source": "Kulturskolan (Isak Andersson)"
     },
     {
       "start": "2026-12-22T08:00:00+01:00",
