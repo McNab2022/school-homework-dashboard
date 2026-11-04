@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-02",
+  "updated": "2026-11-04",
   "timezone": "Europe/Stockholm",
   "source": "https://portalweb.sportadmin.se/webcal?id=f619c1f3-826c-4bd7-a8c8-a344b3470d48",
   "calendarName": "Sportadmin Huddinge Idrottsförening",
@@ -206,8 +206,8 @@
       "start": "2026-11-08T13:00+01:00",
       "end": "2026-11-08T14:00+01:00",
       "summary": "Match: Huddinge IF P2016:3 - IFK Aspudden-Tellus Vit (Futsal P2016-2)",
-      "location": "Vårbyhallen",
-      "description": "Samling: 12:30\nSerie: Futsal P2016-2",
+      "location": "Vårbyhallen sporthall",
+      "description": "Samling: 12:30\nSerie: Futsal P2016-2\nFutsal-serie för de som betalt anmälningsavgiften och varit med på minst en förberedande träning.\n\nInneskor, vattenflaska och matchkläder.\n\nVi fyller på med nya spelare varefter NEJ-svar.",
       "kind": "match",
       "gathering": "12:30"
     },
