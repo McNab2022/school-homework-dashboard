@@ -1,36 +1,9 @@
 {
-  "updated": "2026-11-06",
+  "updated": "2026-11-09",
   "timezone": "Europe/Stockholm",
   "source": "https://portalweb.sportadmin.se/webcal?id=f619c1f3-826c-4bd7-a8c8-a344b3470d48",
   "calendarName": "Sportadmin Huddinge Idrottsförening",
   "events": [
-    {
-      "start": "2026-10-06T18:30+02:00",
-      "end": "2026-10-06T20:00+02:00",
-      "summary": "Tisdagsträning - P2016:3",
-      "location": "Vistaskolans BP",
-      "description": "Samling: 18:25, Utanför planen\nTisdagsträning.",
-      "kind": "training",
-      "gathering": "18:25"
-    },
-    {
-      "start": "2026-10-07T19:00+02:00",
-      "end": "2026-10-07T20:30+02:00",
-      "summary": "Onsdagsträning - P2016:3",
-      "location": "Glömsta BP",
-      "description": "Samling: 18:55, Utanför planen.\nOnsdagsträning. Vi kör till 20:30.",
-      "kind": "training",
-      "gathering": "18:55"
-    },
-    {
-      "start": "2026-10-08T17:45+02:00",
-      "end": "2026-10-08T19:00+02:00",
-      "summary": "Torsdagsträning - P2016:3",
-      "location": "Glömsta BP",
-      "description": "Samling: 17:45, Utanför planen för uppvärmning\nTorsdagsträning.\n\nTräningen inleds med 15 minuters uppvärmning utanför planen.\n\nPlantid 18-19.",
-      "kind": "training",
-      "gathering": "17:45"
-    },
     {
       "start": "2026-10-10T09:00+02:00",
       "end": "2026-10-10T10:15+02:00",
@@ -225,34 +198,16 @@
       "end": "2026-11-12T19:00+01:00",
       "summary": "Torsdagsträning - P2016:3",
       "location": "Glömsta BP",
-      "description": "Samling: 18:00\nUtomhusträning. Uppvärmning utanför planen.",
+      "description": "Samling: 17:45\nUtomhusträning. Uppvärmning utanför planen.",
       "kind": "training",
-      "gathering": "18:00"
-    },
-    {
-      "start": "2026-11-14T10:00+01:00",
-      "end": "2026-11-14T11:00+01:00",
-      "summary": "Match: Årsta FF 2 - Huddinge IF P2016:3 (Futsal P2016-2)",
-      "location": "Liljeholmshallen 2",
-      "description": "Samling: 09:30\nSerie: Futsal P2016-2",
-      "kind": "match",
-      "gathering": "09:30"
-    },
-    {
-      "start": "2026-11-14T10:00+01:00",
-      "end": "2026-11-14T11:00+01:00",
-      "summary": "Match: Huddinge IF P2016:3G - Älvsjö AIK FF Svart (Futsal P2016-3)",
-      "location": "Vårbyhallen",
-      "description": "Samling: 09:30\nSerie: Futsal P2016-3",
-      "kind": "match",
-      "gathering": "09:30"
+      "gathering": "17:45"
     },
     {
       "start": "2026-11-15T10:00+01:00",
       "end": "2026-11-15T12:00+01:00",
-      "summary": "Utomhusträning eller matchspel - P2016:3",
-      "location": "Vistaskolans BP",
-      "description": "Samling: 10:00\nTräning eller match.",
+      "summary": "Träning - P2016:3",
+      "location": "Kvarnbergshallen",
+      "description": "Samling: 10:00\nInomhusträning med fokus på futsal.",
       "kind": "training",
       "gathering": "10:00"
     },
@@ -315,7 +270,7 @@
       "end": "2026-11-22T18:00+01:00",
       "summary": "Match: Skogås-Trångsunds FF Blå - Huddinge IF P2016:3G (Futsal P2016-3)",
       "location": "Skogåshallen",
-      "description": "Samling: 16:30\nSerie: Futsal P2016-3",
+      "description": "Samling: 16:30\nSerie: Futsal P2016-3\nFutsal-serie för spelare som anmält sig och betalat avgiften.\n\nUtrustning för inomhus.\n\nMålvakt:",
       "kind": "match",
       "gathering": "16:30"
     },
@@ -351,7 +306,7 @@
       "end": "2026-11-28T09:00+01:00",
       "summary": "Match: Huddinge IF P2016:3G - Älvsjö AIK FF 1 (Futsal P2016-3)",
       "location": "Vårbyhallen",
-      "description": "Samling: 07:30\nSerie: Futsal P2016-3",
+      "description": "Samling: 07:30\nSerie: Futsal P2016-3\nFutsal-serie för spelare som anmält sig och betalat avgiften.\n\nUtrustning för inomhus.\n\nMålvakt:",
       "kind": "match",
       "gathering": "07:30"
     },
@@ -360,7 +315,7 @@
       "end": "2026-11-28T15:00+01:00",
       "summary": "Match: Älvsjö AIK FF Röd - Huddinge IF P2016:3 (Futsal P2016-2)",
       "location": "Bredängshallen",
-      "description": "Samling: 13:30\nSerie: Futsal P2016-2",
+      "description": "Samling: 13:30\nSerie: Futsal P2016-2\nFutsal-serie för spelare som anmält sig och betalat avgiften.\n\nUtrustning för inomhus.\n\nMålvakt:",
       "kind": "match",
       "gathering": "13:30"
     },
@@ -372,6 +327,15 @@
       "description": "Samling: 10:00\nTräning eller match.",
       "kind": "training",
       "gathering": "10:00"
+    },
+    {
+      "start": "2026-11-29T11:00+01:00",
+      "end": "2026-11-29T13:00+01:00",
+      "summary": "Träning - P2016:3",
+      "location": "Stensängsskolan",
+      "description": "Samling: 11:00\nInomhusträning med fokus på fys, koordination och snabbhet.",
+      "kind": "training",
+      "gathering": "11:00"
     },
     {
       "start": "2026-12-04T19:00+01:00",
@@ -387,7 +351,7 @@
       "end": "2026-12-05T09:00+01:00",
       "summary": "Match: Huddinge IF P2016:3 - Hammarby IF FF 21 Vit (Futsal P2016-2)",
       "location": "Stuvstahallen",
-      "description": "Samling: 07:30\nSerie: Futsal P2016-2",
+      "description": "Samling: 07:30\nSerie: Futsal P2016-2\nFutsal-serie för spelare som anmält sig och betalat avgiften.\n\nUtrustning för inomhus.\n\nMålvakt:",
       "kind": "match",
       "gathering": "07:30"
     },
@@ -396,9 +360,18 @@
       "end": "2026-12-06T10:00+01:00",
       "summary": "Match: FC Kungsholmen Svart - Huddinge IF P2016:3G (Futsal P2016-3)",
       "location": "Rödabergshallen",
-      "description": "Samling: 08:30\nSerie: Futsal P2016-3",
+      "description": "Samling: 08:30\nSerie: Futsal P2016-3\nFutsal-serie för spelare som anmält sig och betalat avgiften.\n\nUtrustning för inomhus.\n\nMålvakt:",
       "kind": "match",
       "gathering": "08:30"
+    },
+    {
+      "start": "2026-12-06T11:00+01:00",
+      "end": "2026-12-06T13:00+01:00",
+      "summary": "Träning - P2016:3",
+      "location": "Stensängsskolan",
+      "description": "Samling: 11:00\nInomhusträning med fokus på fys, koordination och snabbhet.",
+      "kind": "training",
+      "gathering": "11:00"
     },
     {
       "start": "2026-12-11T19:00+01:00",
@@ -414,7 +387,7 @@
       "end": "2026-12-12T09:00+01:00",
       "summary": "Match: Huddinge IF P2016:3G - IFK Aspudden-Tellus Gul 1 (Futsal P2016-3)",
       "location": "Vårbyhallen",
-      "description": "Samling: 07:30\nSerie: Futsal P2016-3",
+      "description": "Samling: 07:30\nSerie: Futsal P2016-3\nFutsal-serie för spelare som anmält sig och betalat avgiften.\n\nUtrustning för inomhus.\n\nMålvakt:",
       "kind": "match",
       "gathering": "07:30"
     },
@@ -423,9 +396,18 @@
       "end": "2026-12-12T10:00+01:00",
       "summary": "Match: IFK Aspudden-Tellus Röd 1 - Huddinge IF P2016:3 (Futsal P2016-2)",
       "location": "Telefonplanshallen",
-      "description": "Samling: 08:30\nSerie: Futsal P2016-2",
+      "description": "Samling: 08:30\nSerie: Futsal P2016-2\nFutsal-serie för spelare som anmält sig och betalat avgiften.\n\nUtrustning för inomhus.\n\nMålvakt:",
       "kind": "match",
       "gathering": "08:30"
+    },
+    {
+      "start": "2026-12-13T11:00+01:00",
+      "end": "2026-12-13T13:00+01:00",
+      "summary": "Träning - P2016:3",
+      "location": "Stensängsskolan",
+      "description": "Samling: 11:00\nInomhusträning med fokus på fys, koordination och snabbhet.",
+      "kind": "training",
+      "gathering": "11:00"
     },
     {
       "start": "2027-01-16T10:00+01:00",
@@ -441,7 +423,7 @@
       "end": "2027-01-17T14:00+01:00",
       "summary": "Match: Huddinge IF P2016:3 - Stureby SK Blå (Futsal P2016-2)",
       "location": "Vårbyhallen",
-      "description": "Samling: 12:30\nSerie: Futsal P2016-2",
+      "description": "Samling: 12:30\nSerie: Futsal P2016-2\nFutsal-serie för spelare som anmält sig och betalat avgiften.\n\nUtrustning för inomhus.\n\nMålvakt:",
       "kind": "match",
       "gathering": "12:30"
     },
