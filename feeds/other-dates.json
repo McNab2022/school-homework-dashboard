@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-02",
+  "updated": "2026-11-10",
   "timezone": "Europe/Stockholm",
   "events": [
     {
@@ -28,6 +28,19 @@
         "Ellie"
       ],
       "source": "Family calendar"
+    },
+    {
+      "start": "2026-11-11T14:00:00+01:00",
+      "end": "2026-11-11T15:00:00+01:00",
+      "summary": "Parents meeting for Ellie",
+      "summary_sv": "Föräldramöte för Ellie",
+      "notes": "Leave home by 14:00 to arrive on time.",
+      "notes_sv": "Lämna hemmet senast 14:00 för att hinna i tid.",
+      "who": [
+        "Alex",
+        "Ellie"
+      ],
+      "source": "Alex's calendar"
     },
     {
       "start": "2026-12-07T17:00:00+01:00",
