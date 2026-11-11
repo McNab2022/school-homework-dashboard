@@ -1,18 +1,9 @@
 {
-  "updated": "2026-11-09",
+  "updated": "2026-11-11",
   "timezone": "Europe/Stockholm",
   "source": "https://portalweb.sportadmin.se/webcal?id=f619c1f3-826c-4bd7-a8c8-a344b3470d48",
   "calendarName": "Sportadmin Huddinge Idrottsförening",
   "events": [
-    {
-      "start": "2026-10-10T09:00+02:00",
-      "end": "2026-10-10T10:15+02:00",
-      "summary": "Match: Sköndals IK - Huddinge IF P2016:3",
-      "location": "Sturebyskolans BP",
-      "description": "Samling: 08:30\nTräningsmatch.\n\nVi ordnar och betalar domare. Kostnaden delas mellan de som spelar. Swishas till ledare på plats.",
-      "kind": "match",
-      "gathering": "08:30"
-    },
     {
       "start": "2026-10-11T10:00+02:00",
       "end": "2026-10-11T11:15+02:00",
@@ -201,6 +192,15 @@
       "description": "Samling: 17:45\nUtomhusträning. Uppvärmning utanför planen.",
       "kind": "training",
       "gathering": "17:45"
+    },
+    {
+      "start": "2026-11-14T10:00+01:00",
+      "end": "2026-11-14T11:00+01:00",
+      "summary": "Match: Huddinge IF P2016:3G - Älvsjö AIK FF Svart (Futsal P2016-3)",
+      "location": "Vårbyhallen",
+      "description": "Samling: 09:30\nSerie: Futsal P2016-3\nFutsal-serie för spelare som anmält sig och betalat avgiften.\n\nUtrustning för inomhus.",
+      "kind": "match",
+      "gathering": "09:30"
     },
     {
       "start": "2026-11-15T10:00+01:00",
