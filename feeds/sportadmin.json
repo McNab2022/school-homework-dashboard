@@ -1,18 +1,9 @@
 {
-  "updated": "2026-11-11",
+  "updated": "2026-11-13",
   "timezone": "Europe/Stockholm",
   "source": "https://portalweb.sportadmin.se/webcal?id=f619c1f3-826c-4bd7-a8c8-a344b3470d48",
   "calendarName": "Sportadmin Huddinge Idrottsförening",
   "events": [
-    {
-      "start": "2026-10-11T10:00+02:00",
-      "end": "2026-10-11T11:15+02:00",
-      "summary": "Match: Huddinge IF P2016:3 - Stuvsta IF",
-      "location": "Glömsta BP",
-      "description": "Samling: 09:30\nTräningsmatch.\n\nMålvakt: Oliver.\n\nVi står för domare. Kostnaden 300kr delas på de som spelar och swishas till ledare på plats på matchdagen.",
-      "kind": "match",
-      "gathering": "09:30"
-    },
     {
       "start": "2026-10-13T18:30+02:00",
       "end": "2026-10-13T20:00+02:00",
@@ -350,7 +341,7 @@
       "start": "2026-12-05T08:00+01:00",
       "end": "2026-12-05T09:00+01:00",
       "summary": "Match: Huddinge IF P2016:3 - Hammarby IF FF 21 Vit (Futsal P2016-2)",
-      "location": "Stuvstahallen",
+      "location": "Kvarnbergshallen",
       "description": "Samling: 07:30\nSerie: Futsal P2016-2\nFutsal-serie för spelare som anmält sig och betalat avgiften.\n\nUtrustning för inomhus.\n\nMålvakt:",
       "kind": "match",
       "gathering": "07:30"
