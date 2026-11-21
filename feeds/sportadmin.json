@@ -1,18 +1,9 @@
 {
-  "updated": "2026-11-16",
+  "updated": "2026-11-21",
   "timezone": "Europe/Stockholm",
   "source": "https://portalweb.sportadmin.se/webcal?id=f619c1f3-826c-4bd7-a8c8-a344b3470d48",
   "calendarName": "Sportadmin Huddinge Idrottsförening",
   "events": [
-    {
-      "start": "2026-10-20T18:30+02:00",
-      "end": "2026-10-20T20:00+02:00",
-      "summary": "Tisdagsträning - P2016:3",
-      "location": "Vistaskolans BP",
-      "description": "Samling: 18:25, Utanför planen\nTisdagsträning.",
-      "kind": "training",
-      "gathering": "18:25"
-    },
     {
       "start": "2026-10-21T19:00+02:00",
       "end": "2026-10-21T20:30+02:00",
@@ -185,15 +176,6 @@
       "gathering": "18:25"
     },
     {
-      "start": "2026-11-18T19:00+01:00",
-      "end": "2026-11-18T20:30+01:00",
-      "summary": "Onsdagsträning - P2016:3",
-      "location": "Glömsta BP",
-      "description": "Samling: 18:55\nUtomhusträning.",
-      "kind": "training",
-      "gathering": "18:55"
-    },
-    {
       "start": "2026-11-19T18:00+01:00",
       "end": "2026-11-19T19:00+01:00",
       "summary": "Torsdagsträning - P2016:3",
@@ -201,6 +183,15 @@
       "description": "Samling: 18:00\nUtomhusträning. Uppvärmning utanför planen.",
       "kind": "training",
       "gathering": "18:00"
+    },
+    {
+      "start": "2026-11-21T09:00+01:00",
+      "end": "2026-11-21T10:00+01:00",
+      "summary": "Match: Huddinge IF P2016:3 - Stuvsta IF 1:1 (Futsal P2016-2)",
+      "location": "Vårbyhallen",
+      "description": "Samling: 08:30\nSerie: Futsal P2016-2\nFutsal-serie för spelare som anmält sig och betalat avgiften.\n\nUtrustning för inomhus.",
+      "kind": "match",
+      "gathering": "08:30"
     },
     {
       "start": "2026-11-22T17:00+01:00",
