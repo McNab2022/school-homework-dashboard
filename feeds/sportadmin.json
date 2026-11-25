@@ -1,18 +1,9 @@
 {
-  "updated": "2026-11-23",
+  "updated": "2026-11-25",
   "timezone": "Europe/Stockholm",
   "source": "https://portalweb.sportadmin.se/webcal?id=f619c1f3-826c-4bd7-a8c8-a344b3470d48",
   "calendarName": "Sportadmin Huddinge Idrottsförening",
   "events": [
-    {
-      "start": "2026-10-24T08:00+02:00",
-      "end": "2026-10-24T13:30+02:00",
-      "summary": "Huddinge Höstcup lag Gul - P2016:3",
-      "location": "Källbrinks IP konstgräs",
-      "description": "Samling: 08:00\nHuddinge höstcup lag Gul.\n\nSamling 08:00.\n\n4 matcher som är 1x25 minuter långa.\n\nMatcher: 08:30, 10:00, 11:30 & 13:30.\n\nAlla spelare behöver ha med svart träningströja om vi möter andra gula lag.\n\n08:30 - FOC Farsta Röd\n10:00 - Tullinge BK Vit\n11:30 - FC Brandbergen\n13:00 - Huddinge lag 4 (vi är hemmalag)",
-      "kind": "other",
-      "gathering": "08:00"
-    },
     {
       "start": "2026-10-27T18:30+01:00",
       "end": "2026-10-27T20:00+01:00",
@@ -194,15 +185,6 @@
       "gathering": "16:30"
     },
     {
-      "start": "2026-11-24T18:30+01:00",
-      "end": "2026-11-24T20:00+01:00",
-      "summary": "Tisdagsträning - P2016:3",
-      "location": "Vistaskolans BP",
-      "description": "Samling: 18:25\nUtomhusträning.",
-      "kind": "training",
-      "gathering": "18:25"
-    },
-    {
       "start": "2026-11-25T19:00+01:00",
       "end": "2026-11-25T20:30+01:00",
       "summary": "Onsdagsträning - P2016:3",
@@ -221,6 +203,15 @@
       "gathering": "18:00"
     },
     {
+      "start": "2026-11-27T19:00+01:00",
+      "end": "2026-11-27T21:00+01:00",
+      "summary": "Inomhusträning - P2016:3",
+      "location": "Balingsnässkolans gymnastiksal",
+      "description": "Samling: 19:00\nTräningen genomförs endast om det skickas kallelse.",
+      "kind": "training",
+      "gathering": "19:00"
+    },
+    {
       "start": "2026-11-28T08:00+01:00",
       "end": "2026-11-28T09:00+01:00",
       "summary": "Match: Huddinge IF P2016:3 - Älvsjö AIK FF 1 (Futsal P2016-3)",
@@ -228,6 +219,15 @@
       "description": "Samling: 07:30\nSerie: Futsal P2016-3\nFutsal-serie för spelare som anmält sig och betalat avgiften.\n\nUtrustning för inomhus.",
       "kind": "match",
       "gathering": "07:30"
+    },
+    {
+      "start": "2026-12-04T19:00+01:00",
+      "end": "2026-12-04T21:00+01:00",
+      "summary": "Inomhusträning - P2016:3",
+      "location": "Balingsnässkolans gymnastiksal",
+      "description": "Samling: 19:00\nTräningen genomförs endast om det skickas kallelse.",
+      "kind": "training",
+      "gathering": "19:00"
     },
     {
       "start": "2026-12-05T08:00+01:00",
@@ -255,6 +255,15 @@
       "description": "Samling: 10:00\nInomhusträning med fokus på futsal.\n\nObs, Flemingsbergshallen ovanför Willys i Flemingsberg.",
       "kind": "training",
       "gathering": "10:00"
+    },
+    {
+      "start": "2026-12-11T19:00+01:00",
+      "end": "2026-12-11T21:00+01:00",
+      "summary": "Inomhusträning - P2016:3",
+      "location": "Balingsnässkolans gymnastiksal",
+      "description": "Samling: 19:00\nTräningen genomförs endast om det skickas kallelse.",
+      "kind": "training",
+      "gathering": "19:00"
     },
     {
       "start": "2026-12-12T08:00+01:00",
@@ -291,6 +300,15 @@
       "description": "Samling: 13:00",
       "kind": "training",
       "gathering": "13:00"
+    },
+    {
+      "start": "2026-12-20T11:30+01:00",
+      "end": "2026-12-20T13:00+01:00",
+      "summary": "Inomhusträning - P2016:3",
+      "location": "Tomtbergahallen A",
+      "description": "Samling: 11:20",
+      "kind": "training",
+      "gathering": "11:20"
     },
     {
       "start": "2027-01-16T10:00+01:00",
