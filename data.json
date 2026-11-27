@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-06",
+  "updated": "2026-11-27",
   "school": "Källbrinksskolan",
   "timezone": "Europe/Stockholm",
   "kids": [
@@ -149,12 +149,12 @@
       "child": "eleanor",
       "subject": "Spanish",
       "type": "homework",
-      "title": "Test revision: Spanish (moderna språk)",
-      "notes": "Prepare for the Spanish exam Wed 2 Dec 09:10 (Sebastian / M2SP71). No topic list published yet in the Veckobrev or ICS — check Vklass and Classroom closer to the date.",
+      "title": "Test revision: Spanish speaking test",
+      "notes": "Prepare for the oral Spanish test (tala och samtala) Wed 2 Dec 09:10 (Sebastian / M2SP71). No topic list published yet, so check Vklass and Classroom.",
       "optional": false,
       "on_classroom": false,
-      "title_sv": "Repetition inför prov: Spanska (moderna språk)",
-      "notes_sv": "Förbered spanskprovet ons 2 dec 09:10 (Sebastian / M2SP71). Ingen ämneslista publicerad ännu i veckobrev eller ICS — kolla Vklass och Classroom närmare inpå.",
+      "title_sv": "Repetition inför prov: Spanska, tala och samtala",
+      "notes_sv": "Förbered det muntliga spanskprovet (tala och samtala) ons 2 dec 09:10 (Sebastian / M2SP71). Ingen ämneslista ännu, kolla Vklass och Classroom.",
       "teacher": "Sebastian",
       "group": "M2SP71",
       "related_tests": [
@@ -168,12 +168,12 @@
       "child": "eleanor",
       "subject": "Spanish",
       "type": "test",
-      "title": "Spanish exam (moderna språk)",
-      "notes": "Wed 2 Dec 09:10 (Vklass provkalender: “Prov moderna språk”). Time matches Ellie’s Spanish lesson with Sebastian (SEBTOR / M2SP71). No topic list in the feed yet — more info in Vklass / Classroom when published. (Only Sebastian’s Spanish; ignore other modern-language teachers.)",
+      "title": "Spanish test: tala och samtala (oral)",
+      "notes": "Wed 2 Dec 09:10 (Veckobrev wk 48: “Prov moderna språk – Prov tala och samtala”, i.e. the speaking/conversation part). Time matches Ellie’s Spanish lesson with Sebastian (SEBTOR / M2SP71). No further topic list yet. (Only Sebastian’s Spanish.)",
       "optional": false,
       "on_classroom": false,
-      "title_sv": "Spanskaprov (moderna språk)",
-      "notes_sv": "Ons 2 dec 09:10 (Vklass provkalender: “Prov moderna språk”). Tiden matchar Ellies spansklektion med Sebastian (SEBTOR / M2SP71). Ingen ämneslista i flödet ännu — mer info i Vklass / Classroom när det publiceras. (Bara Sebastians spanska; ignorera övriga språklärare.)",
+      "title_sv": "Spanskaprov: tala och samtala",
+      "notes_sv": "Ons 2 dec 09:10 (veckobrev v.48: “Prov moderna språk – Prov tala och samtala”). Tiden matchar Ellies spansklektion med Sebastian (SEBTOR / M2SP71). Ingen ämneslista ännu. (Bara Sebastians spanska.)",
       "teacher": "Sebastian",
       "group": "M2SP71",
       "week": "49"
@@ -192,6 +192,42 @@
       "has_attachment": false,
       "title_sv": "HKK — valfritt från Classroom",
       "notes_sv": "Egen planering, valfritt arbete från Google Classroom. Påminn Ellie att öppna Google Classroom för det här materialet."
+    },
+    {
+      "id": "el-english-matilda",
+      "date": "2026-12-02",
+      "time": "12:45",
+      "child": "eleanor",
+      "subject": "English",
+      "type": "test",
+      "title": "English reading comprehension test: Matilda",
+      "notes": "Wed 2 Dec (Veckobrev wk 48; Vklass provkalender “Engelska läsförståelsetest - Matilda”). Done digitally, based on the chapters of Matilda read so far: multiple choice plus short written answers at different levels. Time matches Ellie’s English lesson with Emilia Isaksson (EMIISA, 7C).",
+      "optional": false,
+      "on_classroom": false,
+      "title_sv": "Engelskt läsförståelsetest: Matilda",
+      "notes_sv": "Ons 2 dec (veckobrev v.48; Vklass provkalender “Engelska läsförståelsetest - Matilda”). Genomförs digitalt utifrån kapitlen i Matilda som lästs hittills: flervalsfrågor och korta skrivsvar på olika nivåer. Tiden matchar Ellies engelsklektion med Emilia Isaksson (EMIISA, 7C).",
+      "teacher": "Emilia Isaksson",
+      "group": "7C",
+      "week": "49"
+    },
+    {
+      "id": "el-rev-english-matilda",
+      "date": "2026-11-30",
+      "time": null,
+      "child": "eleanor",
+      "subject": "English",
+      "type": "homework",
+      "title": "Test revision: English, Matilda reading test",
+      "notes": "Prepare for the digital Matilda reading comprehension test Wed 2 Dec: re-read the chapters covered so far, and practise finding facts, interpreting messages and links in the text.",
+      "optional": false,
+      "on_classroom": false,
+      "title_sv": "Repetition inför prov: Engelska, Matilda",
+      "notes_sv": "Förbered det digitala läsförståelsetestet om Matilda ons 2 dec: läs om kapitlen som gåtts igenom, öva på att hitta fakta och tolka budskap och samband.",
+      "teacher": "Emilia Isaksson",
+      "group": "7C",
+      "related_tests": [
+        "el-english-matilda"
+      ]
     }
   ]
 }
