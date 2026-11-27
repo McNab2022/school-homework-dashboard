@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-25",
+  "updated": "2026-11-27",
   "timezone": "Europe/Stockholm",
   "source": "https://portalweb.sportadmin.se/webcal?id=f619c1f3-826c-4bd7-a8c8-a344b3470d48",
   "calendarName": "Sportadmin Huddinge Idrottsförening",
@@ -185,29 +185,11 @@
       "gathering": "16:30"
     },
     {
-      "start": "2026-11-25T19:00+01:00",
-      "end": "2026-11-25T20:30+01:00",
-      "summary": "Onsdagsträning - P2016:3",
-      "location": "Glömsta BP",
-      "description": "Samling: 18:55\nUtomhusträning.",
-      "kind": "training",
-      "gathering": "18:55"
-    },
-    {
-      "start": "2026-11-26T18:00+01:00",
-      "end": "2026-11-26T19:00+01:00",
-      "summary": "Torsdagsträning - P2016:3",
-      "location": "Glömsta BP",
-      "description": "Samling: 18:00\nUtomhusträning. Uppvärmning utanför planen.",
-      "kind": "training",
-      "gathering": "18:00"
-    },
-    {
       "start": "2026-11-27T19:00+01:00",
-      "end": "2026-11-27T21:00+01:00",
+      "end": "2026-11-27T20:30+01:00",
       "summary": "Inomhusträning - P2016:3",
       "location": "Balingsnässkolans gymnastiksal",
-      "description": "Samling: 19:00\nTräningen genomförs endast om det skickas kallelse.",
+      "description": "Samling: 19:00\nVi har hallen till 21 för de som orkar.\n\nSpelare som har tidig match lördag morgon kan prioritera den före träning.",
       "kind": "training",
       "gathering": "19:00"
     },
@@ -219,6 +201,15 @@
       "description": "Samling: 07:30\nSerie: Futsal P2016-3\nFutsal-serie för spelare som anmält sig och betalat avgiften.\n\nUtrustning för inomhus.",
       "kind": "match",
       "gathering": "07:30"
+    },
+    {
+      "start": "2026-11-29T11:00+01:00",
+      "end": "2026-11-29T12:30+01:00",
+      "summary": "Träning - P2016:3",
+      "location": "Snättringeskolans gymnastiksal",
+      "description": "Samling: 11:00\nLiten hall = fokus på teknik.\n\nEndast spelare och ledare i hallen.",
+      "kind": "training",
+      "gathering": "11:00"
     },
     {
       "start": "2026-12-04T19:00+01:00",
